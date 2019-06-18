@@ -227,7 +227,7 @@ hljs.configure({
    </p></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="#sec.installation"><span class="number">2.1 </span><span class="name">Installation and Upgrade</span></a></span></dt><dt><span class="sect1"><a href="#sec.installation.postprocess"><span class="number">2.2 </span><span class="name">Post installation Process</span></a></span></dt></dl></div></div><div class="sect1 " id="sec.installation"><div class="titlepage"><div><div><h2 class="title" id="sec.installation"><span class="number">2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Installation and Upgrade</span> <a title="Permalink" class="permalink" href="#sec.installation">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation.xml</li><li><span class="ds-label">ID: </span>sec.installation</li></ul></div></div></div></div><p>
    This section includes information related to the installation and the
    upgrade of the SUSE Linux Enterprise High Performance Computing 15 SP1.
-  </p><div class="sect2 " id="sec2.installation.systemrole"><div class="titlepage"><div><div><h3 class="title" id="sec2.installation.systemrole"><span class="number">2.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Sytem Role for SUSE Linux Enterprise High Performance Computing 15 SP1</span> <a title="Permalink" class="permalink" href="#sec2.installation.systemrole">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation.xml</li><li><span class="ds-label">ID: </span>sec2.installation.systemrole</li></ul></div></div></div></div><p>
+  </p><div class="sect2 " id="sec2.installation.systemrole"><div class="titlepage"><div><div><h3 class="title" id="sec2.installation.systemrole"><span class="number">2.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">System Role for SUSE Linux Enterprise High Performance Computing 15 SP1</span> <a title="Permalink" class="permalink" href="#sec2.installation.systemrole">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation.xml</li><li><span class="ds-label">ID: </span>sec2.installation.systemrole</li></ul></div></div></div></div><p>
     With SUSE Linux Enterprise High Performance Computing 15 SP1, it is possible to choose specific roles
     for the system based on modules selected during the installation process.
     When the HPC Module is enabled, these three roles are available:
@@ -296,7 +296,7 @@ hljs.configure({
     performed if the SLE HPC module has been registered prior to upgrading.
     Otherwise, the system will instead be upgraded to SLES 15.
    </p><p>
-    To upgrade from SLES 12 to SLES 15, make sure to unregister the
+    To upgrade from SLES 12 to SLES 15, make sure to deregister the
     SLE HPC module prior to upgrading. To do so, open a root shell and
     execute:
    </p><div class="verbatim-wrap"><pre class="screen">SUSEConnect -d -p sle-module-hpc/12/<em class="replaceable ">ARCH</em></pre></div><p>
@@ -571,7 +571,7 @@ systemctl start munge.service</pre></div><p>
     </p></li></ul></div><p>
    To set up a cluster of machines allowing remote login from each other,
    first follow the instructions for setting up and starting
-   <span class="emphasis"><em>munge</em></span> authentication in <a class="xref" href="#sec2.installation.systemrole" title="2.1.1. Sytem Role for SUSE Linux Enterprise High Performance Computing 15 SP1">Section 2.1.1, “Sytem Role for SUSE Linux Enterprise High Performance Computing 15 SP1”</a>.
+   <span class="emphasis"><em>munge</em></span> authentication in <a class="xref" href="#sec2.installation.systemrole" title="2.1.1. System Role for SUSE Linux Enterprise High Performance Computing 15 SP1">Section 2.1.1, “System Role for SUSE Linux Enterprise High Performance Computing 15 SP1”</a>.
    After <span class="emphasis"><em>munge</em></span> has been successfully
    started, enable and start <code class="command">mrlogin</code> on each machine on
    which the user will log in:
