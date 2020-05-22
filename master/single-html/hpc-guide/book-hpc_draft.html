@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>High-Performance Computing Guide | SUSE Linux Enterprise High Performance Computing 15 SP2</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><link rel="stylesheet" type="text/css" href="static/css/brand.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using openSUSE XSL Stylesheets 2.0.13 (based on DocBook XSL Stylesheets 1.78.1)" /><meta name="product-name" content="SUSE Linux Enterprise High Performance Computing" /><meta name="product-number" content="15 SP2" /><meta name="book-title" content="High-Performance Computing Guide" /><meta name="description" content="SUSE Linux Enterprise High Performance Computing" /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-assignee" content="taroth@suse.com" /><meta name="tracker-bsc-component" content="Other" /><meta name="tracker-bsc-product" content="SUSE Linux Enterprise HPC 15 SP2" /><script type="text/javascript">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>High-Performance Computing Guide | SUSE Linux Enterprise High Performance Computing 15 SP2</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><link rel="stylesheet" type="text/css" href="static/css/brand.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using openSUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2)" /><meta name="product-name" content="SUSE Linux Enterprise High Performance Computing" /><meta name="product-number" content="15 SP2" /><meta name="book-title" content="High-Performance Computing Guide" /><meta name="description" content="SUSE Linux Enterprise High Performance Computing" /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-assignee" content="taroth@suse.com" /><meta name="tracker-bsc-component" content="Other" /><meta name="tracker-bsc-product" content="SUSE Linux Enterprise HPC 15 SP2" />
+<script type="text/javascript">
 
-var protocol = window.location.protocol.toLowerCase();
-if ( protocol != 'file:' ) {
-  var agent = navigator.userAgent.toLowerCase();
-  var wanted = ( protocol == 'https:') ? 'https' : 'http';
-  var file = 'fonts.css';
-  document.write('<link rel="stylesheet" type="text/css" href="' + wanted + '://static.opensuse.org/fonts/'+ file +'"></link>');
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
 }
 else {
-   document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
 }
 
-</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -23,9 +20,9 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="draft single offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs inactive"><a class="single-crumb" href="#book-hpc" accesskey="c"><span class="single-contents-icon"></span>High-Performance Computing Guide</a><div class="bubble-corner active-contents"></div></div><div class="clearme"></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs inactive"><a class="single-crumb" href="#book-hpc" accesskey="c"><span class="single-contents-icon"></span>Show Contents: High-Performance Computing Guide</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="clearme"></div></div><div class="clearme"></div></div><div class="active-contents bubble"><div class="bubble-container"><div id="_bubble-toc"><ol><li class="inactive"><a href="#preface-example"><span class="number"> </span><span class="name">About This Guide</span></a></li><li class="inactive"><a href="#part-intro"><span class="number">I </span><span class="name">Introduction</span></a><ol><li class="inactive"><a href="#cha-introduction"><span class="number">1 </span><span class="name">SUSE Linux Enterprise High Performance Computing 15 SP2</span></a></li></ol></li><li class="inactive"><a href="#part-inst"><span class="number">II </span><span class="name">Installation</span></a><ol><li class="inactive"><a href="#installation"><span class="number">2 </span><span class="name">Installation and Upgrade</span></a></li></ol></li><li class="inactive"><a href="#part-remote"><span class="number">III </span><span class="name">Remote Administration</span></a><ol><li class="inactive"><a href="#cha-remote"><span class="number">3 </span><span class="name">Remote Administration</span></a></li></ol></li><li class="inactive"><a href="#part-nodes"><span class="number">IV </span><span class="name">Nodes</span></a><ol><li class="inactive"><a href="#cha-nodes"><span class="number">4 </span><span class="name">Nodes</span></a></li></ol></li><li class="inactive"><a href="#part-sched"><span class="number">V </span><span class="name">Scheduler</span></a><ol><li class="inactive"><a href="#cha-scheduler"><span class="number">5 </span><span class="name">Scheduler</span></a></li></ol></li><li class="inactive"><a href="#part-monitoring"><span class="number">VI </span><span class="name">Monitoring</span></a><ol><li class="inactive"><a href="#cha-monitoring"><span class="number">6 </span><span class="name">Monitoring</span></a></li></ol></li><li class="inactive"><a href="#part-compute"><span class="number">VII </span><span class="name">Compute</span></a><ol><li class="inactive"><a href="#cha-compute"><span class="number">7 </span><span class="name">Compute</span></a></li></ol></li><li class="inactive"><a href="#part-testing"><span class="number">VIII </span><span class="name">Testing</span></a><ol><li class="inactive"><a href="#cha-testing"><span class="number">8 </span><span class="name">Testing your cluster</span></a></li></ol></li><li class="inactive"><a href="#id-1.11"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_toc-bubble-wrap"></div><div id="_content" class="draft "><div class="documentation"><div xml:lang="en" class="book" id="book-hpc" lang="en"><div class="titlepage"><div><h6 class="version-info"><span class="productname">SUSE Linux Enterprise High Performance Computing</span> <span class="productnumber">15 SP2</span></h6><div><h1 class="title">High-Performance Computing Guide</h1></div><div class="abstract "><p>
+</script></head><body class="draft single offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs inactive"><a class="single-crumb" href="#book-hpc" accesskey="c"><span class="single-contents-icon"></span>High-Performance Computing Guide</a><div class="bubble-corner active-contents"></div></div><div class="clearme"></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs inactive"><a class="single-crumb" href="#book-hpc" accesskey="c"><span class="single-contents-icon"></span>Show Contents: High-Performance Computing Guide</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="clearme"></div></div><div class="clearme"></div></div><div class="active-contents bubble"><div class="bubble-container"><div id="_bubble-toc"><ol><li class="inactive"><a href="#preface-example"><span class="number"> </span><span class="name">About This Guide</span></a></li><li class="inactive"><a href="#part-intro"><span class="number">I </span><span class="name">Introduction</span></a><ol><li class="inactive"><a href="#cha-introduction"><span class="number">1 </span><span class="name">SUSE Linux Enterprise High Performance Computing 15 SP2</span></a></li></ol></li><li class="inactive"><a href="#part-inst"><span class="number">II </span><span class="name">Installation</span></a><ol><li class="inactive"><a href="#installation"><span class="number">2 </span><span class="name">Installation and Upgrade</span></a></li></ol></li><li class="inactive"><a href="#part-remote"><span class="number">III </span><span class="name">Remote Administration</span></a><ol><li class="inactive"><a href="#cha-remote"><span class="number">3 </span><span class="name">Remote Administration</span></a></li></ol></li><li class="inactive"><a href="#part-nodes"><span class="number">IV </span><span class="name">Nodes</span></a><ol><li class="inactive"><a href="#cha-nodes"><span class="number">4 </span><span class="name">Nodes</span></a></li></ol></li><li class="inactive"><a href="#part-sched"><span class="number">V </span><span class="name">Scheduler</span></a><ol><li class="inactive"><a href="#cha-scheduler"><span class="number">5 </span><span class="name">Scheduler</span></a></li></ol></li><li class="inactive"><a href="#part-monitoring"><span class="number">VI </span><span class="name">Monitoring</span></a><ol><li class="inactive"><a href="#cha-monitoring"><span class="number">6 </span><span class="name">Monitoring</span></a></li></ol></li><li class="inactive"><a href="#part-compute"><span class="number">VII </span><span class="name">Compute</span></a><ol><li class="inactive"><a href="#cha-compute"><span class="number">7 </span><span class="name">Compute</span></a></li></ol></li><li class="inactive"><a href="#part-testing"><span class="number">VIII </span><span class="name">Testing</span></a><ol><li class="inactive"><a href="#cha-testing"><span class="number">8 </span><span class="name">Testing your cluster</span></a></li></ol></li><li class="inactive"><a href="#id-1.11"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_toc-bubble-wrap"></div><div id="_content" class="draft "><div class="documentation"><div xml:lang="en" class="book" id="book-hpc" lang="en"><div class="titlepage"><div><h6 class="version-info"><span class="productname ">SUSE Linux Enterprise High Performance Computing</span> <span class="productnumber ">15 SP2</span></h6><div><h1 class="title">High-Performance Computing Guide</h1></div><div class="abstract "><p>
        SUSE Linux Enterprise High Performance Computing
-     </p></div><div class="date"><span class="imprint-label">Publication Date: </span>May 15, 2020
+     </p></div><div class="date"><span class="imprint-label">Publication Date: </span>May 22, 2020
 </div></div></div><div class="toc"><dl><dt><span class="preface"><a href="#preface-example"><span class="name">About This Guide</span></a></span></dt><dd><dl><dt><span class="sect1"><a href="#id-1.2.5"><span class="name">Available Documentation</span></a></span></dt><dt><span class="sect1"><a href="#id-1.2.6"><span class="name">Giving Feedback</span></a></span></dt><dt><span class="sect1"><a href="#id-1.2.7"><span class="name">Documentation Conventions</span></a></span></dt><dt><span class="sect1"><a href="#id-1.2.8"><span class="name">Product Life Cycle and Support</span></a></span></dt></dl></dd><dt><span class="part"><a href="#part-intro"><span class="number">I </span><span class="name">Introduction</span></a></span></dt><dd><dl><dt><span class="chapter"><a href="#cha-introduction"><span class="number">1 </span><span class="name">SUSE Linux Enterprise High Performance Computing 15 SP2</span></a></span></dt><dd><dl><dt><span class="sect1"><a href="#sec-intro-provides"><span class="number">1.1 </span><span class="name">Provides</span></a></span></dt><dt><span class="sect1"><a href="#sec-introduction-hw"><span class="number">1.2 </span><span class="name">Hardware Platform Support</span></a></span></dt><dt><span class="sect1"><a href="#sec-introduction-life"><span class="number">1.3 </span><span class="name">Support and Life Cycle</span></a></span></dt><dt><span class="sect1"><a href="#sec-introduction-documentation"><span class="number">1.4 </span><span class="name">Documentation and Other Information</span></a></span></dt></dl></dd></dl></dd><dt><span class="part"><a href="#part-inst"><span class="number">II </span><span class="name">Installation</span></a></span></dt><dd><dl><dt><span class="chapter"><a href="#installation"><span class="number">2 </span><span class="name">Installation and Upgrade</span></a></span></dt><dd><dl><dt><span class="sect1"><a href="#sec-installation"><span class="number">2.1 </span><span class="name">Installation and Upgrade</span></a></span></dt></dl></dd></dl></dd><dt><span class="part"><a href="#part-remote"><span class="number">III </span><span class="name">Remote Administration</span></a></span></dt><dd><dl><dt><span class="chapter"><a href="#cha-remote"><span class="number">3 </span><span class="name">Remote Administration</span></a></span></dt><dd><dl><dt><span class="sect1"><a href="#sec-remote-conman"><span class="number">3.1 </span><span class="name">ConMan — The Console Manager</span></a></span></dt><dt><span class="sect1"><a href="#sec-remote-genders"><span class="number">3.2 </span><span class="name">Genders — Static Cluster Configuration Database</span></a></span></dt><dt><span class="sect1"><a href="#sec-remote-pdsh"><span class="number">3.3 </span><span class="name">pdsh — Parallel Remote Shell Program</span></a></span></dt><dt><span class="sect1"><a href="#sec-remote-powerman"><span class="number">3.4 </span><span class="name">PowerMan — Centralized Power Control for Clusters</span></a></span></dt><dt><span class="sect1"><a href="#sec-remote-memkind"><span class="number">3.5 </span><span class="name">memkind — Heap Manager for Heterogeneous Memory Platforms and Mixed Memory Policies</span></a></span></dt><dt><span class="sect1"><a href="#sec-remote-munge"><span class="number">3.6 </span><span class="name"><span class="emphasis"><em>munge</em></span> Authentication</span></a></span></dt><dt><span class="sect1"><a href="#sec-remote-mrsh"><span class="number">3.7 </span><span class="name">mrsh/mrlogin — Remote Login Using <span class="emphasis"><em>munge</em></span> Authentication</span></a></span></dt><dt><span class="sect1"><a href="#sec-remote-ssh"><span class="number">3.8 </span><span class="name">sshd config</span></a></span></dt></dl></dd></dl></dd><dt><span class="part"><a href="#part-nodes"><span class="number">IV </span><span class="name">Nodes</span></a></span></dt><dd><dl><dt><span class="chapter"><a href="#cha-nodes"><span class="number">4 </span><span class="name">Nodes</span></a></span></dt><dd><dl><dt><span class="sect1"><a href="#sec-nodes-cpuid"><span class="number">4.1 </span><span class="name">cpuid</span></a></span></dt><dt><span class="sect1"><a href="#sec-nodes-hwloc"><span class="number">4.2 </span><span class="name">hwloc — Portable Abstraction of Hierarchical Architectures for High-Performance Computing</span></a></span></dt></dl></dd></dl></dd><dt><span class="part"><a href="#part-sched"><span class="number">V </span><span class="name">Scheduler</span></a></span></dt><dd><dl><dt><span class="chapter"><a href="#cha-scheduler"><span class="number">5 </span><span class="name">Scheduler</span></a></span></dt><dd><dl><dt><span class="sect1"><a href="#sec-scheduler-slurm"><span class="number">5.1 </span><span class="name">Slurm — Utility for HPC Workload Management</span></a></span></dt></dl></dd></dl></dd><dt><span class="part"><a href="#part-monitoring"><span class="number">VI </span><span class="name">Monitoring</span></a></span></dt><dd><dl><dt><span class="chapter"><a href="#cha-monitoring"><span class="number">6 </span><span class="name">Monitoring</span></a></span></dt><dd><dl><dt><span class="sect1"><a href="#sec-monitoring-ganglia"><span class="number">6.1 </span><span class="name">Ganglia — System Monitoring</span></a></span></dt><dt><span class="sect1"><a href="#sec-monitoring-ras"><span class="number">6.2 </span><span class="name">rasdaemon — Utility to Log RAS Error Tracings</span></a></span></dt></dl></dd></dl></dd><dt><span class="part"><a href="#part-compute"><span class="number">VII </span><span class="name">Compute</span></a></span></dt><dd><dl><dt><span class="chapter"><a href="#cha-compute"><span class="number">7 </span><span class="name">Compute</span></a></span></dt><dd><dl><dt><span class="sect1"><a href="#sec-compute-lmod"><span class="number">7.1 </span><span class="name">Lmod — Lua-based Environment Modules</span></a></span></dt><dt><span class="sect1"><a href="#sec-compute-lib"><span class="number">7.2 </span><span class="name">HPC Libraries</span></a></span></dt></dl></dd></dl></dd><dt><span class="part"><a href="#part-testing"><span class="number">VIII </span><span class="name">Testing</span></a></span></dt><dd><dl><dt><span class="chapter"><a href="#cha-testing"><span class="number">8 </span><span class="name">Testing your cluster</span></a></span></dt><dd><dl><dt><span class="sect1"><a href="#sec-testing-slurm"><span class="number">8.1 </span><span class="name">slurm</span></a></span></dt><dt><span class="sect1"><a href="#sec-testing-mpi"><span class="number">8.2 </span><span class="name">How to quickly test MPI</span></a></span></dt><dt><span class="sect1"><a href="#sec-testing-install"><span class="number">8.3 </span><span class="name">Installation</span></a></span></dt><dt><span class="sect1"><a href="#sec-testing-buildmpi"><span class="number">8.4 </span><span class="name">Build MPI test</span></a></span></dt><dt><span class="sect1"><a href="#sec-testing-nfsserver"><span class="number">8.5 </span><span class="name">Setup the NFS server</span></a></span></dt></dl></dd></dl></dd><dt><span class="appendix"><a href="#id-1.11"><span class="number">A </span><span class="name">GNU Licenses</span></a></span></dt><dd><dl><dt><span class="sect1"><a href="#id-1.11.4"><span class="number">A.1 </span><span class="name">GNU Free Documentation License</span></a></span></dt></dl></dd></dl></div><div><div xml:lang="en" class="legalnotice" id="id-1.1.5" lang="en"><p>
   Copyright © 2020–2020
 
@@ -35,7 +32,7 @@ hljs.configure({
   the terms of the GNU Free Documentation License, Version 1.2 or (at your
   option) version 1.3; with the Invariant Section being this copyright notice
   and license. A copy of the license version 1.2 is included in the section
-  entitled <span class="quote">“<span class="quote">GNU Free Documentation License</span>”</span>.
+  entitled <span class="quote">“<span class="quote ">GNU Free Documentation License</span>”</span>.
  </p><p>
   For SUSE trademarks, see
   <a class="link" href="http://www.suse.com/company/legal/" target="_blank">http://www.suse.com/company/legal/</a>. All
@@ -65,7 +62,7 @@ hljs.configure({
         How to use your cluster to do some computation.
     </p></dd><dt id="id-1.2.4.7"><span class="term "><a class="xref" href="#part-testing" title="Part VIII. Testing">Part VIII, “Testing”</a></span></dt><dd><p>
         Some examples of how to test your cluster.
-    </p></dd></dl></div><div xml:lang="en" class="sect1 " id="id-1.2.5" lang="en"><div class="titlepage"><div><div><h2 class="title" id="id-1.2.5"><span class="number">1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Available Documentation</span> <a title="Permalink" class="permalink" href="#id-1.2.5">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>common_intro_available_doc.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div id="id-1.2.5.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Online Documentation and Latest Updates</h6><p>
+    </p></dd></dl></div><div xml:lang="en" class="sect1 " id="id-1.2.5" lang="en"><div class="titlepage"><div><div><h2 class="title"><span class="number">1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Available Documentation</span> <a title="Permalink" class="permalink" href="#id-1.2.5">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>common_intro_available_doc.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div id="id-1.2.5.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Online Documentation and Latest Updates</h6><p>
    Documentation for our products is available at
    <a class="link" href="http://www.suse.com/documentation/" target="_blank">http://www.suse.com/documentation/</a>,
    where you can also find the latest updates, and browse or
@@ -78,7 +75,7 @@ hljs.configure({
   The following documentation is available for this product:
  </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.2.5.5.1"><span class="term "><a class="xref" href="#book-hpc" title="High-Performance Computing Guide">High-Performance Computing Guide</a></span></dt><dd><p>
      Abstract of Example Guide.
-    </p></dd></dl></div></div><div xml:lang="en" class="sect1 " id="id-1.2.6" lang="en"><div class="titlepage"><div><div><h2 class="title" id="id-1.2.6"><span class="number">2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Giving Feedback</span> <a title="Permalink" class="permalink" href="#id-1.2.6">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>common_intro_feedback.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+    </p></dd></dl></div></div><div xml:lang="en" class="sect1 " id="id-1.2.6" lang="en"><div class="titlepage"><div><div><h2 class="title"><span class="number">2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Giving Feedback</span> <a title="Permalink" class="permalink" href="#id-1.2.6">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>common_intro_feedback.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
   We welcome feedback for and contributions to this documentation.
   There are several channels for this:
  </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.2.6.3.1"><span class="term ">Service Requests and Support</span></dt><dd><p>
@@ -88,18 +85,18 @@ hljs.configure({
      To open a service request, you need a SUSE subscription registered at
      SUSE Customer Center.
      Go to <a class="link" href="https://scc.suse.com/support/requests" target="_blank">https://scc.suse.com/support/requests</a>, log
-     in, and click <span class="guimenu">Create New</span>.
+     in, and click <span class="guimenu ">Create New</span>.
     </p></dd><dt id="id-1.2.6.3.2"><span class="term ">Bug Reports</span></dt><dd><p>
      Report issues with the documentation at <a class="link" href="https://bugzilla.suse.com/" target="_blank">https://bugzilla.suse.com/</a>.
      Reporting issues requires a Bugzilla account.
     </p><p>
-     To simplify this process, you can use the <span class="guimenu">Report
+     To simplify this process, you can use the <span class="guimenu ">Report
      Documentation Bug</span> links next to headlines in the HTML
      version of this document. These preselect the right product and
      category in Bugzilla and add a link to the current section.
      You can start typing your bug report right away.
     </p></dd><dt id="id-1.2.6.3.3"><span class="term ">Contributions</span></dt><dd><p>
-     To contribute to this documentation, use the <span class="guimenu">Edit Source</span>
+     To contribute to this documentation, use the <span class="guimenu ">Edit Source</span>
      links next to headlines in the HTML version of this document. They
      take you to the source code on GitHub, where you can open a pull request.
      Contributing requires a GitHub account.
@@ -113,7 +110,7 @@ hljs.configure({
      document title, the product version, and the publication date of the
      document. Additionally, include the relevant section number and title (or
      provide the URL) and provide a concise description of the problem.
-    </p></dd></dl></div></div><div xml:lang="en" class="sect1 " id="id-1.2.7" lang="en"><div class="titlepage"><div><div><h2 class="title" id="id-1.2.7"><span class="number">3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Documentation Conventions</span> <a title="Permalink" class="permalink" href="#id-1.2.7">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>common_intro_convention.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+    </p></dd></dl></div></div><div xml:lang="en" class="sect1 " id="id-1.2.7" lang="en"><div class="titlepage"><div><div><h2 class="title"><span class="number">3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Documentation Conventions</span> <a title="Permalink" class="permalink" href="#id-1.2.7">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>common_intro_convention.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
   The following notices and typographic conventions are used in this
   document:
  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
@@ -129,22 +126,22 @@ hljs.configure({
    </p></li><li class="listitem "><p>
     <code class="systemitem">user</code>: The name of user or group
    </p></li><li class="listitem "><p>
-    <span class="package">package_name</span>: The name of a software package
+    <span class="package ">package_name</span>: The name of a software package
    </p></li><li class="listitem "><p>
     <span class="keycap">Alt</span>, <span class="keycap">Alt</span><span class="key-connector">–</span><span class="keycap">F1</span>: A key to press or a key combination. Keys
     are shown in uppercase as on a keyboard.
    </p></li><li class="listitem "><p>
-    <span class="guimenu">File</span>, <span class="guimenu">File</span> › <span class="guimenu">Save
+    <span class="guimenu ">File</span>, <span class="guimenu ">File</span> › <span class="guimenu ">Save
     As</span>: menu items, buttons
-   </p></li><li class="listitem "><p><strong class="arch-arrow-start">x86_64</strong>
+   </p></li><li class="listitem "><p><strong class="arch-arrow-start">AMD/Intel</strong>
     This paragraph is only relevant for the Intel 64/AMD64 architectures. The
     arrows mark the beginning and the end of the text block.
-   <strong class="arch-arrow-end"></strong></p><p><strong class="arch-arrow-start">System z, POWER</strong>
+   <strong class="arch-arrow-end"></strong></p><p><strong class="arch-arrow-start">IBM Z, POWER</strong>
     This paragraph is only relevant for the architectures
     <code class="literal">IBM Z</code> and <code class="literal">POWER</code>. The arrows
     mark the beginning and the end of the text block.
    <strong class="arch-arrow-end"></strong></p></li><li class="listitem "><p>
-    <em class="citetitle ">Chapter 1, <span class="quote">“<span class="quote">Example Chapter</span>”</span></em>:
+    <em class="citetitle ">Chapter 1, <span class="quote">“<span class="quote ">Example Chapter</span>”</span></em>:
     A cross-reference to another chapter in this guide.
    </p></li><li class="listitem "><p>
     Commands that must be run with <code class="systemitem">root</code> privileges. Often you can also
@@ -173,11 +170,11 @@ hljs.configure({
      versions.
     </p></div><div id="id-1.2.7.4.14.3" class="admonition tip compact"><img class="symbol" alt="Tip" title="Tip" src="static/images/icon-tip.png" /><p>
      Helpful information, like a guideline or a piece of practical advice.
-    </p></div></li></ul></div></div><div xml:lang="en" class="sect1 " id="id-1.2.8" lang="en"><div class="titlepage"><div><div><h2 class="title" id="id-1.2.8"><span class="number">4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Product Life Cycle and Support</span> <a title="Permalink" class="permalink" href="#id-1.2.8">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>common_intro_support.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+    </p></div></li></ul></div></div><div xml:lang="en" class="sect1 " id="id-1.2.8" lang="en"><div class="titlepage"><div><div><h2 class="title"><span class="number">4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Product Life Cycle and Support</span> <a title="Permalink" class="permalink" href="#id-1.2.8">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>common_intro_support.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
   Different SUSE products have different product life cycles.
   To check the exact life cycle dates for SUSE Linux Enterprise High Performance Computing, see
   <a class="link" href="https://www.suse.com/lifecycle/" target="_blank">https://www.suse.com/lifecycle/</a>.
- </p><div xml:lang="en" class="sect2 " id="id-1.2.8.3" lang="en"><div class="titlepage"><div><div><h3 class="title" id="id-1.2.8.3"><span class="number">4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Life Cycle</span> <a title="Permalink" class="permalink" href="#id-1.2.8.3">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>common_intro_cycle.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+ </p><div xml:lang="en" class="sect2 " id="id-1.2.8.3" lang="en"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Life Cycle</span> <a title="Permalink" class="permalink" href="#id-1.2.8.3">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>common_intro_cycle.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
   For SUSE Linux Enterprise High Performance Computing, the following life cycles and release cycles apply:
  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
     SUSE Linux Enterprise High Performance Computing has a 13-year life cycle: 10 years of general support and
@@ -198,7 +195,7 @@ hljs.configure({
   Modules have a different life cycle, update policy, and update timeline than
   their base products. Modules contain software packages and are fully
   supported parts of SUSE Linux Enterprise High Performance Computing.
- </p></div><div class="sect2 " id="id-1.2.8.4"><div class="titlepage"><div><div><h3 class="title" id="id-1.2.8.4"><span class="number">4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Support Statement for SUSE Linux Enterprise High Performance Computing</span> <a title="Permalink" class="permalink" href="#id-1.2.8.4">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>common_intro_support.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+ </p></div><div class="sect2 " id="id-1.2.8.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Support Statement for SUSE Linux Enterprise High Performance Computing</span> <a title="Permalink" class="permalink" href="#id-1.2.8.4">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>common_intro_support.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
    To receive support, you need an appropriate subscription with SUSE.
    To view the specific support offerings available to you, go to
    <a class="link" href="https://www.suse.com/support/" target="_blank">https://www.suse.com/support/</a> and select your product.
@@ -231,13 +228,13 @@ hljs.configure({
      Some packages shipped as part of the module <span class="emphasis"><em>Workstation
      Extension</em></span> are L2-supported only.
     </p></li><li class="listitem "><p>
-     Packages with names ending in <span class="package">-devel</span> (containing header
+     Packages with names ending in <span class="package ">-devel</span> (containing header
      files and similar developer resources) will only be supported together
      with their main packages.
     </p></li></ul></div><p>
    SUSE will only support the usage of original packages.
    That is, packages that are unchanged and not recompiled.
-  </p></div><div class="sect2 " id="id-1.2.8.5"><div class="titlepage"><div><div><h3 class="title" id="id-1.2.8.5"><span class="number">4.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Technology Previews</span> <a title="Permalink" class="permalink" href="#id-1.2.8.5">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>common_intro_support.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+  </p></div><div class="sect2 " id="id-1.2.8.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Technology Previews</span> <a title="Permalink" class="permalink" href="#id-1.2.8.5">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>common_intro_support.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
    Technology previews are packages, stacks, or features delivered by SUSE
    to provide glimpses into upcoming innovations.
    Technology previews are included for your convenience to give you a chance
@@ -275,11 +272,11 @@ hljs.configure({
     SUSE Linux Enterprise High Performance Computing is a highly scalable, high performance open-source operating
     system designed to utilize the power of parallel computing for modeling,
     simulation and advanced analytics workloads.
-   </p></dd></dl></div><div xml:lang="en" class="chapter " id="cha-introduction" lang="en"><div class="titlepage"><div><div><h2 class="title"><span class="number">1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">SUSE Linux Enterprise High Performance Computing 15 SP2</span> <a title="Permalink" class="permalink" href="#cha-introduction">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>introduction.xml</li><li><span class="ds-label">ID: </span>cha-introduction</li></ul></div></div><div><div class="abstract"><div class="abstract-title-wrap"><h6 class="abstract-title">Abstract<a title="Permalink" class="permalink" href="#id-1.3.2.2.1">#</a></h6></div><p>
+   </p></dd></dl></div><div xml:lang="en" class="chapter " id="cha-introduction" lang="en"><div class="titlepage"><div><div><h2 class="title"><span class="number">1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">SUSE Linux Enterprise High Performance Computing 15 SP2</span> <a title="Permalink" class="permalink" href="#cha-introduction">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>introduction.xml</li><li><span class="ds-label">ID: </span>cha-introduction</li></ul></div></div><div><div class="abstract"><p>
     SUSE Linux Enterprise High Performance Computing is a highly scalable, high performance open-source operating
     system designed to utilize the power of parallel computing for modeling,
     simulation and advanced analytics workloads.
-   </p></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="#sec-intro-provides"><span class="number">1.1 </span><span class="name">Provides</span></a></span></dt><dt><span class="sect1"><a href="#sec-introduction-hw"><span class="number">1.2 </span><span class="name">Hardware Platform Support</span></a></span></dt><dt><span class="sect1"><a href="#sec-introduction-life"><span class="number">1.3 </span><span class="name">Support and Life Cycle</span></a></span></dt><dt><span class="sect1"><a href="#sec-introduction-documentation"><span class="number">1.4 </span><span class="name">Documentation and Other Information</span></a></span></dt></dl></div></div><div class="sect1 " id="sec-intro-provides"><div class="titlepage"><div><div><h2 class="title" id="sec-intro-provides"><span class="number">1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Provides</span> <a title="Permalink" class="permalink" href="#sec-intro-provides">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>introduction.xml</li><li><span class="ds-label">ID: </span>sec-intro-provides</li></ul></div></div></div></div><p>
+   </p></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="#sec-intro-provides"><span class="number">1.1 </span><span class="name">Provides</span></a></span></dt><dt><span class="sect1"><a href="#sec-introduction-hw"><span class="number">1.2 </span><span class="name">Hardware Platform Support</span></a></span></dt><dt><span class="sect1"><a href="#sec-introduction-life"><span class="number">1.3 </span><span class="name">Support and Life Cycle</span></a></span></dt><dt><span class="sect1"><a href="#sec-introduction-documentation"><span class="number">1.4 </span><span class="name">Documentation and Other Information</span></a></span></dt></dl></div></div><div class="sect1 " id="sec-intro-provides"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Provides</span> <a title="Permalink" class="permalink" href="#sec-intro-provides">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>introduction.xml</li><li><span class="ds-label">ID: </span>sec-intro-provides</li></ul></div></div></div></div><p>
    SUSE Linux Enterprise High Performance Computing 15 SP2 provides tools and libraries related to
    High-Performance Computing.
    This includes:
@@ -311,10 +308,10 @@ hljs.configure({
      Various MPI implementations
     </p></li><li class="listitem "><p>
      Serial and parallel libraries for the HDF5 file format
-    </p></li></ul></div></div><div class="sect1 " id="sec-introduction-hw"><div class="titlepage"><div><div><h2 class="title" id="sec-introduction-hw"><span class="number">1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Hardware Platform Support</span> <a title="Permalink" class="permalink" href="#sec-introduction-hw">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>introduction.xml</li><li><span class="ds-label">ID: </span>sec-introduction-hw</li></ul></div></div></div></div><p>
+    </p></li></ul></div></div><div class="sect1 " id="sec-introduction-hw"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Hardware Platform Support</span> <a title="Permalink" class="permalink" href="#sec-introduction-hw">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>introduction.xml</li><li><span class="ds-label">ID: </span>sec-introduction-hw</li></ul></div></div></div></div><p>
    SUSE Linux Enterprise High Performance Computing 15 SP2 is available for the
    Intel 64/AMD64 (x86-64) and AArch64 platforms.
-  </p></div><div class="sect1 " id="sec-introduction-life"><div class="titlepage"><div><div><h2 class="title" id="sec-introduction-life"><span class="number">1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Support and Life Cycle</span> <a title="Permalink" class="permalink" href="#sec-introduction-life">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>introduction.xml</li><li><span class="ds-label">ID: </span>sec-introduction-life</li></ul></div></div></div></div><p>
+  </p></div><div class="sect1 " id="sec-introduction-life"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Support and Life Cycle</span> <a title="Permalink" class="permalink" href="#sec-introduction-life">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>introduction.xml</li><li><span class="ds-label">ID: </span>sec-introduction-life</li></ul></div></div></div></div><p>
    SUSE Linux Enterprise High Performance Computing 15 SP2 is supported throughout the life cycle of
    SLE 15 SP2. ESPOS (Extended Service Overlap Support) as well
    as Long Term Support Service are also available for this product. Any
@@ -323,7 +320,7 @@ hljs.configure({
   </p><p>
    For more information, see the Support Policy page
    <a class="link" href="https://www.suse.com/support/policy.html" target="_blank">https://www.suse.com/support/policy.html</a>.
-  </p></div><div class="sect1 " id="sec-introduction-documentation"><div class="titlepage"><div><div><h2 class="title" id="sec-introduction-documentation"><span class="number">1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Documentation and Other Information</span> <a title="Permalink" class="permalink" href="#sec-introduction-documentation">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>introduction.xml</li><li><span class="ds-label">ID: </span>sec-introduction-documentation</li></ul></div></div></div></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>Read the READMEs on the media.</p></li><li class="listitem "><p>
+  </p></div><div class="sect1 " id="sec-introduction-documentation"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Documentation and Other Information</span> <a title="Permalink" class="permalink" href="#sec-introduction-documentation">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>introduction.xml</li><li><span class="ds-label">ID: </span>sec-introduction-documentation</li></ul></div></div></div></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>Read the READMEs on the media.</p></li><li class="listitem "><p>
       Get the detailed change log information about a particular package
       from the RPM (where
       <code class="filename"><em class="replaceable ">FILENAME</em>.rpm</code>
@@ -343,15 +340,15 @@ hljs.configure({
     roles provide a set of preselected packages typical for the specific role,
     as well as an installation workflow that will configure the system to make
     the best use of system resource based on a typical role use case.
-   </p></dd></dl></div><div xml:lang="en" class="chapter " id="installation" lang="en"><div class="titlepage"><div><div><h2 class="title"><span class="number">2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Installation and Upgrade</span> <a title="Permalink" class="permalink" href="#installation">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation.xml</li><li><span class="ds-label">ID: </span>installation</li></ul></div></div><div><div class="abstract"><div class="abstract-title-wrap"><h6 class="abstract-title">Abstract<a title="Permalink" class="permalink" href="#id-1.4.2.2.1">#</a></h6></div><p>
+   </p></dd></dl></div><div xml:lang="en" class="chapter " id="installation" lang="en"><div class="titlepage"><div><div><h2 class="title"><span class="number">2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Installation and Upgrade</span> <a title="Permalink" class="permalink" href="#installation">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation.xml</li><li><span class="ds-label">ID: </span>installation</li></ul></div></div><div><div class="abstract"><p>
     SUSE Linux Enterprise High Performance Computing comes with a number of preconfigured system roles for HPC. These
     roles provide a set of preselected packages typical for the specific role,
     as well as an installation workflow that will configure the system to make
     the best use of system resource based on a typical role use case.
-   </p></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="#sec-installation"><span class="number">2.1 </span><span class="name">Installation and Upgrade</span></a></span></dt></dl></div></div><div class="sect1 " id="sec-installation"><div class="titlepage"><div><div><h2 class="title" id="sec-installation"><span class="number">2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Installation and Upgrade</span> <a title="Permalink" class="permalink" href="#sec-installation">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation.xml</li><li><span class="ds-label">ID: </span>sec-installation</li></ul></div></div></div></div><p>
+   </p></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="#sec-installation"><span class="number">2.1 </span><span class="name">Installation and Upgrade</span></a></span></dt></dl></div></div><div class="sect1 " id="sec-installation"><div class="titlepage"><div><div><h2 class="title"><span class="number">2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Installation and Upgrade</span> <a title="Permalink" class="permalink" href="#sec-installation">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation.xml</li><li><span class="ds-label">ID: </span>sec-installation</li></ul></div></div></div></div><p>
    This section includes information related to the installation and the
    upgrade of the SUSE Linux Enterprise High Performance Computing 15 SP2.
-  </p><div class="sect2 " id="sec2-installation-systemrole"><div class="titlepage"><div><div><h3 class="title" id="sec2-installation-systemrole"><span class="number">2.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">System Role for SUSE Linux Enterprise High Performance Computing 15 SP2</span> <a title="Permalink" class="permalink" href="#sec2-installation-systemrole">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation.xml</li><li><span class="ds-label">ID: </span>sec2-installation-systemrole</li></ul></div></div></div></div><p>
+  </p><div class="sect2 " id="sec2-installation-systemrole"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">System Role for SUSE Linux Enterprise High Performance Computing 15 SP2</span> <a title="Permalink" class="permalink" href="#sec2-installation-systemrole">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation.xml</li><li><span class="ds-label">ID: </span>sec2-installation-systemrole</li></ul></div></div></div></div><p>
     With SUSE Linux Enterprise High Performance Computing 15 SP2, it is possible to choose specific roles
     for the system based on modules selected during the installation process.
     When the HPC Module is enabled, these three roles are available:
@@ -407,12 +404,12 @@ hljs.configure({
     For more information, see <a class="xref" href="#sec-remote-munge" title="3.6. munge Authentication">Section 3.6, “<span class="emphasis"><em>munge</em></span> Authentication”</a>.
    </p><p>
     From the Ganglia monitoring system, the data collector
-    <span class="package">ganglia-gmod</span> is installed for every role, while the
-    data aggregator <span class="package">ganglia-gmetad</span> needs to be installed
+    <span class="package ">ganglia-gmod</span> is installed for every role, while the
+    data aggregator <span class="package ">ganglia-gmetad</span> needs to be installed
     manually on the system which is expected to collect the data.
    </p><p>
     The system roles are only available for new installations of SUSE Linux Enterprise High Performance Computing.
-   </p></div><div class="sect2 " id="sec2-upgrade"><div class="titlepage"><div><div><h3 class="title" id="sec2-upgrade"><span class="number">2.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Upgrade-Related Notes</span> <a title="Permalink" class="permalink" href="#sec2-upgrade">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation.xml</li><li><span class="ds-label">ID: </span>sec2-upgrade</li></ul></div></div></div></div><p>
+   </p></div><div class="sect2 " id="sec2-upgrade"><div class="titlepage"><div><div><h3 class="title"><span class="number">2.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Upgrade-Related Notes</span> <a title="Permalink" class="permalink" href="#sec2-upgrade">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>installation.xml</li><li><span class="ds-label">ID: </span>sec2-upgrade</li></ul></div></div></div></div><p>
     This section includes upgrade-related information for the SUSE Linux Enterprise High Performance Computing 15 SP2.
    </p><p>
     You can upgrade to SUSE Linux Enterprise High Performance Computing 15 SP2 from SLES 15 SP1 or SLE HPC
@@ -436,9 +433,9 @@ hljs.configure({
     (<code class="literal">x86_64</code>, <code class="literal">aarch64</code>).
    </p></div></div></div></div><div class="part" id="part-remote"><div class="titlepage"><div><div><h1 class="title"><span class="number">Part III </span><span class="name">Remote Administration </span><a title="Permalink" class="permalink" href="#part-remote">#</a></h1></div></div></div><div class="toc"><dl><dt><span class="chapter"><a href="#cha-remote"><span class="number">3 </span><span class="name">Remote Administration</span></a></span></dt><dd class="toc-abstract"><p>
     What is this chapter about?
-   </p></dd></dl></div><div xml:lang="en" class="chapter " id="cha-remote" lang="en"><div class="titlepage"><div><div><h2 class="title"><span class="number">3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Remote Administration</span> <a title="Permalink" class="permalink" href="#cha-remote">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>remote_administration.xml</li><li><span class="ds-label">ID: </span>cha-remote</li></ul></div></div><div><div class="abstract"><div class="abstract-title-wrap"><h6 class="abstract-title">Abstract<a title="Permalink" class="permalink" href="#id-1.5.2.2.1">#</a></h6></div><p>
+   </p></dd></dl></div><div xml:lang="en" class="chapter " id="cha-remote" lang="en"><div class="titlepage"><div><div><h2 class="title"><span class="number">3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Remote Administration</span> <a title="Permalink" class="permalink" href="#cha-remote">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>remote_administration.xml</li><li><span class="ds-label">ID: </span>cha-remote</li></ul></div></div><div><div class="abstract"><p>
     What is this chapter about?
-   </p></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="#sec-remote-conman"><span class="number">3.1 </span><span class="name">ConMan — The Console Manager</span></a></span></dt><dt><span class="sect1"><a href="#sec-remote-genders"><span class="number">3.2 </span><span class="name">Genders — Static Cluster Configuration Database</span></a></span></dt><dt><span class="sect1"><a href="#sec-remote-pdsh"><span class="number">3.3 </span><span class="name">pdsh — Parallel Remote Shell Program</span></a></span></dt><dt><span class="sect1"><a href="#sec-remote-powerman"><span class="number">3.4 </span><span class="name">PowerMan — Centralized Power Control for Clusters</span></a></span></dt><dt><span class="sect1"><a href="#sec-remote-memkind"><span class="number">3.5 </span><span class="name">memkind — Heap Manager for Heterogeneous Memory Platforms and Mixed Memory Policies</span></a></span></dt><dt><span class="sect1"><a href="#sec-remote-munge"><span class="number">3.6 </span><span class="name"><span class="emphasis"><em>munge</em></span> Authentication</span></a></span></dt><dt><span class="sect1"><a href="#sec-remote-mrsh"><span class="number">3.7 </span><span class="name">mrsh/mrlogin — Remote Login Using <span class="emphasis"><em>munge</em></span> Authentication</span></a></span></dt><dt><span class="sect1"><a href="#sec-remote-ssh"><span class="number">3.8 </span><span class="name">sshd config</span></a></span></dt></dl></div></div><div class="sect1 " id="sec-remote-conman"><div class="titlepage"><div><div><h2 class="title" id="sec-remote-conman"><span class="number">3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">ConMan — The Console Manager</span> <a title="Permalink" class="permalink" href="#sec-remote-conman">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>remote_administration.xml</li><li><span class="ds-label">ID: </span>sec-remote-conman</li></ul></div></div></div></div><p>
+   </p></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="#sec-remote-conman"><span class="number">3.1 </span><span class="name">ConMan — The Console Manager</span></a></span></dt><dt><span class="sect1"><a href="#sec-remote-genders"><span class="number">3.2 </span><span class="name">Genders — Static Cluster Configuration Database</span></a></span></dt><dt><span class="sect1"><a href="#sec-remote-pdsh"><span class="number">3.3 </span><span class="name">pdsh — Parallel Remote Shell Program</span></a></span></dt><dt><span class="sect1"><a href="#sec-remote-powerman"><span class="number">3.4 </span><span class="name">PowerMan — Centralized Power Control for Clusters</span></a></span></dt><dt><span class="sect1"><a href="#sec-remote-memkind"><span class="number">3.5 </span><span class="name">memkind — Heap Manager for Heterogeneous Memory Platforms and Mixed Memory Policies</span></a></span></dt><dt><span class="sect1"><a href="#sec-remote-munge"><span class="number">3.6 </span><span class="name"><span class="emphasis"><em>munge</em></span> Authentication</span></a></span></dt><dt><span class="sect1"><a href="#sec-remote-mrsh"><span class="number">3.7 </span><span class="name">mrsh/mrlogin — Remote Login Using <span class="emphasis"><em>munge</em></span> Authentication</span></a></span></dt><dt><span class="sect1"><a href="#sec-remote-ssh"><span class="number">3.8 </span><span class="name">sshd config</span></a></span></dt></dl></div></div><div class="sect1 " id="sec-remote-conman"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">ConMan — The Console Manager</span> <a title="Permalink" class="permalink" href="#sec-remote-conman">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>remote_administration.xml</li><li><span class="ds-label">ID: </span>sec-remote-conman</li></ul></div></div></div></div><p>
    ConMan is a serial console management program designed to support a
    large number of console devices and simultaneous users. It supports:
   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
@@ -480,7 +477,7 @@ hljs.configure({
      <span class="keycap">Ctrl</span><span class="key-connector">–</span><span class="keycap">L</span>.
     </p></li></ul></div><p>
    For more information about options, see the man page of ConMan.
-  </p></div><div class="sect1 " id="sec-remote-genders"><div class="titlepage"><div><div><h2 class="title" id="sec-remote-genders"><span class="number">3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Genders — Static Cluster Configuration Database</span> <a title="Permalink" class="permalink" href="#sec-remote-genders">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>remote_administration.xml</li><li><span class="ds-label">ID: </span>sec-remote-genders</li></ul></div></div></div></div><p>
+  </p></div><div class="sect1 " id="sec-remote-genders"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Genders — Static Cluster Configuration Database</span> <a title="Permalink" class="permalink" href="#sec-remote-genders">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>remote_administration.xml</li><li><span class="ds-label">ID: </span>sec-remote-genders</li></ul></div></div></div></div><p>
    Support for Genders has been added to the HPC module.
   </p><p>
    Genders is a static cluster configuration database used for
@@ -501,20 +498,20 @@ hljs.configure({
   </p><p>
    List of packages:
   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
-     <span class="package">genders</span>
+     <span class="package ">genders</span>
     </p></li><li class="listitem "><p>
-     <span class="package">genders-base</span>
+     <span class="package ">genders-base</span>
     </p></li><li class="listitem "><p>
-     <span class="package">genders-devel</span>
+     <span class="package ">genders-devel</span>
     </p></li><li class="listitem "><p>
-     <span class="package">python-genders</span>
+     <span class="package ">python-genders</span>
     </p></li><li class="listitem "><p>
-     <span class="package">genders-perl-compat</span>
+     <span class="package ">genders-perl-compat</span>
     </p></li><li class="listitem "><p>
-     <span class="package">libgenders0</span>
+     <span class="package ">libgenders0</span>
     </p></li><li class="listitem "><p>
-     <span class="package">libgendersplusplus2</span>
-    </p></li></ul></div></div><div class="sect1 " id="sec-remote-pdsh"><div class="titlepage"><div><div><h2 class="title" id="sec-remote-pdsh"><span class="number">3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">pdsh — Parallel Remote Shell Program</span> <a title="Permalink" class="permalink" href="#sec-remote-pdsh">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>remote_administration.xml</li><li><span class="ds-label">ID: </span>sec-remote-pdsh</li></ul></div></div></div></div><p>
+     <span class="package ">libgendersplusplus2</span>
+    </p></li></ul></div></div><div class="sect1 " id="sec-remote-pdsh"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">pdsh — Parallel Remote Shell Program</span> <a title="Permalink" class="permalink" href="#sec-remote-pdsh">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>remote_administration.xml</li><li><span class="ds-label">ID: </span>sec-remote-pdsh</li></ul></div></div></div></div><p>
    <code class="literal">pdsh</code> is a parallel remote shell which can be used
    with multiple back-ends for remote connections. It can run a command on
    multiple machines in parallel.
@@ -565,7 +562,7 @@ hljs.configure({
    the plugins, run:
   </p><div class="verbatim-wrap"><pre class="screen">zypper in pdsh-<em class="replaceable ">PLUGIN_NAME</em></pre></div><p>
    For more information, see the man page <code class="command">pdsh</code>.
-  </p></div><div class="sect1 " id="sec-remote-powerman"><div class="titlepage"><div><div><h2 class="title" id="sec-remote-powerman"><span class="number">3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">PowerMan — Centralized Power Control for Clusters</span> <a title="Permalink" class="permalink" href="#sec-remote-powerman">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>remote_administration.xml</li><li><span class="ds-label">ID: </span>sec-remote-powerman</li></ul></div></div></div></div><p>
+  </p></div><div class="sect1 " id="sec-remote-powerman"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">PowerMan — Centralized Power Control for Clusters</span> <a title="Permalink" class="permalink" href="#sec-remote-powerman">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>remote_administration.xml</li><li><span class="ds-label">ID: </span>sec-remote-powerman</li></ul></div></div></div></div><p>
    PowerMan allows manipulating remote power control devices (RPC) from a
    central location. It can control:
   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
@@ -575,7 +572,7 @@ hljs.configure({
     </p></li><li class="listitem "><p>
      RPCs which are accessed through an external program
     </p></li></ul></div><p>
-   The communication to RPCs is controlled by <span class="quote">“<span class="quote">expect</span>”</span>-like
+   The communication to RPCs is controlled by <span class="quote">“<span class="quote ">expect</span>”</span>-like
    scripts. For a
    list of currently supported devices, see the configuration file
    <code class="filename">/etc/powerman/powerman.conf</code>.
@@ -585,11 +582,11 @@ hljs.configure({
    To configure it, include the appropriate device file for your RPC
    (<code class="filename">/etc/powerman/*.dev</code>) in
    <code class="filename">/etc/powerman/powerman.conf</code> and add devices and
-   nodes. The device <span class="quote">“<span class="quote">type</span>”</span> needs to match the
-   <span class="quote">“<span class="quote">specification</span>”</span> name in one
-   of the included device files. The list of <span class="quote">“<span class="quote">plugs</span>”</span> used for
+   nodes. The device <span class="quote">“<span class="quote ">type</span>”</span> needs to match the
+   <span class="quote">“<span class="quote ">specification</span>”</span> name in one
+   of the included device files. The list of <span class="quote">“<span class="quote ">plugs</span>”</span> used for
    nodes need to
-   match an entry in the <span class="quote">“<span class="quote">plug name</span>”</span> list.
+   match an entry in the <span class="quote">“<span class="quote ">plug name</span>”</span> list.
   </p><p>
    After configuring PowerMan, start its service by:
   </p><div class="verbatim-wrap"><pre class="screen">systemctl start powerman.service</pre></div><p>
@@ -602,7 +599,7 @@ hljs.configure({
     When connecting to a remote PowerMan instance, data is transferred
     unencrypted. Therefore, use this feature only if the network is
     appropriately secured.
-   </p></div></div><div class="sect1 " id="sec-remote-memkind"><div class="titlepage"><div><div><h2 class="title" id="sec-remote-memkind"><span class="number">3.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">memkind — Heap Manager for Heterogeneous Memory Platforms and Mixed Memory Policies</span> <a title="Permalink" class="permalink" href="#sec-remote-memkind">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>remote_administration.xml</li><li><span class="ds-label">ID: </span>sec-remote-memkind</li></ul></div></div></div></div><p>
+   </p></div></div><div class="sect1 " id="sec-remote-memkind"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">memkind — Heap Manager for Heterogeneous Memory Platforms and Mixed Memory Policies</span> <a title="Permalink" class="permalink" href="#sec-remote-memkind">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>remote_administration.xml</li><li><span class="ds-label">ID: </span>sec-remote-memkind</li></ul></div></div></div></div><p>
    The <code class="literal">memkind</code> library is a user-extensible heap manager
    built on top of <code class="literal">jemalloc</code> which enables control of
    memory characteristics and a partitioning of the heap between kinds of
@@ -621,7 +618,7 @@ hljs.configure({
      <a class="link" href="https://memkind.github.io/memkind/" target="_blank">https://memkind.github.io/memkind/</a>
     </p></li></ul></div><div id="id-1.5.2.7.5" class="admonition note compact"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><p>
     This tool is only available for x86-64.
-   </p></div></div><div class="sect1 " id="sec-remote-munge"><div class="titlepage"><div><div><h2 class="title" id="sec-remote-munge"><span class="number">3.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><span class="emphasis"><em>munge</em></span> Authentication</span> <a title="Permalink" class="permalink" href="#sec-remote-munge">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>remote_administration.xml</li><li><span class="ds-label">ID: </span>sec-remote-munge</li></ul></div></div></div></div><p>
+   </p></div></div><div class="sect1 " id="sec-remote-munge"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><span class="emphasis"><em>munge</em></span> Authentication</span> <a title="Permalink" class="permalink" href="#sec-remote-munge">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>remote_administration.xml</li><li><span class="ds-label">ID: </span>sec-remote-munge</li></ul></div></div></div></div><p>
    <span class="emphasis"><em>munge</em></span>
    allows users to connect as the same user from a machine to any other
    machine which shares the same secret key. This can be used to set up a
@@ -631,7 +628,7 @@ hljs.configure({
    The <span class="emphasis"><em>munge</em></span> authentication is based on a single shared key.
    This key is
    located under <code class="filename">/etc/munge/munge.key</code>. At the installation
-   time of the <span class="package">munge</span> package an individual munge key is
+   time of the <span class="package ">munge</span> package an individual munge key is
    created from the random
    source <code class="filename">/dev/urandom</code>. This key has to be the same on
    all systems that should allow login to each other:
@@ -648,7 +645,7 @@ systemctl start munge.service</pre></div><p>
    to all other nodes in the cluster. This key file should belong to the
    <code class="systemitem">munge</code> user and must have the
    access rights <code class="literal">0400</code>.
-  </p></div><div class="sect1 " id="sec-remote-mrsh"><div class="titlepage"><div><div><h2 class="title" id="sec-remote-mrsh"><span class="number">3.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">mrsh/mrlogin — Remote Login Using <span class="emphasis"><em>munge</em></span> Authentication</span> <a title="Permalink" class="permalink" href="#sec-remote-mrsh">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>remote_administration.xml</li><li><span class="ds-label">ID: </span>sec-remote-mrsh</li></ul></div></div></div></div><p>
+  </p></div><div class="sect1 " id="sec-remote-mrsh"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">mrsh/mrlogin — Remote Login Using <span class="emphasis"><em>munge</em></span> Authentication</span> <a title="Permalink" class="permalink" href="#sec-remote-mrsh">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>remote_administration.xml</li><li><span class="ds-label">ID: </span>sec-remote-mrsh</li></ul></div></div></div></div><p>
    <span class="emphasis"><em>mrsh</em></span> is a set of remote shell programs using the
    <span class="emphasis"><em>munge</em></span> authentication system instead of reserved ports
    for security.
@@ -684,13 +681,13 @@ systemctl enable mrlogin.service</pre></div><p>
    user <code class="systemitem">root</code>. This is disabled by
    default. To enable it anyway, run:
   </p><div class="verbatim-wrap"><pre class="screen">echo "mrsh" &gt;&gt; /etc/securetty
-  echo "mrlogin" &gt;&gt; /etc/securetty</pre></div></div><div class="sect1 " id="sec-remote-ssh"><div class="titlepage"><div><div><h2 class="title" id="sec-remote-ssh"><span class="number">3.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">sshd config</span> <a title="Permalink" class="permalink" href="#sec-remote-ssh">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>remote_administration.xml</li><li><span class="ds-label">ID: </span>sec-remote-ssh</li></ul></div></div></div></div><p>
+  echo "mrlogin" &gt;&gt; /etc/securetty</pre></div></div><div class="sect1 " id="sec-remote-ssh"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">sshd config</span> <a title="Permalink" class="permalink" href="#sec-remote-ssh">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>remote_administration.xml</li><li><span class="ds-label">ID: </span>sec-remote-ssh</li></ul></div></div></div></div><p>
    A paragraph of text.
   </p></div></div></div><div class="part" id="part-nodes"><div class="titlepage"><div><div><h1 class="title"><span class="number">Part IV </span><span class="name">Nodes </span><a title="Permalink" class="permalink" href="#part-nodes">#</a></h1></div></div></div><div class="toc"><dl><dt><span class="chapter"><a href="#cha-nodes"><span class="number">4 </span><span class="name">Nodes</span></a></span></dt><dd class="toc-abstract"><p>
     What is this chapter about?
-   </p></dd></dl></div><div xml:lang="en" class="chapter " id="cha-nodes" lang="en"><div class="titlepage"><div><div><h2 class="title"><span class="number">4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Nodes</span> <a title="Permalink" class="permalink" href="#cha-nodes">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>nodes.xml</li><li><span class="ds-label">ID: </span>cha-nodes</li></ul></div></div><div><div class="abstract"><div class="abstract-title-wrap"><h6 class="abstract-title">Abstract<a title="Permalink" class="permalink" href="#id-1.6.2.2.1">#</a></h6></div><p>
+   </p></dd></dl></div><div xml:lang="en" class="chapter " id="cha-nodes" lang="en"><div class="titlepage"><div><div><h2 class="title"><span class="number">4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Nodes</span> <a title="Permalink" class="permalink" href="#cha-nodes">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>nodes.xml</li><li><span class="ds-label">ID: </span>cha-nodes</li></ul></div></div><div><div class="abstract"><p>
     What is this chapter about?
-   </p></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="#sec-nodes-cpuid"><span class="number">4.1 </span><span class="name">cpuid</span></a></span></dt><dt><span class="sect1"><a href="#sec-nodes-hwloc"><span class="number">4.2 </span><span class="name">hwloc — Portable Abstraction of Hierarchical Architectures for High-Performance Computing</span></a></span></dt></dl></div></div><div class="sect1 " id="sec-nodes-cpuid"><div class="titlepage"><div><div><h2 class="title" id="sec-nodes-cpuid"><span class="number">4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">cpuid</span> <a title="Permalink" class="permalink" href="#sec-nodes-cpuid">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>nodes.xml</li><li><span class="ds-label">ID: </span>sec-nodes-cpuid</li></ul></div></div></div></div><p>
+   </p></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="#sec-nodes-cpuid"><span class="number">4.1 </span><span class="name">cpuid</span></a></span></dt><dt><span class="sect1"><a href="#sec-nodes-hwloc"><span class="number">4.2 </span><span class="name">hwloc — Portable Abstraction of Hierarchical Architectures for High-Performance Computing</span></a></span></dt></dl></div></div><div class="sect1 " id="sec-nodes-cpuid"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">cpuid</span> <a title="Permalink" class="permalink" href="#sec-nodes-cpuid">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>nodes.xml</li><li><span class="ds-label">ID: </span>sec-nodes-cpuid</li></ul></div></div></div></div><p>
    <code class="literal">cpuid</code> executes the x86 CPUID instruction and decodes
    and prints the results to stdout. Its knowledge of Intel, AMD and Cyrix
    CPUs is fairly complete. It also supports Intel Knights Mill CPUs (x86-64).
@@ -702,7 +699,7 @@ systemctl enable mrlogin.service</pre></div><p>
    man page <code class="literal">cpuid(1)</code>.
   </p><p>
    Note that this tool is only available for x86-64.
-  </p></div><div class="sect1 " id="sec-nodes-hwloc"><div class="titlepage"><div><div><h2 class="title" id="sec-nodes-hwloc"><span class="number">4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">hwloc — Portable Abstraction of Hierarchical Architectures for High-Performance Computing</span> <a title="Permalink" class="permalink" href="#sec-nodes-hwloc">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>nodes.xml</li><li><span class="ds-label">ID: </span>sec-nodes-hwloc</li></ul></div></div></div></div><p>
+  </p></div><div class="sect1 " id="sec-nodes-hwloc"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">hwloc — Portable Abstraction of Hierarchical Architectures for High-Performance Computing</span> <a title="Permalink" class="permalink" href="#sec-nodes-hwloc">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>nodes.xml</li><li><span class="ds-label">ID: </span>sec-nodes-hwloc</li></ul></div></div></div></div><p>
    <code class="literal">hwloc</code> provides command-line tools and a C API to
    obtain the hierarchical map of key computing elements, such as: NUMA
    memory nodes, shared caches, processor packages, processor cores,
@@ -729,9 +726,9 @@ systemctl enable mrlogin.service</pre></div><p>
    <code class="literal">hwloc</code>.
    </p></div></div></div><div class="part" id="part-sched"><div class="titlepage"><div><div><h1 class="title"><span class="number">Part V </span><span class="name">Scheduler </span><a title="Permalink" class="permalink" href="#part-sched">#</a></h1></div></div></div><div class="toc"><dl><dt><span class="chapter"><a href="#cha-scheduler"><span class="number">5 </span><span class="name">Scheduler</span></a></span></dt><dd class="toc-abstract"><p>
     What is this chapter about?
-   </p></dd></dl></div><div xml:lang="en" class="chapter " id="cha-scheduler" lang="en"><div class="titlepage"><div><div><h2 class="title"><span class="number">5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Scheduler</span> <a title="Permalink" class="permalink" href="#cha-scheduler">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>scheduler.xml</li><li><span class="ds-label">ID: </span>cha-scheduler</li></ul></div></div><div><div class="abstract"><div class="abstract-title-wrap"><h6 class="abstract-title">Abstract<a title="Permalink" class="permalink" href="#id-1.7.2.2.1">#</a></h6></div><p>
+   </p></dd></dl></div><div xml:lang="en" class="chapter " id="cha-scheduler" lang="en"><div class="titlepage"><div><div><h2 class="title"><span class="number">5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Scheduler</span> <a title="Permalink" class="permalink" href="#cha-scheduler">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>scheduler.xml</li><li><span class="ds-label">ID: </span>cha-scheduler</li></ul></div></div><div><div class="abstract"><p>
     What is this chapter about?
-   </p></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="#sec-scheduler-slurm"><span class="number">5.1 </span><span class="name">Slurm — Utility for HPC Workload Management</span></a></span></dt></dl></div></div><div class="sect1 " id="sec-scheduler-slurm"><div class="titlepage"><div><div><h2 class="title" id="sec-scheduler-slurm"><span class="number">5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Slurm — Utility for HPC Workload Management</span> <a title="Permalink" class="permalink" href="#sec-scheduler-slurm">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>scheduler.xml</li><li><span class="ds-label">ID: </span>sec-scheduler-slurm</li></ul></div></div></div></div><p>
+   </p></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="#sec-scheduler-slurm"><span class="number">5.1 </span><span class="name">Slurm — Utility for HPC Workload Management</span></a></span></dt></dl></div></div><div class="sect1 " id="sec-scheduler-slurm"><div class="titlepage"><div><div><h2 class="title"><span class="number">5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Slurm — Utility for HPC Workload Management</span> <a title="Permalink" class="permalink" href="#sec-scheduler-slurm">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>scheduler.xml</li><li><span class="ds-label">ID: </span>sec-scheduler-slurm</li></ul></div></div></div></div><p>
     Slurm is an open-source, fault-tolerant, and highly scalable cluster
     management and job scheduling system for Linux clusters containing up to
     65,536 nodes. Components include machine status, partition management,
@@ -751,19 +748,19 @@ systemctl enable mrlogin.service</pre></div><p>
        same UID/GID across all nodes of the cluster.
       </p><p>
        If this user/group does not exist, the package
-       <span class="package">slurm</span> creates this user and group when it is
+       <span class="package ">slurm</span> creates this user and group when it is
        installed. However, this does not guarantee
        that the generated UIDs/GIDs will be identical on all systems.
       </p><p>
        Therefore, we strongly advise you to create the user/group
        <code class="systemitem">slurm</code> before
-       installing <span class="package">slurm</span>.
+       installing <span class="package ">slurm</span>.
        If you are using a network directory service such as LDAP for user and
        group management, you can use it to
        provide the <code class="systemitem">slurm</code>
        user/group as well.
       </p></div></li><li class="step "><p>
-      Install <span class="package">slurm-munge</span> on the control and compute
+      Install <span class="package ">slurm-munge</span> on the control and compute
       nodes: <code class="command">zypper in slurm-munge</code>
      </p></li><li class="step "><p>
       Configure, enable and start "munge" on the control and compute nodes.
@@ -827,19 +824,19 @@ systemctl enable slurmd.service</pre></div><p>
     documentation page</a>.
    </p></div></div></div><div class="part" id="part-monitoring"><div class="titlepage"><div><div><h1 class="title"><span class="number">Part VI </span><span class="name">Monitoring </span><a title="Permalink" class="permalink" href="#part-monitoring">#</a></h1></div></div></div><div class="toc"><dl><dt><span class="chapter"><a href="#cha-monitoring"><span class="number">6 </span><span class="name">Monitoring</span></a></span></dt><dd class="toc-abstract"><p>
     What is this chapter about?
-   </p></dd></dl></div><div xml:lang="en" class="chapter " id="cha-monitoring" lang="en"><div class="titlepage"><div><div><h2 class="title"><span class="number">6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Monitoring</span> <a title="Permalink" class="permalink" href="#cha-monitoring">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>monitoring.xml</li><li><span class="ds-label">ID: </span>cha-monitoring</li></ul></div></div><div><div class="abstract"><div class="abstract-title-wrap"><h6 class="abstract-title">Abstract<a title="Permalink" class="permalink" href="#id-1.8.2.2.1">#</a></h6></div><p>
+   </p></dd></dl></div><div xml:lang="en" class="chapter " id="cha-monitoring" lang="en"><div class="titlepage"><div><div><h2 class="title"><span class="number">6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Monitoring</span> <a title="Permalink" class="permalink" href="#cha-monitoring">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>monitoring.xml</li><li><span class="ds-label">ID: </span>cha-monitoring</li></ul></div></div><div><div class="abstract"><p>
     What is this chapter about?
-   </p></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="#sec-monitoring-ganglia"><span class="number">6.1 </span><span class="name">Ganglia — System Monitoring</span></a></span></dt><dt><span class="sect1"><a href="#sec-monitoring-ras"><span class="number">6.2 </span><span class="name">rasdaemon — Utility to Log RAS Error Tracings</span></a></span></dt></dl></div></div><div class="sect1 " id="sec-monitoring-ganglia"><div class="titlepage"><div><div><h2 class="title" id="sec-monitoring-ganglia"><span class="number">6.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Ganglia — System Monitoring</span> <a title="Permalink" class="permalink" href="#sec-monitoring-ganglia">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>monitoring.xml</li><li><span class="ds-label">ID: </span>sec-monitoring-ganglia</li></ul></div></div></div></div><p>
+   </p></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="#sec-monitoring-ganglia"><span class="number">6.1 </span><span class="name">Ganglia — System Monitoring</span></a></span></dt><dt><span class="sect1"><a href="#sec-monitoring-ras"><span class="number">6.2 </span><span class="name">rasdaemon — Utility to Log RAS Error Tracings</span></a></span></dt></dl></div></div><div class="sect1 " id="sec-monitoring-ganglia"><div class="titlepage"><div><div><h2 class="title"><span class="number">6.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Ganglia — System Monitoring</span> <a title="Permalink" class="permalink" href="#sec-monitoring-ganglia">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>monitoring.xml</li><li><span class="ds-label">ID: </span>sec-monitoring-ganglia</li></ul></div></div></div></div><p>
    Ganglia is a scalable distributed monitoring system for high-performance
    computing systems, such as clusters and grids. It is based on a
    hierarchical design targeted at federations of clusters.
   </p><p>
-   To use Ganglia, make sure to install <span class="package">ganglia-gmetad</span>
+   To use Ganglia, make sure to install <span class="package ">ganglia-gmetad</span>
    on the management serve then start the Ganglia meta-daemon:
    <code class="command">rcgmead start</code>. To make sure the service is started
    after a reboot, run: <code class="command">systemctl enable gmetad</code>. On
    each cluster node which you want to monitor, install
-   <span class="package">ganglia-gmond</span>, start the service <code class="command">rcgmond
+   <span class="package ">ganglia-gmond</span>, start the service <code class="command">rcgmond
    start</code> and make sure it is enabled to be started automatically
    after a reboot: <code class="command">systemctl enable gmond</code>. To test
    whether the <code class="systemitem">gmond</code> daemon has
@@ -850,13 +847,13 @@ systemctl enable slurmd.service</pre></div><p>
    When using the Btrfs file system, the monitoring data will be lost after
    a rollback and the service <code class="systemitem">gmetad</code>. To be able to
    start it again, either install the package
-   <span class="package">ganglia-gmetad-skip-bcheck</span> or create the file
+   <span class="package ">ganglia-gmetad-skip-bcheck</span> or create the file
    <code class="filename">/etc/ganglia/no_btrfs_check</code>.
   </p><p>
    To use the Ganglia Web interface, it is required to add the "Web and
    Scripting Module" first. This can be done by running
    <code class="command">SUSEConnect -p sle-module-web-scripting/15/x86_64</code>.
-   Install <span class="package">ganglia-web</span> on the management server.
+   Install <span class="package ">ganglia-web</span> on the management server.
    Depending on which PHP version is used (default is PHP 5), enable it in
    Apache2: <code class="command">a2enmod php5</code> or <code class="command">a2enmod
    php7</code>. Then start Apache2 on this machine: <code class="command">rcapache2
@@ -864,7 +861,7 @@ systemctl enable slurmd.service</pre></div><p>
    reboot: <code class="command">systemctl enable apache2</code>. The Ganglia Web
    interface should be accessible from
    <code class="literal">http://<em class="replaceable ">MANAGEMENT_SERVER</em>/ganglia</code>.
-  </p></div><div class="sect1 " id="sec-monitoring-ras"><div class="titlepage"><div><div><h2 class="title" id="sec-monitoring-ras"><span class="number">6.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">rasdaemon — Utility to Log RAS Error Tracings</span> <a title="Permalink" class="permalink" href="#sec-monitoring-ras">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>monitoring.xml</li><li><span class="ds-label">ID: </span>sec-monitoring-ras</li></ul></div></div></div></div><p>
+  </p></div><div class="sect1 " id="sec-monitoring-ras"><div class="titlepage"><div><div><h2 class="title"><span class="number">6.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">rasdaemon — Utility to Log RAS Error Tracings</span> <a title="Permalink" class="permalink" href="#sec-monitoring-ras">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>monitoring.xml</li><li><span class="ds-label">ID: </span>sec-monitoring-ras</li></ul></div></div></div></div><p>
    <code class="systemitem">rasdaemon</code> is a RAS
    (Reliability, Availability and
    Serviceability) logging tool. It records memory errors using the EDAC
@@ -905,9 +902,9 @@ systemctl enable slurmd.service</pre></div><p>
   Model: <em class="replaceable ">MODEL-NAME</em>
   <em class="replaceable ">LABEL</em>: <em class="replaceable ">MC</em>.<em class="replaceable ">TOP</em>.<em class="replaceable ">MID</em>.<em class="replaceable ">LOW</em></pre></div></div></div></div><div class="part" id="part-compute"><div class="titlepage"><div><div><h1 class="title"><span class="number">Part VII </span><span class="name">Compute </span><a title="Permalink" class="permalink" href="#part-compute">#</a></h1></div></div></div><div class="toc"><dl><dt><span class="chapter"><a href="#cha-compute"><span class="number">7 </span><span class="name">Compute</span></a></span></dt><dd class="toc-abstract"><p>
     What is this chapter about?
-   </p></dd></dl></div><div xml:lang="en" class="chapter " id="cha-compute" lang="en"><div class="titlepage"><div><div><h2 class="title"><span class="number">7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Compute</span> <a title="Permalink" class="permalink" href="#cha-compute">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>cha-compute</li></ul></div></div><div><div class="abstract"><div class="abstract-title-wrap"><h6 class="abstract-title">Abstract<a title="Permalink" class="permalink" href="#id-1.9.2.2.1">#</a></h6></div><p>
+   </p></dd></dl></div><div xml:lang="en" class="chapter " id="cha-compute" lang="en"><div class="titlepage"><div><div><h2 class="title"><span class="number">7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Compute</span> <a title="Permalink" class="permalink" href="#cha-compute">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>cha-compute</li></ul></div></div><div><div class="abstract"><p>
     What is this chapter about?
-   </p></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="#sec-compute-lmod"><span class="number">7.1 </span><span class="name">Lmod — Lua-based Environment Modules</span></a></span></dt><dt><span class="sect1"><a href="#sec-compute-lib"><span class="number">7.2 </span><span class="name">HPC Libraries</span></a></span></dt></dl></div></div><div class="sect1 " id="sec-compute-lmod"><div class="titlepage"><div><div><h2 class="title" id="sec-compute-lmod"><span class="number">7.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Lmod — Lua-based Environment Modules</span> <a title="Permalink" class="permalink" href="#sec-compute-lmod">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec-compute-lmod</li></ul></div></div></div></div><p>
+   </p></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="#sec-compute-lmod"><span class="number">7.1 </span><span class="name">Lmod — Lua-based Environment Modules</span></a></span></dt><dt><span class="sect1"><a href="#sec-compute-lib"><span class="number">7.2 </span><span class="name">HPC Libraries</span></a></span></dt></dl></div></div><div class="sect1 " id="sec-compute-lmod"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Lmod — Lua-based Environment Modules</span> <a title="Permalink" class="permalink" href="#sec-compute-lmod">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec-compute-lmod</li></ul></div></div></div></div><p>
    Lmod is an advanced environment module system which allows the
    installation of multiple versions of a program or shared library, and
    helps configure the system environment for the use of a specific
@@ -918,7 +915,7 @@ systemctl enable slurmd.service</pre></div><p>
    parallel installation of different versions and flavors of the same
    library or binary and are supplied with appropriate
    <code class="literal">lmod</code> module files.
-  </p><div class="sect2 " id="sec2-compute-lmod-basic"><div class="titlepage"><div><div><h3 class="title" id="sec2-compute-lmod-basic"><span class="number">7.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Installation and Basic Usage</span> <a title="Permalink" class="permalink" href="#sec2-compute-lmod-basic">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-compute-lmod-basic</li></ul></div></div></div></div><p>
+  </p><div class="sect2 " id="sec2-compute-lmod-basic"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Installation and Basic Usage</span> <a title="Permalink" class="permalink" href="#sec2-compute-lmod-basic">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-compute-lmod-basic</li></ul></div></div></div></div><p>
     To install Lmod, run: <code class="command">zypper in lua-lmod</code>.
    </p><p>
     Before Lmod can be used, an init file needs to be sourced from the
@@ -935,7 +932,7 @@ systemctl enable slurmd.service</pre></div><p>
     To obtain <code class="literal">&lt;lmod_version&gt;</code>, run:
    </p><div class="verbatim-wrap"><pre class="screen">rpm -q lua-lmod | sed "s/.*-\([^-]\+\)-.*/\1/"</pre></div><p>
     The init script adds the command <code class="command">module</code>.
-   </p></div><div class="sect2 " id="sec2-compute-lmod-lista"><div class="titlepage"><div><div><h3 class="title" id="sec2-compute-lmod-lista"><span class="number">7.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Listing Available Modules</span> <a title="Permalink" class="permalink" href="#sec2-compute-lmod-lista">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-compute-lmod-lista</li></ul></div></div></div></div><p>
+   </p></div><div class="sect2 " id="sec2-compute-lmod-lista"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Listing Available Modules</span> <a title="Permalink" class="permalink" href="#sec2-compute-lmod-lista">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-compute-lmod-lista</li></ul></div></div></div></div><p>
     To list the available all available modules, run: <code class="command">module
     spider</code>. To show all modules which can be loaded with the
     currently loaded modules, run: <code class="command">module avail</code>. A
@@ -946,14 +943,14 @@ systemctl enable slurmd.service</pre></div><p>
     version number is loaded. To refer to a specific module version, the
     full string <code class="literal"><em class="replaceable ">NAME</em>/<em class="replaceable ">VERSION</em></code>
     may be used.
-   </p></div><div class="sect2 " id="sec2-compute-lmod-listl"><div class="titlepage"><div><div><h3 class="title" id="sec2-compute-lmod-listl"><span class="number">7.1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Listing Loaded Modules</span> <a title="Permalink" class="permalink" href="#sec2-compute-lmod-listl">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-compute-lmod-listl</li></ul></div></div></div></div><p>
+   </p></div><div class="sect2 " id="sec2-compute-lmod-listl"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Listing Loaded Modules</span> <a title="Permalink" class="permalink" href="#sec2-compute-lmod-listl">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-compute-lmod-listl</li></ul></div></div></div></div><p>
     <code class="command">module list</code> shows all currently loaded modules. Refer
     to <code class="command">module help</code> for a short help on the module command
     and <code class="command">module help <em class="replaceable ">MODULE-NAME</em></code>
     for a help on the
     particular module. Note that the <code class="command">module</code> command is available
     only when you log in after installing <code class="literal">lua-lmod</code>.
-   </p></div><div class="sect2 " id="sec2-compute-lmod-info"><div class="titlepage"><div><div><h3 class="title" id="sec2-compute-lmod-info"><span class="number">7.1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Gathering Information About a Module</span> <a title="Permalink" class="permalink" href="#sec2-compute-lmod-info">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-compute-lmod-info</li></ul></div></div></div></div><p>
+   </p></div><div class="sect2 " id="sec2-compute-lmod-info"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Gathering Information About a Module</span> <a title="Permalink" class="permalink" href="#sec2-compute-lmod-info">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-compute-lmod-info</li></ul></div></div></div></div><p>
     To get information about a particular module, run: <code class="command">module
     whatis <em class="replaceable ">MODULE-NAME</em></code> To load a module,
     run:
@@ -965,13 +962,13 @@ systemctl enable slurmd.service</pre></div><p>
     modules are found. To run a program compiled against this library, the
     appropriate <code class="command">module load</code> commands must be issued
     beforehand.
-   </p></div><div class="sect2 " id="sec2-compute-lmod-load"><div class="titlepage"><div><div><h3 class="title" id="sec2-compute-lmod-load"><span class="number">7.1.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Loading Modules</span> <a title="Permalink" class="permalink" href="#sec2-compute-lmod-load">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-compute-lmod-load</li></ul></div></div></div></div><p>
+   </p></div><div class="sect2 " id="sec2-compute-lmod-load"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.1.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Loading Modules</span> <a title="Permalink" class="permalink" href="#sec2-compute-lmod-load">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-compute-lmod-load</li></ul></div></div></div></div><p>
     The <code class="command">module load <em class="replaceable ">MODULE</em></code>
     command needs to be
     run in the shell from which the module is to be used. Some modules
     require a compiler toolchain or MPI flavor module to be loaded before
     they are available for loading.
-   </p></div><div class="sect2 " id="sec2-compute-lmod-env"><div class="titlepage"><div><div><h3 class="title" id="sec2-compute-lmod-env"><span class="number">7.1.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Environment Variables</span> <a title="Permalink" class="permalink" href="#sec2-compute-lmod-env">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-compute-lmod-env</li></ul></div></div></div></div><p>
+   </p></div><div class="sect2 " id="sec2-compute-lmod-env"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.1.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Environment Variables</span> <a title="Permalink" class="permalink" href="#sec2-compute-lmod-env">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-compute-lmod-env</li></ul></div></div></div></div><p>
     If the respective development packages are installed, build time
     environment variables like <code class="literal">LIBRARY_PATH</code>,
     <code class="literal">CPATH</code>, <code class="literal">C_INCLUDE_PATH</code> and
@@ -983,10 +980,10 @@ systemctl enable slurmd.service</pre></div><p>
     and <code class="literal">-L <em class="replaceable ">PACKAGE_NAME</em>_LIB</code>
     to add the include and library paths
     to the command lines of the compiler and linker.
-   </p></div><div class="sect2 " id="sec2-compute-lmod-moreinfo"><div class="titlepage"><div><div><h3 class="title" id="sec2-compute-lmod-moreinfo"><span class="number">7.1.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">For More Information</span> <a title="Permalink" class="permalink" href="#sec2-compute-lmod-moreinfo">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-compute-lmod-moreinfo</li></ul></div></div></div></div><p>
+   </p></div><div class="sect2 " id="sec2-compute-lmod-moreinfo"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.1.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">For More Information</span> <a title="Permalink" class="permalink" href="#sec2-compute-lmod-moreinfo">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-compute-lmod-moreinfo</li></ul></div></div></div></div><p>
     For more information on Lmod, see
     <a class="link" href="https://lmod.readthedocs.org" target="_blank">https://lmod.readthedocs.org</a>.
-   </p></div></div><div class="sect1 " id="sec-compute-lib"><div class="titlepage"><div><div><h2 class="title" id="sec-compute-lib"><span class="number">7.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">HPC Libraries</span> <a title="Permalink" class="permalink" href="#sec-compute-lib">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec-compute-lib</li></ul></div></div></div></div><p>
+   </p></div></div><div class="sect1 " id="sec-compute-lib"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">HPC Libraries</span> <a title="Permalink" class="permalink" href="#sec-compute-lib">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec-compute-lib</li></ul></div></div></div></div><p>
    Library packages which support environment modules follow a distinctive
    naming scheme: all packages have the compiler suite and, if built with
    MPI support, the MPI flavor in their name:
@@ -1010,18 +1007,18 @@ systemctl enable slurmd.service</pre></div><p>
    with GCC for Open MPI v2:
   </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
      library package:
-     <span class="package">libscalapack2_2_1_0-gnu-openmpi2-hpc</span>
+     <span class="package ">libscalapack2_2_1_0-gnu-openmpi2-hpc</span>
     </p></li><li class="listitem "><p>
-     library master package: <span class="package">libscalapack2-gnu-openmpi2-hpc</span>
+     library master package: <span class="package ">libscalapack2-gnu-openmpi2-hpc</span>
     </p></li><li class="listitem "><p>
      development package:
-     <span class="package">libscalapack2_2_1_0-gnu-openmpi2-hpc-devel</span>
+     <span class="package ">libscalapack2_2_1_0-gnu-openmpi2-hpc-devel</span>
     </p></li><li class="listitem "><p>
      development master package:
-     <span class="package">libscalapack2-gnu-openmpi2-hpc-devel</span>
+     <span class="package ">libscalapack2-gnu-openmpi2-hpc-devel</span>
     </p></li><li class="listitem "><p>
      static library package:
-     <span class="package">libscalapack2_2_1_0-gnu-openmpi2-hpc-devel-static</span>
+     <span class="package ">libscalapack2_2_1_0-gnu-openmpi2-hpc-devel-static</span>
     </p></li></ul></div><p>
    (Note that the digit <code class="literal">2</code> appended to the library name
    denotes the <code class="literal">.so</code> version of the library).
@@ -1034,7 +1031,7 @@ systemctl enable slurmd.service</pre></div><p>
    Presently, the GNU compiler collection version 4.8 as provided with SUSE
    Linux Enterprise 15 and the MPI flavors Open MPI v.2 and MVAPICH2 are
    supported.
-  </p><div class="sect2 " id="sec2-lib-fftw"><div class="titlepage"><div><div><h3 class="title" id="sec2-lib-fftw"><span class="number">7.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">FFTW HPC Library — Discrete Fourier Transforms</span> <a title="Permalink" class="permalink" href="#sec2-lib-fftw">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-lib-fftw</li></ul></div></div></div></div><p>
+  </p><div class="sect2 " id="sec2-lib-fftw"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">FFTW HPC Library — Discrete Fourier Transforms</span> <a title="Permalink" class="permalink" href="#sec2-lib-fftw">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-lib-fftw</li></ul></div></div></div></div><p>
     <code class="literal">FFTW</code> is a C subroutine library for computing the
     Discrete Fourier Transform (DFT) in one or more dimensions, of both real
     and complex data, and of arbitrary input size.
@@ -1060,7 +1057,7 @@ systemctl enable slurmd.service</pre></div><p>
      </p></li></ul></div><p>
     For general information about Lmod and modules, see
     <a class="xref" href="#sec-compute-lmod" title="7.1. Lmod — Lua-based Environment Modules">Section 7.1, “Lmod — Lua-based Environment Modules”</a>.
-   </p></div><div class="sect2 " id="sec2-lib-hdf5"><div class="titlepage"><div><div><h3 class="title" id="sec2-lib-hdf5"><span class="number">7.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">HDF5 HPC Library — Model, Library, File Format for Storing and Managing Data</span> <a title="Permalink" class="permalink" href="#sec2-lib-hdf5">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-lib-hdf5</li></ul></div></div></div></div><p>
+   </p></div><div class="sect2 " id="sec2-lib-hdf5"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">HDF5 HPC Library — Model, Library, File Format for Storing and Managing Data</span> <a title="Permalink" class="permalink" href="#sec2-lib-hdf5">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-lib-hdf5</li></ul></div></div></div></div><p>
     HDF5 is a data model, library, and file format for storing and managing
     data. It supports an unlimited variety of data types, and is designed for
     flexible and efficient I/O and for high volume and complex data. HDF5 is
@@ -1078,36 +1075,36 @@ systemctl enable slurmd.service</pre></div><p>
    </p><div class="verbatim-wrap"><pre class="screen">module load phpdf5</pre></div><p>
     List of master packages:
    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
-      <span class="package">hdf5-examples</span>
+      <span class="package ">hdf5-examples</span>
      </p></li><li class="listitem "><p>
-      <span class="package">hdf5-gnu-hpc-devel</span>
+      <span class="package ">hdf5-gnu-hpc-devel</span>
      </p></li><li class="listitem "><p>
-      <span class="package">libhdf5-gnu-hpc</span>
+      <span class="package ">libhdf5-gnu-hpc</span>
      </p></li><li class="listitem "><p>
-      <span class="package">libhdf5_cpp-gnu-hpc</span>
+      <span class="package ">libhdf5_cpp-gnu-hpc</span>
      </p></li><li class="listitem "><p>
-      <span class="package">libhdf5_fortran-gnu-hpc</span>
+      <span class="package ">libhdf5_fortran-gnu-hpc</span>
      </p></li><li class="listitem "><p>
-      <span class="package">libhdf5_hl_cpp-gnu-hpc</span>
+      <span class="package ">libhdf5_hl_cpp-gnu-hpc</span>
      </p></li><li class="listitem "><p>
-      <span class="package">libhdf5_hl_fortran-gnu-hpc</span>
+      <span class="package ">libhdf5_hl_fortran-gnu-hpc</span>
      </p></li><li class="listitem "><p>
-      <span class="package">hdf5-gnu-openmpi1-hpc-devel</span>
+      <span class="package ">hdf5-gnu-openmpi1-hpc-devel</span>
      </p></li><li class="listitem "><p>
-      <span class="package">libhdf5-gnu-openmpi1-hpc</span>
+      <span class="package ">libhdf5-gnu-openmpi1-hpc</span>
      </p></li><li class="listitem "><p>
-      <span class="package">libhdf5_fortran-gnu-openmpi1-hpc</span>
+      <span class="package ">libhdf5_fortran-gnu-openmpi1-hpc</span>
      </p></li><li class="listitem "><p>
-      <span class="package">libhdf5_hl_fortran-gnu-openmpi1-hpc</span>
+      <span class="package ">libhdf5_hl_fortran-gnu-openmpi1-hpc</span>
      </p></li><li class="listitem "><p>
-      <span class="package">hdf5-gnu-mvapich2-hpc-devel</span>
+      <span class="package ">hdf5-gnu-mvapich2-hpc-devel</span>
      </p></li><li class="listitem "><p>
-      <span class="package">libhdf5-gnu-mvapich2-hpc</span>
+      <span class="package ">libhdf5-gnu-mvapich2-hpc</span>
      </p></li><li class="listitem "><p>
-      <span class="package">libhdf5_fortran-gnu-mvapich2-hpc</span>
+      <span class="package ">libhdf5_fortran-gnu-mvapich2-hpc</span>
      </p></li></ul></div><p>
     For general information about Lmod and modules, see <a class="xref" href="#sec-compute-lmod" title="7.1. Lmod — Lua-based Environment Modules">Section 7.1, “Lmod — Lua-based Environment Modules”</a>
-   </p></div><div class="sect2 " id="sec2-lib-netcdf"><div class="titlepage"><div><div><h3 class="title" id="sec2-lib-netcdf"><span class="number">7.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">NetCDF HPC Library — Implementation of Self-Describing Data Formats</span> <a title="Permalink" class="permalink" href="#sec2-lib-netcdf">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-lib-netcdf</li></ul></div></div></div></div><p>
+   </p></div><div class="sect2 " id="sec2-lib-netcdf"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">NetCDF HPC Library — Implementation of Self-Describing Data Formats</span> <a title="Permalink" class="permalink" href="#sec2-lib-netcdf">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-lib-netcdf</li></ul></div></div></div></div><p>
     The NetCDF software libraries for C, C++, FORTRAN, and Perl are a set of
     software libraries and self-describing, machine-independent data formats
     that support the creation, access, and sharing of array-oriented
@@ -1130,23 +1127,23 @@ systemctl enable slurmd.service</pre></div><p>
    </p><div class="verbatim-wrap"><pre class="screen">module load pnetcdf</pre></div><p>
     List of master packages:
    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
-      <span class="package">netcdf-gnu-hpc</span>
+      <span class="package ">netcdf-gnu-hpc</span>
      </p></li><li class="listitem "><p>
-      <span class="package">netcdf-gnu-hpc-devel</span>
+      <span class="package ">netcdf-gnu-hpc-devel</span>
      </p></li><li class="listitem "><p>
-      <span class="package">netcdf-gnu-hpc</span>
+      <span class="package ">netcdf-gnu-hpc</span>
      </p></li><li class="listitem "><p>
-      <span class="package">netcdf-gnu-hpc-devel</span>
+      <span class="package ">netcdf-gnu-hpc-devel</span>
      </p></li><li class="listitem "><p>
-      <span class="package">netcdf-gnu-openmpi1-hpc</span>
+      <span class="package ">netcdf-gnu-openmpi1-hpc</span>
      </p></li><li class="listitem "><p>
-      <span class="package">netcdf-gnu-openmpi1-hpc-devel</span>
+      <span class="package ">netcdf-gnu-openmpi1-hpc-devel</span>
      </p></li><li class="listitem "><p>
-      <span class="package">netcdf-gnu-mvapich2-hpc</span>
+      <span class="package ">netcdf-gnu-mvapich2-hpc</span>
      </p></li><li class="listitem "><p>
-      <span class="package">netcdf-gnu-mvapich2-hpc-devel</span>
+      <span class="package ">netcdf-gnu-mvapich2-hpc-devel</span>
      </p></li></ul></div><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect5 bridgehead"><h6 class="title" id="id-1.9.2.4.10.12"><span class="name"><code class="literal">netcdf-cxx</code> Packages</span><a title="Permalink" class="permalink" href="#id-1.9.2.4.10.12">#</a></h6></div><p>
-    <span class="package">netcdf-cxx4</span> provides a C++ binding for the NetCDF
+    <span class="package ">netcdf-cxx4</span> provides a C++ binding for the NetCDF
     API.
    </p><p>
     This module requires loading a compiler toolchain module beforehand. To
@@ -1165,7 +1162,7 @@ systemctl enable slurmd.service</pre></div><p>
    </p><div xmlns:dm="urn:x-suse:ns:docmanager" class="sect5 bridgehead"><h6 class="title" id="id-1.9.2.4.10.20"><span class="name">For More Information</span><a title="Permalink" class="permalink" href="#id-1.9.2.4.10.20">#</a></h6></div><p>
     For general information about Lmod and modules, see
     <a class="xref" href="#sec-compute-lmod" title="7.1. Lmod — Lua-based Environment Modules">Section 7.1, “Lmod — Lua-based Environment Modules”</a>.
-   </p></div><div class="sect2 " id="sec2-lib-numpy"><div class="titlepage"><div><div><h3 class="title" id="sec2-lib-numpy"><span class="number">7.2.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">NumPy Python Library</span> <a title="Permalink" class="permalink" href="#sec2-lib-numpy">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-lib-numpy</li></ul></div></div></div></div><p>
+   </p></div><div class="sect2 " id="sec2-lib-numpy"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.2.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">NumPy Python Library</span> <a title="Permalink" class="permalink" href="#sec2-lib-numpy">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-lib-numpy</li></ul></div></div></div></div><p>
     NumPy is a general-purpose array-processing package designed to
     efficiently manipulate large multi-dimensional arrays of arbitrary
     records without sacrificing too much speed for small multi-dimensional
@@ -1197,7 +1194,7 @@ systemctl enable slurmd.service</pre></div><p>
       <code class="literal">python3-numpy-gnu-hpc</code>
      </p></li><li class="listitem "><p>
       <code class="literal">python3-numpy-gnu-hpc-devel</code>
-     </p></li></ul></div></div><div class="sect2 " id="sec2-lib-blas"><div class="titlepage"><div><div><h3 class="title" id="sec2-lib-blas"><span class="number">7.2.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">OpenBLAS Library — Optimized BLAS Library</span> <a title="Permalink" class="permalink" href="#sec2-lib-blas">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-lib-blas</li></ul></div></div></div></div><p>
+     </p></li></ul></div></div><div class="sect2 " id="sec2-lib-blas"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.2.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">OpenBLAS Library — Optimized BLAS Library</span> <a title="Permalink" class="permalink" href="#sec2-lib-blas">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-lib-blas</li></ul></div></div></div></div><p>
     OpenBLAS is an optimized BLAS (Basic Linear Algebra Subprograms) library
     based on GotoBLAS2 1.3, BSD version. It provides the BLAS API. It is
     shipped as a package enabled for environment modules and thus requires
@@ -1247,8 +1244,8 @@ systemctl enable slurmd.service</pre></div><p>
      </p></li></ul></div><p>
     For general information about Lmod and modules, see
     <a class="xref" href="#sec-compute-lmod" title="7.1. Lmod — Lua-based Environment Modules">Section 7.1, “Lmod — Lua-based Environment Modules”</a>.
-   </p></div><div class="sect2 " id="sec2-lib-papi"><div class="titlepage"><div><div><h3 class="title" id="sec2-lib-papi"><span class="number">7.2.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">PAPI HPC Library — Consistent Interface for Hardware Performance Counters</span> <a title="Permalink" class="permalink" href="#sec2-lib-papi">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-lib-papi</li></ul></div></div></div></div><p>
-    PAPI (package <span class="package">papi</span>) provides a tool with a
+   </p></div><div class="sect2 " id="sec2-lib-papi"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.2.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">PAPI HPC Library — Consistent Interface for Hardware Performance Counters</span> <a title="Permalink" class="permalink" href="#sec2-lib-papi">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-lib-papi</li></ul></div></div></div></div><p>
+    PAPI (package <span class="package ">papi</span>) provides a tool with a
     consistent interface and methodology for use of the performance counter
     hardware found in most major microprocessors.
    </p><p>
@@ -1258,13 +1255,13 @@ systemctl enable slurmd.service</pre></div><p>
    </p><div class="verbatim-wrap"><pre class="screen">module load papi</pre></div><p>
     List of master packages:
    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
-      <span class="package">papi-hpc</span>
+      <span class="package ">papi-hpc</span>
      </p></li><li class="listitem "><p>
-      <span class="package">papi-hpc-devel</span>
+      <span class="package ">papi-hpc-devel</span>
      </p></li></ul></div><p>
     For general information about Lmod and modules, see
     <a class="xref" href="#sec-compute-lmod" title="7.1. Lmod — Lua-based Environment Modules">Section 7.1, “Lmod — Lua-based Environment Modules”</a>.
-   </p></div><div class="sect2 " id="sec2-lib-petsc"><div class="titlepage"><div><div><h3 class="title" id="sec2-lib-petsc"><span class="number">7.2.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">PETSc HPC Library — Solver for Partial Differential Equations</span> <a title="Permalink" class="permalink" href="#sec2-lib-petsc">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-lib-petsc</li></ul></div></div></div></div><p>
+   </p></div><div class="sect2 " id="sec2-lib-petsc"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.2.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">PETSc HPC Library — Solver for Partial Differential Equations</span> <a title="Permalink" class="permalink" href="#sec2-lib-petsc">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-lib-petsc</li></ul></div></div></div></div><p>
     PETSc is a suite of data structures and routines for the scalable
     (parallel) solution of scientific applications modeled by partial
     differential equations.
@@ -1284,7 +1281,7 @@ systemctl enable slurmd.service</pre></div><p>
      </p></li></ul></div><p>
     For general information about Lmod and modules, see
     <a class="xref" href="#sec-compute-lmod" title="7.1. Lmod — Lua-based Environment Modules">Section 7.1, “Lmod — Lua-based Environment Modules”</a>.
-   </p></div><div class="sect2 " id="sec2-lib-scala"><div class="titlepage"><div><div><h3 class="title" id="sec2-lib-scala"><span class="number">7.2.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">ScaLAPACK HPC Library — LAPACK Routines</span> <a title="Permalink" class="permalink" href="#sec2-lib-scala">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-lib-scala</li></ul></div></div></div></div><p>
+   </p></div><div class="sect2 " id="sec2-lib-scala"><div class="titlepage"><div><div><h3 class="title"><span class="number">7.2.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">ScaLAPACK HPC Library — LAPACK Routines</span> <a title="Permalink" class="permalink" href="#sec2-lib-scala">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>compute.xml</li><li><span class="ds-label">ID: </span>sec2-lib-scala</li></ul></div></div></div></div><p>
     The library ScaLAPACK (short for "Scalable LAPACK") includes a subset of
     LAPACK routines designed for distributed memory MIMD-parallel computers.
    </p><p>
@@ -1313,9 +1310,9 @@ systemctl enable slurmd.service</pre></div><p>
     <a class="xref" href="#sec-compute-lmod" title="7.1. Lmod — Lua-based Environment Modules">Section 7.1, “Lmod — Lua-based Environment Modules”</a>.
    </p></div></div></div></div><div class="part" id="part-testing"><div class="titlepage"><div><div><h1 class="title"><span class="number">Part VIII </span><span class="name">Testing </span><a title="Permalink" class="permalink" href="#part-testing">#</a></h1></div></div></div><div class="toc"><dl><dt><span class="chapter"><a href="#cha-testing"><span class="number">8 </span><span class="name">Testing your cluster</span></a></span></dt><dd class="toc-abstract"><p>
     What is this chapter about?
-   </p></dd></dl></div><div xml:lang="en" class="chapter " id="cha-testing" lang="en"><div class="titlepage"><div><div><h2 class="title"><span class="number">8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Testing your cluster</span> <a title="Permalink" class="permalink" href="#cha-testing">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>testing.xml</li><li><span class="ds-label">ID: </span>cha-testing</li></ul></div></div><div><div class="abstract"><div class="abstract-title-wrap"><h6 class="abstract-title">Abstract<a title="Permalink" class="permalink" href="#id-1.10.2.2.1">#</a></h6></div><p>
+   </p></dd></dl></div><div xml:lang="en" class="chapter " id="cha-testing" lang="en"><div class="titlepage"><div><div><h2 class="title"><span class="number">8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Testing your cluster</span> <a title="Permalink" class="permalink" href="#cha-testing">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>testing.xml</li><li><span class="ds-label">ID: </span>cha-testing</li></ul></div></div><div><div class="abstract"><p>
     What is this chapter about?
-   </p></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="#sec-testing-slurm"><span class="number">8.1 </span><span class="name">slurm</span></a></span></dt><dt><span class="sect1"><a href="#sec-testing-mpi"><span class="number">8.2 </span><span class="name">How to quickly test MPI</span></a></span></dt><dt><span class="sect1"><a href="#sec-testing-install"><span class="number">8.3 </span><span class="name">Installation</span></a></span></dt><dt><span class="sect1"><a href="#sec-testing-buildmpi"><span class="number">8.4 </span><span class="name">Build MPI test</span></a></span></dt><dt><span class="sect1"><a href="#sec-testing-nfsserver"><span class="number">8.5 </span><span class="name">Setup the NFS server</span></a></span></dt></dl></div></div><div class="sect1 " id="sec-testing-slurm"><div class="titlepage"><div><div><h2 class="title" id="sec-testing-slurm"><span class="number">8.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">slurm</span> <a title="Permalink" class="permalink" href="#sec-testing-slurm">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>testing.xml</li><li><span class="ds-label">ID: </span>sec-testing-slurm</li></ul></div></div></div></div><div class="verbatim-wrap"><pre class="screen">#!/usr/bin/env bash
+   </p></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="#sec-testing-slurm"><span class="number">8.1 </span><span class="name">slurm</span></a></span></dt><dt><span class="sect1"><a href="#sec-testing-mpi"><span class="number">8.2 </span><span class="name">How to quickly test MPI</span></a></span></dt><dt><span class="sect1"><a href="#sec-testing-install"><span class="number">8.3 </span><span class="name">Installation</span></a></span></dt><dt><span class="sect1"><a href="#sec-testing-buildmpi"><span class="number">8.4 </span><span class="name">Build MPI test</span></a></span></dt><dt><span class="sect1"><a href="#sec-testing-nfsserver"><span class="number">8.5 </span><span class="name">Setup the NFS server</span></a></span></dt></dl></div></div><div class="sect1 " id="sec-testing-slurm"><div class="titlepage"><div><div><h2 class="title"><span class="number">8.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">slurm</span> <a title="Permalink" class="permalink" href="#sec-testing-slurm">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>testing.xml</li><li><span class="ds-label">ID: </span>sec-testing-slurm</li></ul></div></div></div></div><div class="verbatim-wrap"><pre class="screen">#!/usr/bin/env bash
 #Job name
 #SBATCH -J TEST_Slurm
 # Asking for one node
@@ -1339,10 +1336,10 @@ echo 'As the user: `whoami`'</pre></div><div class="verbatim-wrap"><pre class="s
 #S -N 8
 module load gnu
 module load openmpi
-mpirun -n 8 /export/mpi_hello_world</pre></div><div class="verbatim-wrap"><pre class="screen">sbatch -n 8 run_mpi_test.sh</pre></div></div><div class="sect1 " id="sec-testing-mpi"><div class="titlepage"><div><div><h2 class="title" id="sec-testing-mpi"><span class="number">8.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">How to quickly test MPI</span> <a title="Permalink" class="permalink" href="#sec-testing-mpi">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>testing.xml</li><li><span class="ds-label">ID: </span>sec-testing-mpi</li></ul></div></div></div></div><p>
+mpirun -n 8 /export/mpi_hello_world</pre></div><div class="verbatim-wrap"><pre class="screen">sbatch -n 8 run_mpi_test.sh</pre></div></div><div class="sect1 " id="sec-testing-mpi"><div class="titlepage"><div><div><h2 class="title"><span class="number">8.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">How to quickly test MPI</span> <a title="Permalink" class="permalink" href="#sec-testing-mpi">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>testing.xml</li><li><span class="ds-label">ID: </span>sec-testing-mpi</li></ul></div></div></div></div><p>
    This section describes how to quickly test MPI on your cluster.
   </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>Install all needed components</p></li><li class="step "><p>Create an NFS export directory for the <code class="literal">mpiuser</code>
-    to get access from all nodes to a share dir (<code class="literal">/export</code>)</p></li><li class="step "><p>create the <code class="literal">mpiuser</code></p></li><li class="step "><p>build a mpi test code</p></li><li class="step "><p>test the mpi code over all nodes</p></li></ol></div></div></div><div class="sect1 " id="sec-testing-install"><div class="titlepage"><div><div><h2 class="title" id="sec-testing-install"><span class="number">8.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Installation</span> <a title="Permalink" class="permalink" href="#sec-testing-install">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>testing.xml</li><li><span class="ds-label">ID: </span>sec-testing-install</li></ul></div></div></div></div><p>
+    to get access from all nodes to a share dir (<code class="literal">/export</code>)</p></li><li class="step "><p>create the <code class="literal">mpiuser</code></p></li><li class="step "><p>build a mpi test code</p></li><li class="step "><p>test the mpi code over all nodes</p></li></ol></div></div></div><div class="sect1 " id="sec-testing-install"><div class="titlepage"><div><div><h2 class="title"><span class="number">8.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Installation</span> <a title="Permalink" class="permalink" href="#sec-testing-install">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>testing.xml</li><li><span class="ds-label">ID: </span>sec-testing-install</li></ul></div></div></div></div><p>
    To be able to test MPI on your cluster you need to install different component
    to get the expected services.
   </p><p>
@@ -1352,7 +1349,7 @@ mpirun -n 8 /export/mpi_hello_world</pre></div><div class="verbatim-wrap"><pre c
 systemctl enable nfs
 systemctl start nfs</pre></div><p>
    You should install if this is not yet done needed libraries:
-  </p><div class="verbatim-wrap"><pre class="screen">zypper in -y patterns-hpc-compute_node patterns-hpc-libraries</pre></div></div><div class="sect1 " id="sec-testing-buildmpi"><div class="titlepage"><div><div><h2 class="title" id="sec-testing-buildmpi"><span class="number">8.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Build MPI test</span> <a title="Permalink" class="permalink" href="#sec-testing-buildmpi">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>testing.xml</li><li><span class="ds-label">ID: </span>sec-testing-buildmpi</li></ul></div></div></div></div><div class="verbatim-wrap"><pre class="screen">module load gnu &amp;&amp; module load openmpi &amp;&amp; mpirun --hostfile /etc/nodes -n 8 /export/mpi_hello_world</pre></div></div><div class="sect1 " id="sec-testing-nfsserver"><div class="titlepage"><div><div><h2 class="title" id="sec-testing-nfsserver"><span class="number">8.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Setup the NFS server</span> <a title="Permalink" class="permalink" href="#sec-testing-nfsserver">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>testing.xml</li><li><span class="ds-label">ID: </span>sec-testing-nfsserver</li></ul></div></div></div></div><div class="verbatim-wrap"><pre class="screen">mkdir /export
+  </p><div class="verbatim-wrap"><pre class="screen">zypper in -y patterns-hpc-compute_node patterns-hpc-libraries</pre></div></div><div class="sect1 " id="sec-testing-buildmpi"><div class="titlepage"><div><div><h2 class="title"><span class="number">8.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Build MPI test</span> <a title="Permalink" class="permalink" href="#sec-testing-buildmpi">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>testing.xml</li><li><span class="ds-label">ID: </span>sec-testing-buildmpi</li></ul></div></div></div></div><div class="verbatim-wrap"><pre class="screen">module load gnu &amp;&amp; module load openmpi &amp;&amp; mpirun --hostfile /etc/nodes -n 8 /export/mpi_hello_world</pre></div></div><div class="sect1 " id="sec-testing-nfsserver"><div class="titlepage"><div><div><h2 class="title"><span class="number">8.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Setup the NFS server</span> <a title="Permalink" class="permalink" href="#sec-testing-nfsserver">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>testing.xml</li><li><span class="ds-label">ID: </span>sec-testing-nfsserver</li></ul></div></div></div></div><div class="verbatim-wrap"><pre class="screen">mkdir /export
 echo '/export    *(rw,root_squash,sync,no_subtree_check)' &gt; /etc/exports
 systemctl enable nfs-server.service
 systemctl restart nfs-server.service
@@ -1366,7 +1363,7 @@ module load gnu
 module load openmpi
 mpicc -o mpi_hello_world mpi_hello_world.c</pre></div></div></div></div><div class="legal-section"><div class="appendix " id="id-1.11"><div class="titlepage"><div><div><h1 class="title"><span class="number">A </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">GNU Licenses</span> <a title="Permalink" class="permalink" href="#id-1.11">#</a></h1><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>common_legal.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="#id-1.11.4"><span class="number">A.1 </span><span class="name">GNU Free Documentation License</span></a></span></dt></dl></div></div><p>
   This appendix contains the GNU Free Documentation License version 1.2.
- </p><div class="sect1 " id="id-1.11.4"><div class="titlepage"><div><div><h2 class="title legal" id="id-1.11.4"><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">GNU Free Documentation License</span> <a title="Permalink" class="permalink" href="#id-1.11.4">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>common_license_gfdl1.2.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
+ </p><div class="sect1 " id="id-1.11.4"><div class="titlepage"><div><div><h2 class="title legal"><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">GNU Free Documentation License</span> <a title="Permalink" class="permalink" href="#id-1.11.4">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>common_license_gfdl1.2.xml</li><li><span class="ds-label">ID: </span><span class="ds-message">no ID found</span></li></ul></div></div></div></div><p>
   Copyright (C) 2000, 2001, 2002 Free Software Foundation, Inc. 51 Franklin St,
   Fifth Floor, Boston, MA 02110-1301 USA. Everyone is permitted to copy and
   distribute verbatim copies of this license document, but changing it is not
@@ -1735,6 +1732,6 @@ Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST.</pre></d
   releasing these examples in parallel under your choice of free software
   license, such as the GNU General Public License, to permit their use in free
   software.
- </p></div></div></div></div></div><div class="page-bottom"><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+ </p></div></div></div></div></div><div class="page-bottom"><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
         2020 
         SUSE</p></div></div></body></html>
