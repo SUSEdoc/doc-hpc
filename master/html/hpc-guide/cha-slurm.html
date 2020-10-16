@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Slurm | High-Performance Computing Guide | SUSE Linux Enterprise High Performance Computing 15 SP2</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><link rel="stylesheet" type="text/css" href="static/css/brand.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using openSUSE XSL Stylesheets 2.0.17 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE Linux Enterprise High Performance Computing" /><meta name="product-number" content="15 SP2" /><meta name="book-title" content="High-Performance Computing Guide" /><meta name="chapter-title" content="Chapter 5. Slurm" /><meta name="description" content="Slurm is a workload manager for managing compute jobs on high performance computing cluster. It can start multiple jobs on a single node or a single job on multiple nodes. Additional components can be used for advanced scheduling and accounting." /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-assignee" content="taroth@suse.com" /><meta name="tracker-bsc-component" content="Other" /><meta name="tracker-bsc-product" content="SUSE Linux Enterprise HPC 15 SP2" /><link rel="home" href="index.html" title="High-Performance Computing Guide" /><link rel="up" href="part-slurm.html" title="Part V. Scheduler" /><link rel="prev" href="part-slurm.html" title="Part V. Scheduler" /><link rel="next" href="part-monitoring.html" title="Part VI. Monitoring" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+}
+else {
+  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #FABEBE;"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="High-Performance Computing Guide"><span class="book-icon">High-Performance Computing Guide</span></a><span> › </span><a class="crumb" href="part-slurm.html">Scheduler</a><span> › </span><a class="crumb" href="cha-slurm.html">Slurm</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>High-Performance Computing Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="preface-example.html"><span class="number"> </span><span class="name">About This Guide</span></a></li><li class="inactive"><a href="part-intro.html"><span class="number">I </span><span class="name">Introduction</span></a><ol><li class="inactive"><a href="cha-introduction.html"><span class="number">1 </span><span class="name">SUSE Linux Enterprise High Performance Computing 15 SP2</span></a></li></ol></li><li class="inactive"><a href="part-inst.html"><span class="number">II </span><span class="name">Installation</span></a><ol><li class="inactive"><a href="installation.html"><span class="number">2 </span><span class="name">Installation and Upgrade</span></a></li></ol></li><li class="inactive"><a href="part-remote.html"><span class="number">III </span><span class="name">Remote Administration</span></a><ol><li class="inactive"><a href="cha-remote.html"><span class="number">3 </span><span class="name">Remote Administration</span></a></li></ol></li><li class="inactive"><a href="part-nodes.html"><span class="number">IV </span><span class="name">Nodes</span></a><ol><li class="inactive"><a href="cha-nodes.html"><span class="number">4 </span><span class="name">Nodes</span></a></li></ol></li><li class="inactive"><a href="part-slurm.html"><span class="number">V </span><span class="name">Scheduler</span></a><ol><li class="inactive"><a href="cha-slurm.html"><span class="number">5 </span><span class="name">Slurm</span></a></li></ol></li><li class="inactive"><a href="part-monitoring.html"><span class="number">VI </span><span class="name">Monitoring</span></a><ol><li class="inactive"><a href="cha-monitoring.html"><span class="number">6 </span><span class="name">Monitoring</span></a></li></ol></li><li class="inactive"><a href="part-compute.html"><span class="number">VII </span><span class="name">Compute</span></a><ol><li class="inactive"><a href="cha-compute.html"><span class="number">7 </span><span class="name">Compute</span></a></li></ol></li><li class="inactive"><a href="part-testing.html"><span class="number">VIII </span><span class="name">Testing</span></a><ol><li class="inactive"><a href="cha-testing.html"><span class="number">8 </span><span class="name">Testing your cluster</span></a></li></ol></li><li class="inactive"><a href="apa.html"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Part V. Scheduler" href="part-slurm.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Part VI. Monitoring" href="part-monitoring.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #FABEBE;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="High-Performance Computing Guide"><span class="book-icon">High-Performance Computing Guide</span></a><span> › </span><a class="crumb" href="part-slurm.html">Scheduler</a><span> › </span><a class="crumb" href="cha-slurm.html">Slurm</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Part V. Scheduler" href="part-slurm.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Part VI. Monitoring" href="part-monitoring.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div xml:lang="en" class="chapter " id="cha-slurm" lang="en"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname ">SUSE Linux Enterprise High Performance Computing</span> <span class="productnumber ">15 SP2</span></div><div><h2 class="title"><span class="number">5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Slurm</span> <a title="Permalink" class="permalink" href="cha-slurm.html#">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>slurm.xml</li><li><span class="ds-label">ID: </span>cha-slurm</li></ul></div></div><div><div class="abstract"><p>
+    <span class="emphasis"><em>Slurm</em></span> is a workload manager for managing compute jobs
+    on high performance computing cluster. It can start multiple jobs on a
+    single node or a single job on multiple nodes. Additional components can be
+    used for advanced scheduling and accounting.
+   </p><p>
+    The mandatory components of <span class="emphasis"><em>Slurm</em></span> is the control
+    daemon <span class="emphasis"><em>slurmctld</em></span> taking care of job scheduling and the
+    slurm daemon <span class="emphasis"><em>slurmd</em></span> responsible for launching compute
+    jobs. Subsequently nodes running the control daemon are called master nodes
+    and nodes running the <span class="emphasis"><em>slurmd</em></span> are called compute nodes.
+   </p><p>
+    Additional components are a secondary <span class="emphasis"><em>slurmctld</em></span> acting
+    as standby server for a failover and the slurm database daemon
+    <span class="emphasis"><em>slurmdbd</em></span> which stores the job history and user
+    hirachy.
+   </p></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="cha-slurm.html#sec-scheduler-slurm"><span class="number">5.1 </span><span class="name">Slurm — Utility for HPC Workload Management</span></a></span></dt><dt><span class="sect1"><a href="cha-slurm.html#sec-slurm-adm-commands"><span class="number">5.2 </span><span class="name">Slurm administration commands</span></a></span></dt><dt><span class="sect1"><a href="cha-slurm.html#sec-slurm-additional-res"><span class="number">5.3 </span><span class="name">Additional Ressources</span></a></span></dt></dl></div></div><div class="sect1 " id="sec-scheduler-slurm"><div class="titlepage"><div><div><h2 class="title"><span class="number">5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Slurm — Utility for HPC Workload Management</span> <a title="Permalink" class="permalink" href="cha-slurm.html#sec-scheduler-slurm">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>slurm.xml</li><li><span class="ds-label">ID: </span>sec-scheduler-slurm</li></ul></div></div></div></div><p>
+   For a minimal setup of <span class="emphasis"><em>Slurm</em></span> with a controll node and
+   multiple cmpute nodes, follow these instructions:
+  </p><div class="sect2 " id="sec-slurm-minimal"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Minimal installation</span> <a title="Permalink" class="permalink" href="cha-slurm.html#sec-slurm-minimal">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>slurm.xml</li><li><span class="ds-label">ID: </span>sec-slurm-minimal</li></ul></div></div></div></div><div id="id-1.7.2.3.3.2" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important: Make Sure of Consistent UIDs and GIDs for Slurm's Accounts</h6><p>
+     For security reasons, <span class="emphasis"><em>Slurm</em></span> does not run as the user
+     <code class="systemitem">root</code> but under its own user. It
+     is important that the user <code class="systemitem">slurm</code>
+     has the same UID/GID across all nodes of the cluster.
+    </p><p>
+     If this user/group does not exist, the package <span class="package ">slurm</span>
+     creates this user and group when it is installed. However, this does not
+     guarantee that the generated UIDs/GIDs will be identical on all systems.
+    </p><p>
+     Therefore, we strongly advise you to create the user/group
+     <code class="systemitem">slurm</code> before installing
+     <span class="package ">slurm</span>. If you are using a network directory service
+     such as LDAP for user and group management, you can use it to provide the
+     <code class="systemitem">slurm</code> user/group as well.
+    </p></div><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+      It is strongly recommended that all compute nodes share a common home
+      directory.
+     </p><p>
+      Configure, enable and start <span class="emphasis"><em>munge</em></span> on the control and
+      compute nodes as described in <a class="xref" href="cha-remote.html#sec-remote-munge" title="3.6. munge Authentication">Section 3.6, “<span class="emphasis"><em>munge</em></span> Authentication”</a>.
+     </p></li><li class="step "><p>
+      Install <span class="package ">slurm-node</span> on the compute nodes with
+      <code class="command">zypper in slurm-node</code> and <span class="package ">slurm</span> on
+      the controll node with <code class="command">zypper in slurm</code>. The package
+      <span class="package ">munge</span>will be installed as dependence automatically.
+     </p></li></ol></div></div><div class="procedure " id="id-1.7.2.3.3.4"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 5.1: </span><span class="name">Creating <code class="filename">slurm.conf</code> </span><a title="Permalink" class="permalink" href="cha-slurm.html#id-1.7.2.3.3.4">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+      Edit the main configuration file
+      <code class="filename">/etc/slurm/slurm.conf</code>:
+     </p><ol type="a" class="substeps "><li class="step "><p>
+        Configure the parameter
+        <code class="literal">ControlMachine=<em class="replaceable ">CONTROL_MACHINE</em></code>
+        with the host name of the control node.
+       </p><p>
+        To find out the correct host name, run <code class="command">hostname -s</code>
+        on the control node.
+       </p></li><li class="step "><p>
+        In order to define the compute nodes add:
+       </p><div class="verbatim-wrap"><pre class="screen">NodeName=<em class="replaceable ">NODE_LIST</em>  State=UNKNOWN</pre></div><p>
+        where the actual parameters like <code class="literal">CPUs</code> for compute
+        node can be obtained by running the following command on the compute
+        node:
+       </p><div class="verbatim-wrap"><pre class="screen">slurmd -C</pre></div><p>
+        Additionally the line
+       </p><div class="verbatim-wrap"><pre class="screen">PartitionName=normal Nodes=<em class="replaceable ">NODE_LIST</em> \
+  Default=YES MaxTime=24:00:00 State=UP</pre></div><p>
+        has to be added, where <em class="replaceable ">NODE_LIST</em> is the list
+        of compute nodes (that is, the output of <code class="command">hostname -s</code>
+        run on each compute node (either comma-separated or as ranges:
+        <code class="literal">node[1-100]</code>).
+       </p></li><li class="step "><p>
+        Now copy the modified configuration file
+        <code class="filename">/etc/slurm/slurm.conf</code> to the control node and all
+        compute nodes:
+       </p><div class="verbatim-wrap"><pre class="screen">scp /etc/slurm/slurm.conf <em class="replaceable ">COMPUTE_NODE</em>:/etc/slurm/</pre></div></li></ol></li><li class="step "><p>
+      On the control node, start
+      <code class="systemitem">slurmctld</code>:
+     </p><div class="verbatim-wrap"><pre class="screen">systemctl start slurmctld.service</pre></div><p>
+      Also enable it so that it starts on every boot:
+     </p><div class="verbatim-wrap"><pre class="screen">systemctl enable slurmctld.service</pre></div></li><li class="step "><p>
+      On the compute nodes, start and enable
+      <code class="systemitem">slurmd</code>:
+     </p><div class="verbatim-wrap"><pre class="screen">systemctl start slurmd.service
+systemctl enable slurmd.service</pre></div><p>
+      The last line causes <code class="systemitem">slurmd</code> to be
+      started on every boot automatically.
+     </p></li></ol></div></div><div class="procedure " id="id-1.7.2.3.3.5"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 5.2: </span><span class="name">Testing the Installation </span><a title="Permalink" class="permalink" href="cha-slurm.html#id-1.7.2.3.3.5">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+      Check the status and availability of the compute nodes with the
+      <code class="command">sinfo</code> command. It should give you the following output
+      in this example:
+     </p><div class="verbatim-wrap"><pre class="screen">PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST 
+normal*      up 1-00:00:00      2   idle sle15sp2-node[1-2]</pre></div><p>
+      If the node state is not <code class="literal">idle</code> see
+      <a class="xref" href="cha-slurm.html#sec-slurm-faq" title="5.3.1. Frequently asked questions">Section 5.3.1, “Frequently asked questions”</a>.
+     </p></li><li class="step "><p>
+      Now the slurm installation can be tested by running:
+     </p><div class="verbatim-wrap"><pre class="screen">srun sleep 30</pre></div><p>
+      This will try to immediatelly run the <code class="command">sleep</code> on a free
+      compute node. In another shell you can now
+      <a href="#ftn.id-1.7.2.3.3.5.3.3.2" class="footnote"><sup class="footnote" id="id-1.7.2.3.3.5.3.3.2">[1]</sup></a>
+      run the command
+     </p><div class="verbatim-wrap"><pre class="screen">squeue</pre></div><p>
+      It which will show you the running compute job in an output like
+     </p><div class="verbatim-wrap"><pre class="screen">    JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON) 
+        1    normal    sleep     root  R       0:05      1 node02</pre></div></li><li class="step "><p>
+      Now you can create the simple shell script
+     </p><div class="verbatim-wrap"><pre class="screen">#!/bin/bash
+echo "started at $(date)"
+sleep 30
+echo "finished at $(date)"</pre></div><p>
+      save it as <code class="filename">sleeper.sh</code> and run the shell script in
+      the queue with
+     </p><div class="verbatim-wrap"><pre class="screen">sbatch sleeper.sh</pre></div><p>
+      The shell script is executed as soon as enough resources are available.
+      After the execution the output of the shell script is stored in the
+      output file <code class="filename">slurm-${JOBNR}.out</code>.
+     </p></li></ol></div></div></div><div class="sect2 " id="sec-slurm-slurmdbd"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Install slurm database</span> <a title="Permalink" class="permalink" href="cha-slurm.html#sec-slurm-slurmdbd">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>slurm.xml</li><li><span class="ds-label">ID: </span>sec-slurm-slurmdbd</li></ul></div></div></div></div><p>
+    With the minimal installation slurm will only store pending and running
+    jobs. In order to store to finished and failed job data, the storage plugin
+    has to be installed and enabled. Additionally so called completely fair
+    scheduling can be enable, which replaces the FIFO
+    <a href="#ftn.id-1.7.2.3.4.2.1" class="footnote"><sup class="footnote" id="id-1.7.2.3.4.2.1">[2]</sup></a>
+    scheduling with algorithms which calculate the job priority in a queue in
+    dependence of the job which a user has run in the history.
+   </p><p>
+    The slurm database has two components which is the daemon
+    <code class="literal">slurmdbd</code> itself and a mysql database, where
+    <code class="literal">mariab</code> is recommended. The database can be on the same
+    node which runs <code class="literal">slurmdbd</code> or another node. For this
+    simple setup all these services run on the same node.
+   </p><div class="procedure " id="id-1.7.2.3.4.4"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 5.3: </span><span class="name">Install <span class="package ">slurmdbd</span> </span><a title="Permalink" class="permalink" href="cha-slurm.html#id-1.7.2.3.4.4">#</a></h6></div><div class="procedure-contents"><div id="id-1.7.2.3.4.4.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Mariadb</h6><p>
+      If you want to use an external SQL database (or such a database is
+      already installed on the control node), you can skip the Mariadb-related
+      steps.
+     </p></div><ol class="procedure" type="1"><li class="step "><p>
+      Install the Mariabd SQL database with <code class="command">zypper in
+      mariadb</code>.
+     </p></li><li class="step "><p>
+      Start and enable Mariadb with the following commands:
+     </p><div class="verbatim-wrap"><pre class="screen">systemctl start mariadb
+systemctl enable mariadb</pre></div></li><li class="step "><p>
+      Now the database should be secure with the command
+      <code class="command">mysql_secure_installation</code>.
+     </p></li><li class="step " id="sec-sum-sqldb"><p>
+      In this step the database and the user for the slurm database has to be
+      created. This is done by connecting to the SQL database with e.g. the
+      command <code class="command">mysql -u root -p</code>. After a successful
+      connection the database and the creation of secure password
+      <a href="#ftn.id-1.7.2.3.4.4.6.1.2" class="footnote"><sup class="footnote" id="id-1.7.2.3.4.4.6.1.2">[3]</sup></a>
+      , the slurm user and the database is created with the commands
+     </p><div class="verbatim-wrap"><pre class="screen">create user 'slurm'@'localhost' identified by 'password';
+grant all on slurm_acct_db.* TO 'slurm'@'localhost';
+create database slurm_acct_db;</pre></div></li><li class="step "><p>
+      The package <span class="package ">slurmdbd</span> can be installed with the command
+     </p><div class="verbatim-wrap"><pre class="screen">zypper in slurm-slurmdbd</pre></div><p>
+      Now the configuration file <code class="filename">/etc/slurm/slurmdbd.conf</code>
+      for <code class="literal">slurmdbd</code> has to be modified so that the daemon can
+      access the database. Change the following lines
+     </p><div class="verbatim-wrap"><pre class="screen">StoragePass=password</pre></div><p>
+      to the password which you use in <a class="xref" href="cha-slurm.html#sec-sum-sqldb" title="Step 4">Step 4</a>. When
+      another location or user for the SQL database was chosen, you also need
+      to modify the following entries:
+     </p><div class="verbatim-wrap"><pre class="screen">StorageUser=slurm
+DbdAddr=localhost
+DbdHost=localhost</pre></div></li><li class="step "><p>
+      The daemon <code class="literal">slurmdbd</code> should now be started and enabled
+      with the commands
+     </p><div class="verbatim-wrap"><pre class="screen">systemctl start slurmdbd
+systemctl enable slurmdbd</pre></div><p>
+      The first start of <code class="literal">slurmdbd</code> will take some time.
+     </p></li><li class="step "><p>
+      To enable accounting, you have to have change/add the following lines for
+      the connection between the <code class="literal">slurmctld</code> and the
+      <code class="literal">slurmdbd</code> daemon:
+     </p><div class="verbatim-wrap"><pre class="screen">JobAcctGatherType=jobacct_gather/linux
+JobAcctGatherFrequency=30
+AccountingStorageType=accounting_storage/slurmdbd
+AccountingStorageHost=localhost</pre></div><p>
+      In the example above, we assume that <code class="literal">slurmdbd</code> is
+      running on the same host as <code class="literal">slurmctld</code>.
+     </p></li><li class="step "><p>
+      Restart the <code class="literal">slurmctld</code> with:
+     </p><div class="verbatim-wrap"><pre class="screen">systemctl restart slurmctld</pre></div></li><li class="step "><p><span class="step-optional">(Optional)</span> 
+      Per default <code class="literal">slurm</code> does not take any group membership
+      into account and it is not possible to map the system groups to
+      <code class="literal">slurm</code>. The creation and group membership have to
+      managed via the commandline tool <code class="command">sacctmgr</code>. Its also
+      possible to have a group hierarchy and users can be part of several
+      groups.
+     </p><p>
+      To create an umbrella group <code class="literal">bavaria</code> for two subgroups
+      called <code class="literal">nuremberg</code> and <code class="literal">munich</code> use
+      following commands
+     </p><div class="verbatim-wrap"><pre class="screen">sacctmgr add account bavaria \
+  Description="umbrella group for subgroups" Organization=bavaria
+sacctmgr add account nuremberg,munich parent=bavaria 
+Description="subgroup" Organization=bavaria</pre></div><p>
+      With the similar syntax you can add now users to the accounts:
+     </p><div class="verbatim-wrap"><pre class="screen">sacctmgr add user tux Account=nuremberg</pre></div></li></ol></div></div></div></div><div class="sect1 " id="sec-slurm-adm-commands"><div class="titlepage"><div><div><h2 class="title"><span class="number">5.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Slurm administration commands</span> <a title="Permalink" class="permalink" href="cha-slurm.html#sec-slurm-adm-commands">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>slurm.xml</li><li><span class="ds-label">ID: </span>sec-slurm-adm-commands</li></ul></div></div></div></div><div class="sect2 " id="sec-slurm-sconfigure"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">scontrol</span> <a title="Permalink" class="permalink" href="cha-slurm.html#sec-slurm-sconfigure">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>slurm.xml</li><li><span class="ds-label">ID: </span>sec-slurm-sconfigure</li></ul></div></div></div></div><p>
+    The command <code class="command">scontrol</code> is used to show and update the
+    entities of <code class="literal">slurm</code> like the state of the compute nodes or
+    compute jobs. It can also be used to reboot or propagate configuration
+    changes to the compute nodes.
+   </p><p>
+    Useful options to this command are <code class="literal">--details</code> which will
+    print a more verbose output and <code class="literal">--oneliner</code> forcing the
+    output to a single what is useful for scripts.
+   </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.7.2.4.2.4.1"><span class="term "><code class="command">scontrol show <em class="replaceable ">ENTITY</em></code></span></dt><dd><p>
+       will display the state of the specified
+       <em class="replaceable ">ENTITY</em>.
+      </p></dd><dt id="id-1.7.2.4.2.4.2"><span class="term "><code class="command">scontrol update <em class="replaceable ">SPECIFICATION</em></code></span></dt><dd><p>
+       can be used to update the <em class="replaceable ">SPECIFICATION</em> like
+       the compute node or compute node state.
+      </p><p>
+       Useful <em class="replaceable ">SPECIFICATION</em> states for compute nodes
+       which can be set are:
+      </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.7.2.4.2.4.2.2.3.1"><span class="term ">nodename=<em class="replaceable ">NODE</em> state=drain reason=<em class="replaceable ">REASON</em></span></dt><dd><p>
+          will drain the compute node so that no <span class="emphasis"><em>new</em></span> jobs
+          can be scheduled on the compute node, but will node end compute jobs
+          running on the compute node. <em class="replaceable ">REASON</em> could
+          be any string.
+         </p></dd><dt id="id-1.7.2.4.2.4.2.2.3.2"><span class="term ">nodename=<em class="replaceable ">NODE</em> state=down reason=<em class="replaceable ">REASON</em></span></dt><dd><p>
+          is removing all jobs from the compute node
+          <em class="replaceable ">NODE</em>, any jobs on the node will be
+          aborted.
+         </p></dd><dt id="id-1.7.2.4.2.4.2.2.3.3"><span class="term ">nodename=<em class="replaceable ">NODE</em> state=drain reason=<em class="replaceable ">REASON</em></span></dt><dd><p>
+          will drain the compute node so that no <span class="emphasis"><em>new</em></span> jobs
+          can be scheduled on the compute node, but will node end compute jobs
+          running on the compute node. <em class="replaceable ">REASON</em> could
+          be any string.
+         </p><p>
+          The compute node will stay in <code class="literal">drained</code> state and
+          must be put back to the idle state with the next listed command.
+         </p></dd><dt id="id-1.7.2.4.2.4.2.2.3.4"><span class="term ">nodename=<em class="replaceable ">NODE</em> state=resume</span></dt><dd><p>
+          marks the compute node <em class="replaceable ">NODE</em> to be ready
+          for a return to the <code class="literal">idle</code> state.
+         </p></dd><dt id="id-1.7.2.4.2.4.2.2.3.5"><span class="term ">jobid=<em class="replaceable ">JOBID</em><em class="replaceable ">REQUIREMENT</em>=<em class="replaceable ">VALUE</em></span></dt><dd><p>
+          will update the given requirement like <code class="literal">NumNodes</code>
+          with a new value. This command can also be executed as normal user.
+         </p></dd></dl></div></dd><dt id="id-1.7.2.4.2.4.3"><span class="term ">reconfigure</span></dt><dd><p>
+       will trigger a reload of the configuration
+       <code class="filename">slurm.conf</code> on all compute nodes.
+      </p></dd><dt id="id-1.7.2.4.2.4.4"><span class="term ">reboot <em class="replaceable ">NODELIST</em></span></dt><dd><p>
+       can be used to reboot a compute node, as soon as the jobs on it have
+       finished. The option <code class="literal">RebootProgram="/sbin/reboot"</code>
+       have to be set in <code class="filename">slurm.conf</code> to use this command.
+      </p><p>
+       When the reboot of a compute node takes more than 60s, you set set an
+       higher value for the parameter like <code class="literal">ResumeTimeout=300</code>
+       in <code class="filename">slurm.conf</code>.
+      </p></dd><dt id="id-1.7.2.4.2.4.5"><span class="term "><code class="command">sacctmgr</code></span></dt><dd><p>
+       is used for job accounting within slurm. The service
+       <code class="literal">slurmdbd</code> has to be setup in order to use this
+       command. Follow the steps in <a class="xref" href="cha-slurm.html#sec-sum-sqldb" title="Step 4">Step 4</a> to setup
+       <code class="literal">slurmdbd</code>.
+      </p></dd><dt id="id-1.7.2.4.2.4.6"><span class="term "><code class="command">sinfo</code></span></dt><dd><p>
+       retrieves information about the state of the compute nodes and can be
+       used for a fast overview of the cluster health. Following commandline
+       switches are available
+      </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.7.2.4.2.4.6.2.2.1"><span class="term "><code class="command">--dead</code></span></dt><dd><p>
+          displays information about not responding nodes.
+         </p></dd><dt id="id-1.7.2.4.2.4.6.2.2.2"><span class="term "><code class="command">--long</code></span></dt><dd><p>
+          use this switch for more detailed information.
+         </p></dd><dt id="id-1.7.2.4.2.4.6.2.2.3"><span class="term "><code class="command">--reservation</code></span></dt><dd><p>
+          print information about advanced reservations.
+         </p></dd><dt id="id-1.7.2.4.2.4.6.2.2.4"><span class="term "><code class="command">-R</code></span></dt><dd><p>
+          displays the reason why a node is in the <code class="literal">down</code>,
+          <code class="literal">drained</code> or <code class="literal">failing</code> state.
+         </p></dd><dt id="id-1.7.2.4.2.4.6.2.2.5"><span class="term "><code class="command">--state=<em class="replaceable ">STATE</em></code></span></dt><dd><p>
+          limit the output only to computes with the given state
+          <em class="replaceable ">STATE</em>.
+         </p></dd></dl></div></dd><dt id="id-1.7.2.4.2.4.7"><span class="term "><code class="command">sacct</code></span></dt><dd><p>
+       displays, when accounting is enabled, the accounting data. Following
+       options are available
+      </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.7.2.4.2.4.7.2.2.1"><span class="term "><code class="command">--allusers</code></span></dt><dd><p>
+          show accounting data for all users.
+         </p></dd><dt id="id-1.7.2.4.2.4.7.2.2.2"><span class="term "><code class="command">--accounts</code>=<em class="replaceable ">NAME</em></span></dt><dd><p>
+          only specified user(s) are shown
+         </p></dd><dt id="id-1.7.2.4.2.4.7.2.2.3"><span class="term "><code class="command">--starttime</code>=<em class="replaceable ">MM/DD[/YY]-HH:MM[:SS]</em></span></dt><dd><p>
+          only jobs after starttime will be showed. It also possible to have
+          just <em class="replaceable ">MM/DD</em> or
+          <em class="replaceable ">HH:MM</em>. If not time is given
+          <code class="literal">00:00</code>, what means that only job from this day are
+          showed.
+         </p></dd><dt id="id-1.7.2.4.2.4.7.2.2.4"><span class="term "><code class="command">--endtime</code>=<em class="replaceable ">MM/DD[/YY]-HH:MM[:SS]</em></span></dt><dd><p>
+          same option as for <code class="command">--starttime</code>. If not set, the
+          time when the command was issued is used.
+         </p></dd><dt id="id-1.7.2.4.2.4.7.2.2.5"><span class="term "><code class="command">--name</code>=<em class="replaceable ">NAME</em></span></dt><dd><p>
+          limit output to jobs with the given <em class="replaceable ">NAME</em>
+         </p></dd><dt id="id-1.7.2.4.2.4.7.2.2.6"><span class="term "><code class="command">--partition</code>=<em class="replaceable ">PARTITION</em></span></dt><dd><p>
+          show only job which run <em class="replaceable ">PARTITION</em>.
+         </p></dd></dl></div></dd><dt id="id-1.7.2.4.2.4.8"><span class="term "><code class="command">sbatch</code>, <code class="command">salloc</code> and <code class="command">srun</code></span></dt><dd><p>
+       this commands are used schedule a compute job, which is a batch script
+       for <code class="command">sbatch</code>, a interactive session for
+       <code class="command">salloc</code> and a binary for <code class="command">srun</code>.
+       Please note that only the command <code class="command">sbatch</code> will place
+       the submitted job script to the queue if it can't scheduled immediately.
+      </p><p>
+       Frequently used options for this commands are:
+      </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.7.2.4.2.4.8.2.3.1"><span class="term "><code class="command">-n <em class="replaceable ">COUNT_THREADS</em></code></span></dt><dd><p>
+          specifies the number of threads needed by the job. The threads can be
+          allocated on different nodes.
+         </p></dd><dt id="id-1.7.2.4.2.4.8.2.3.2"><span class="term "><code class="command">-N <em class="replaceable ">MINCOUNT_NODES[-MAXCOUNT_NODES]</em></code></span></dt><dd><p>
+          sets the number of compute nodes which are required for a job. The
+          <em class="replaceable ">MAXCOUNT_NODES</em> number can be omitted.
+         </p></dd><dt id="id-1.7.2.4.2.4.8.2.3.3"><span class="term "><code class="command">--time <em class="replaceable ">TIME</em></code></span></dt><dd><p>
+          specifies the maximal clocktime (runtime) after which a job is
+          killed. The format of <em class="replaceable ">TIME</em> is either
+          seconds or <em class="replaceable ">[HH:]MM:SS</em>. No to be confused
+          with the walltime which is the <code class="literal">clocktime ×
+          threads</code>.
+         </p></dd><dt id="id-1.7.2.4.2.4.8.2.3.4"><span class="term "><code class="command">--signal <em class="replaceable ">[B:]NUMBER[@TIME]</em></code></span></dt><dd><p>
+          selects the signal with the <em class="replaceable ">NUMBER</em> to be
+          sent 60 seconds before job end if not <em class="replaceable ">TIME</em>
+          is specified. The signal will be sent to every process on every node.
+          When only a signal should be sent to the controlling batch job, you
+          have to specify the <code class="command">B:</code> flag.
+         </p></dd><dt id="id-1.7.2.4.2.4.8.2.3.5"><span class="term "><code class="command">--job-name <em class="replaceable ">NAME</em></code></span></dt><dd><p>
+          set the name of the job to <em class="replaceable ">NAME</em> in the
+          queue.
+         </p></dd><dt id="id-1.7.2.4.2.4.8.2.3.6"><span class="term "><code class="command">--array=<em class="replaceable ">RANGEINDEX</em></code></span></dt><dd><p>
+          execute the given script via <code class="command">sbatch</code> for indexes
+          given by <em class="replaceable ">RANGEINDEX</em> with the same
+          parameters.
+         </p></dd><dt id="id-1.7.2.4.2.4.8.2.3.7"><span class="term "><code class="command">--dependency=<em class="replaceable ">STATE:JOBID</em></code></span></dt><dd><p>
+          defer job until specified <em class="replaceable ">STATE</em> of job
+          <em class="replaceable ">JOBID</em> has been reached.
+         </p></dd><dt id="id-1.7.2.4.2.4.8.2.3.8"><span class="term "><code class="command">--gres=<em class="replaceable ">GRES</em></code></span></dt><dd><p>
+          run job only on node with the give <em class="replaceable ">GRES</em>
+          available. A generic resource is a GPU for example.
+         </p></dd><dt id="id-1.7.2.4.2.4.8.2.3.9"><span class="term "><code class="command">--licenses=<em class="replaceable ">NAME[:COUNT]</em></code></span></dt><dd><p>
+          the job needs the number <em class="replaceable ">COUNT</em> of licenses
+          with the name <em class="replaceable ">NAME</em>. In opposite to a gres,
+          a license is not tight to a compute, but is a cluster wide variable.
+         </p></dd><dt id="id-1.7.2.4.2.4.8.2.3.10"><span class="term "><code class="command">--mem=<em class="replaceable ">MEMORY</em></code></span></dt><dd><p>
+          sets the real memory <em class="replaceable ">MEMORY</em> needed by a
+          job per node, memory control has to be enabled in order to use this
+          option. The default unit for <em class="replaceable ">MEMORY</em>, but
+          also <code class="literal">K</code> for kilobyte, <code class="literal">M</code> for
+          megabyte, <code class="literal">G</code> for gigabyte and <code class="literal">T</code>
+          for terabyte can be used.
+         </p></dd><dt id="id-1.7.2.4.2.4.8.2.3.11"><span class="term "><code class="command">--mem-per-cpu=<em class="replaceable ">MEMORY</em></code></span></dt><dd><p>
+          same options as for <code class="command">--mem</code>, but defines memory per
+          used CPU.
+         </p></dd></dl></div></dd></dl></div></div></div><div class="sect1 " id="sec-slurm-additional-res"><div class="titlepage"><div><div><h2 class="title"><span class="number">5.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Additional Ressources</span> <a title="Permalink" class="permalink" href="cha-slurm.html#sec-slurm-additional-res">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>slurm.xml</li><li><span class="ds-label">ID: </span>sec-slurm-additional-res</li></ul></div></div></div></div><div class="sect2 " id="sec-slurm-faq"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Frequently asked questions</span> <a title="Permalink" class="permalink" href="cha-slurm.html#sec-slurm-faq">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>slurm.xml</li><li><span class="ds-label">ID: </span>sec-slurm-faq</li></ul></div></div></div></div><p>
+    Faq
+   </p></div><div class="sect2 " id="sec-slurm-ext-doc"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">External documentaion</span> <a title="Permalink" class="permalink" href="cha-slurm.html#sec-slurm-ext-doc">#</a></h3><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>slurm.xml</li><li><span class="ds-label">ID: </span>sec-slurm-ext-doc</li></ul></div></div></div></div><p>
+    For further documentation, see the
+    <a class="link" href="https://slurm.schedmd.com/quickstart_admin.html" target="_blank">Quick
+    Start Administrator Guide</a> and
+    <a class="link" href="https://slurm.schedmd.com/quickstart.html" target="_blank"> Quick Start
+    User Guide</a>. There is further in-depth documentation on the
+    <a class="link" href="https://slurm.schedmd.com/documentation.html" target="_blank">Slurm
+    documentation page</a>.
+   </p></div></div><div class="footnotes"><br /><hr class="footnote-hr" /><div id="ftn.id-1.7.2.3.3.5.3.3.2" class="footnote "><p><a href="#id-1.7.2.3.3.5.3.3.2" class="para"><sup class="para">[1] </sup></a>
+        at least within 30 seconds
+       </p></div><div id="ftn.id-1.7.2.3.4.2.1" class="footnote "><p><a href="#id-1.7.2.3.4.2.1" class="para"><sup class="para">[2] </sup></a>
+      <span class="emphasis"><em>f</em></span>irst <span class="emphasis"><em>i</em></span>n
+      <span class="emphasis"><em>f</em></span>irst <span class="emphasis"><em>o</em></span>ut.
+     </p></div><div id="ftn.id-1.7.2.3.4.4.6.1.2" class="footnote "><p><a href="#id-1.7.2.3.4.4.6.1.2" class="para"><sup class="para">[3] </sup></a>
+        You can use the command <code class="command">openssl rand -base64 32</code> to
+        create a secure random password
+       </p></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="part-monitoring.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Part VI </span>Monitoring</span></a><a class="nav-link" href="part-slurm.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Part V </span>Scheduler</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p></div></div></body></html>
