@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>SUSE Linux Enterprise High Performance Computing 15 SP3 | Administration Guide | SUSE Linux Enterprise High Performance Computing 15 SP3</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.2.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.81.0 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="product-name" content="SUSE Linux Enterprise High Performance Computing" /><meta name="product-number" content="15 SP3" /><meta name="book-title" content="Administration Guide" /><meta name="chapter-title" content="Chapter 1. SUSE Linux Enterprise High Performance Computing 15 SP3" /><meta name="description" content="SUSE Linux Enterprise High Performance Computing is a highly scalable, high performance open-source operating system designed to utilize the power of parallel computing for modeling, simulation and advanced analytics workloads." /><meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi" /><meta name="tracker-type" content="bsc" /><meta name="tracker-bsc-assignee" content="taroth@suse.com" /><meta name="tracker-bsc-component" content="Other" /><meta name="tracker-bsc-product" content="SUSE Linux Enterprise HPC 15 SP3" /><link rel="home" href="index.html" title="Administration Guide" /><link rel="up" href="part-intro.html" title="Part I. Introduction" /><link rel="prev" href="part-intro.html" title="Part I. Introduction" /><link rel="next" href="part-inst.html" title="Part II. Installation" />
+<script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
+};
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="draft offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg" style="background-color: #E11;"><div id="_header"><div id="_logo"><img src="static/images/logo.svg" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Administration Guide"><span class="book-icon">Administration Guide</span></a><span> › </span><a class="crumb" href="part-intro.html">Introduction</a><span> › </span><a class="crumb" href="cha-introduction.html">SUSE Linux Enterprise High Performance Computing 15 SP3</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Administration Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="preface-administration.html"><span class="number"> </span><span class="name">Preface</span></a></li><li class="inactive"><a href="part-intro.html"><span class="number">I </span><span class="name">Introduction</span></a><ol><li class="inactive"><a href="cha-introduction.html"><span class="number">1 </span><span class="name">SUSE Linux Enterprise High Performance Computing 15 SP3</span></a></li></ol></li><li class="inactive"><a href="part-inst.html"><span class="number">II </span><span class="name">Installation</span></a><ol><li class="inactive"><a href="installation.html"><span class="number">2 </span><span class="name">Installation and upgrade</span></a></li></ol></li><li class="inactive"><a href="part-remote.html"><span class="number">III </span><span class="name">Remote administration</span></a><ol><li class="inactive"><a href="cha-remote.html"><span class="number">3 </span><span class="name">Remote administration</span></a></li></ol></li><li class="inactive"><a href="part-hardware.html"><span class="number">IV </span><span class="name">Hardware</span></a><ol><li class="inactive"><a href="cha-nodes.html"><span class="number">4 </span><span class="name">Hardware</span></a></li></ol></li><li class="inactive"><a href="part-slurm.html"><span class="number">V </span><span class="name">Workload manager</span></a><ol><li class="inactive"><a href="cha-slurm.html"><span class="number">5 </span><span class="name">Slurm</span></a></li></ol></li><li class="inactive"><a href="part-monitoring.html"><span class="number">VI </span><span class="name">Monitoring and logging</span></a><ol><li class="inactive"><a href="cha-monitoring.html"><span class="number">6 </span><span class="name">Monitoring and logging</span></a></li></ol></li><li class="inactive"><a href="part-compute.html"><span class="number">VII </span><span class="name">HPC libraries</span></a><ol><li class="inactive"><a href="cha-compute.html"><span class="number">7 </span><span class="name">HPC user libraries</span></a></li></ol></li><li class="inactive"><a href="apa.html"><span class="number">A </span><span class="name">GNU licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Part I. Introduction" href="part-intro.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Part II. Installation" href="part-inst.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" style="background-color: #E11;" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Administration Guide"><span class="book-icon">Administration Guide</span></a><span> › </span><a class="crumb" href="part-intro.html">Introduction</a><span> › </span><a class="crumb" href="cha-introduction.html">SUSE Linux Enterprise High Performance Computing 15 SP3</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Part I. Introduction" href="part-intro.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Part II. Installation" href="part-inst.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class="draft "><div class="documentation"><div xml:lang="en" class="chapter " id="cha-introduction" lang="en"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname ">SUSE Linux Enterprise High Performance Computing</span> <span class="productnumber ">15 SP3</span></div><div><h2 class="title"><span class="number">1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">SUSE Linux Enterprise High Performance Computing 15 SP3</span> <a title="Permalink" class="permalink" href="cha-introduction.html#">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>introduction.xml</li><li><span class="ds-label">ID: </span>cha-introduction</li></ul></div></div><div><div class="abstract"><p>
+    SUSE Linux Enterprise High Performance Computing is a highly scalable, high performance open-source operating
+    system designed to utilize the power of parallel computing for modeling,
+    simulation and advanced analytics workloads.
+   </p></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="cha-introduction.html#sec-intro-provides"><span class="number">1.1 </span><span class="name">Components provided</span></a></span></dt><dt><span class="sect1"><a href="cha-introduction.html#sec-introduction-hw"><span class="number">1.2 </span><span class="name">Hardware platform support</span></a></span></dt><dt><span class="sect1"><a href="cha-introduction.html#sec-introduction-life"><span class="number">1.3 </span><span class="name">Support and life cycle</span></a></span></dt><dt><span class="sect1"><a href="cha-introduction.html#sec-introduction-documentation"><span class="number">1.4 </span><span class="name">Documentation and other information</span></a></span></dt></dl></div></div><div class="sect1 " id="sec-intro-provides"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Components provided</span> <a title="Permalink" class="permalink" href="cha-introduction.html#sec-intro-provides">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>introduction.xml</li><li><span class="ds-label">ID: </span>sec-intro-provides</li></ul></div></div></div></div><p>
+   SUSE Linux Enterprise High Performance Computing 15 SP3 provides tools and libraries related to
+   High-Performance Computing.
+   This includes:
+  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+     A workload manager
+    </p></li><li class="listitem "><p>
+     Remote and parallel shells
+    </p></li><li class="listitem "><p>
+     Performance monitoring and measuring tools
+    </p></li><li class="listitem "><p>
+     A serial-console monitoring tool
+    </p></li><li class="listitem "><p>
+     A cluster power management tool
+    </p></li><li class="listitem "><p>
+      A tool for discovering the machine hardware topology
+     </p></li><li class="listitem "><p>
+      System monitoring
+     </p></li><li class="listitem "><p>
+      A tool for monitoring memory errors
+     </p></li><li class="listitem "><p>
+      A tool for determining the CPU model and its capabilities (x86-64 only)
+     </p></li><li class="listitem "><p>
+     A user-extensible heap manager capable of distinguishing between different
+     kinds of memory (x86-64 only)
+    </p></li><li class="listitem "><p>
+     Various MPI implementations
+    </p></li><li class="listitem "><p>
+     Serial and parallel computational libraries providing common standards,
+     such as BLAS, LAPACK, and others.
+    </p></li><li class="listitem "><p>
+     Serial and parallel libraries for the HDF5 file format
+    </p></li></ul></div></div><div class="sect1 " id="sec-introduction-hw"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Hardware platform support</span> <a title="Permalink" class="permalink" href="cha-introduction.html#sec-introduction-hw">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>introduction.xml</li><li><span class="ds-label">ID: </span>sec-introduction-hw</li></ul></div></div></div></div><p>
+   SUSE Linux Enterprise High Performance Computing 15 SP3 is available for the
+   Intel 64/AMD64 (x86-64) and AArch64 platforms.
+  </p></div><div class="sect1 " id="sec-introduction-life"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Support and life cycle</span> <a title="Permalink" class="permalink" href="cha-introduction.html#sec-introduction-life">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>introduction.xml</li><li><span class="ds-label">ID: </span>sec-introduction-life</li></ul></div></div></div></div><p>
+   SUSE Linux Enterprise High Performance Computing 15 SP3 is supported throughout the life cycle of
+   SLE 15 SP3. Two life-cycle extensions, <span class="emphasis"><em>Extended Service
+   Overlap Support</em></span> (ESPOS) and <span class="emphasis"><em>Long Term Support
+   Service</em></span> (LTSS), are also available for this product. Any released
+   package is fully maintained and supported until the availability of the next
+   release.
+  </p><p>
+   For more information, see the Support Policy page
+   <a class="link" href="https://www.suse.com/support/policy.html" target="_blank">https://www.suse.com/support/policy.html</a>.
+  </p></div><div class="sect1 " id="sec-introduction-documentation"><div class="titlepage"><div><div><h2 class="title"><span class="number">1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Documentation and other information</span> <a title="Permalink" class="permalink" href="cha-introduction.html#sec-introduction-documentation">#</a></h2><div class="doc-status"><ul><li><span class="ds-label">File Name: </span>introduction.xml</li><li><span class="ds-label">ID: </span>sec-introduction-documentation</li></ul></div></div></div></div><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>Read the READMEs on the media.</p></li><li class="listitem "><p>
+      Get the detailed change log information about a particular package
+      from the RPM (where
+      <code class="filename"><em class="replaceable ">FILENAME</em>.rpm</code>
+      is the name of the RPM):
+    </p><div class="verbatim-wrap"><pre class="screen">rpm --changelog -qp <em class="replaceable ">FILENAME</em>.rpm</pre></div></li><li class="listitem "><p>
+     Check the <code class="filename">ChangeLog</code> file in the top level of the
+     media for a chronological log of all changes made to the updated
+     packages.
+    </p></li><li class="listitem "><p>
+     The most recent version of the release notes are always available at
+     <a class="link" href="https://www.suse.com/releasenotes" target="_blank">https://www.suse.com/releasenotes</a>.
+    </p></li><li class="listitem "><p>
+     The most recent version of this documentation is always available at
+     <a class="link" href="https://documentation.suse.com/" target="_blank">https://documentation.suse.com/</a>.
+    </p></li></ul></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="part-inst.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Part II </span>Installation</span></a><a class="nav-link" href="part-intro.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Part I </span>Introduction</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2021 
+        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
