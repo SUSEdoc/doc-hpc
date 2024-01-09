@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>SLE-HPC 15 SP3 | Administration Guide | Spack package management tool</title><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"/><link rel="schema.DCTERMS" href="http://purl.org/dc/terms/"/>
+<meta name="title" content="Spack package management tool | SLE-HPC 15 SP3"/>
+<meta name="description" content="Spack is a configurable Python-based package manager, …"/>
+<meta name="product-name" content="SUSE Linux Enterprise High Performance Computing"/>
+<meta name="product-number" content="15 SP3"/>
+<meta name="book-title" content="Administration Guide"/>
+<meta name="chapter-title" content="Chapter 8. Spack package management tool"/>
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi"/>
+<meta name="tracker-type" content="bsc"/>
+<meta name="tracker-bsc-assignee" content="tahlia.richardson@suse.com"/>
+<meta name="tracker-bsc-component" content="Documentation"/>
+<meta name="tracker-bsc-product" content="SUSE Linux Enterprise HPC 15 SP3"/>
+<meta name="publisher" content="SUSE"/><meta property="og:title" content="Spack package management tool | SLE-HPC 15 SP3"/>
+<meta property="og:description" content="Spack is a configurable Python-based package manager, automating the installation and fine-tuning of simulations and librari…"/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Spack package management tool | SLE-HPC 15 SP3"/>
+<meta name="twitter:description" content="Spack is a configurable Python-based package manager, automating the installation and fine-tuning of simulations and librari…"/>
+<link rel="prev" href="cha-compute.html" title="Chapter 7. HPC user libraries"/><link rel="next" href="cha-dolly.html" title="Chapter 9. Dolly clone tool"/><script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
+};
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script><meta name="edit-url" content="https://github.com/SUSE/doc-hpc/edit/maintenance/SLE15SP3/xml/spack.xml"/></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">Administration Guide</a><span> / </span><a class="crumb" href="cha-spack.html">Spack package management tool</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">Administration Guide</div><ol><li><a href="preface-administration.html" class=" "><span class="title-number"> </span><span class="title-name">Preface</span></a></li><li><a href="cha-introduction.html" class=" "><span class="title-number">1 </span><span class="title-name">Introduction</span></a></li><li><a href="installation.html" class=" "><span class="title-number">2 </span><span class="title-name">Installation and upgrade</span></a></li><li><a href="cha-remote.html" class=" "><span class="title-number">3 </span><span class="title-name">Remote administration</span></a></li><li><a href="cha-nodes.html" class=" "><span class="title-number">4 </span><span class="title-name">Hardware</span></a></li><li><a href="cha-slurm.html" class=" "><span class="title-number">5 </span><span class="title-name">Slurm — utility for HPC workload management</span></a></li><li><a href="cha-monitoring.html" class=" "><span class="title-number">6 </span><span class="title-name">Monitoring and logging</span></a></li><li><a href="cha-compute.html" class=" "><span class="title-number">7 </span><span class="title-name">HPC user libraries</span></a></li><li><a href="cha-spack.html" class=" you-are-here"><span class="title-number">8 </span><span class="title-name">Spack package management tool</span></a></li><li><a href="cha-dolly.html" class=" "><span class="title-number">9 </span><span class="title-name">Dolly clone tool</span></a></li><li><a href="apa.html" class=" "><span class="title-number">A </span><span class="title-name">GNU licenses</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section xml:lang="en" class="chapter" id="cha-spack" data-id-title="Spack package management tool"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname">SUSE Linux Enterprise High Performance Computing</span> <span class="productnumber">15 SP3</span></div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">8 </span><span class="title-name">Spack package management tool</span></span> <a title="Permalink" class="permalink" href="cha-spack.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/maintenance/SLE15SP3/xml/spack.xml" title="Edit source document"> </a></div></div></div><div><div class="abstract"><p>
+    Spack is a configurable Python-based package manager, automating
+    the installation and fine-tuning of simulations and libraries.
+    Spack can install many variants of the same build
+    using different compilers, options, and MPI implementations.
+    For more information, see the
+    <a class="link" href="https://spack-tutorial.readthedocs.io/en/latest/" target="_blank">Spack Documentation</a>.
+   </p></div></div></div></div><section class="sect1" id="spack-installation" data-id-title="Installing Spack"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">8.1 </span><span class="title-name">Installing Spack</span></span> <a title="Permalink" class="permalink" href="cha-spack.html#spack-installation">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/maintenance/SLE15SP3/xml/spack.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+   Use this procedure to install Spack on any node in the cluster.
+  </p><div class="procedure" id="pro-spack-installation" data-id-title="Installing and configuring Spack"><div class="title-container"><div class="procedure-title-wrap"><div class="procedure-title"><span class="title-number-name"><span class="title-number">Procedure 8.1: </span><span class="title-name">Installing and configuring Spack </span></span><a title="Permalink" class="permalink" href="cha-spack.html#pro-spack-installation">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/maintenance/SLE15SP3/xml/spack.xml" title="Edit source document"> </a></div></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
+     Install Spack:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>zypper in spack</pre></div></li><li class="step"><p>
+     Set up your environment with the appropriate script for your shell:
+    </p><ul class="stepalternatives">
+     <li class="step"><p>
+       For bash/zsh/sh:
+      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>. /usr/share/spack/setup-env.sh</pre></div></li>
+     <li class="step"><p>
+       For tcsh/csh:
+      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>source /usr/share/spack/setup-env.csh</pre></div></li>
+     <li class="step"><p>
+       For fish:
+      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>. /usr/share/spack/setup-env.fish</pre></div></li>
+    </ul></li><li class="step"><p>
+     It is recommended to install <code class="literal">bash-completion</code> so you can
+     use <span class="keycap">TAB</span> key auto-completion for Spack commands:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>zypper in bash-completion</pre></div><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>spack <span class="emphasis"><em>TAB</em></span>
+activate      clone         dependencies  fetch         list          providers     solve         url
+add           commands      dependents    find          load          pydoc         spec          verify
+arch          compiler      deprecate     flake9        location      python        stage         versions
+blame         compilers     dev-build     gc            log-parse     reindex       test          view
+buildcache    concretize    develop       gpg           maintainers   remove        test-env
+build-env     config        docs          graph         mark          repo          tutorial
+cd            containerize  edit          help          mirror        resource      undevelop
+checksum      create        env           info          module        restage       uninstall
+ci            deactivate    extensions    install       patch         rm            unit-test
+clean         debug         external      license       pkg           setup         unload</pre></div></li></ol></div></div></section><section class="sect1" id="spack-simple-example" data-id-title="Using Spack: simple example with netcdf-cxx4"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">8.2 </span><span class="title-name">Using Spack: simple example with netcdf-cxx4</span></span> <a title="Permalink" class="permalink" href="cha-spack.html#spack-simple-example">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/maintenance/SLE15SP3/xml/spack.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+  This example procedure shows you different ways to build
+  <code class="literal">netcdf-cxx4</code> with Spack.
+ </p><div class="procedure" id="pro-spack-simple-example" data-id-title="Building netcdf-cxx4 with Spack"><div class="title-container"><div class="procedure-title-wrap"><div class="procedure-title"><span class="title-number-name"><span class="title-number">Procedure 8.2: </span><span class="title-name">Building <code class="literal">netcdf-cxx4</code> with Spack </span></span><a title="Permalink" class="permalink" href="cha-spack.html#pro-spack-simple-example">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/maintenance/SLE15SP3/xml/spack.xml" title="Edit source document"> </a></div></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
+    Show detailed information on <code class="literal">netcdf-cxx4</code>:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>spack info netcdf-cxx4
+AutotoolsPackage:   netcdf-cxx4
+
+Description:
+    NetCDF (network Common Data Form) is a set of software libraries and
+    machine-independent data formats that support the creation, access, and
+    sharing of array-oriented scientific data. This is the C++ distribution.
+
+Homepage: https://www.unidata.ucar.edu/software/netcdf
+
+Maintainers: @WardF
+
+Tags:
+    None
+
+Preferred version: <span class="callout" id="spack-info-version">1</span>
+    4.3.1    ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-cxx4-4.3.1.tar.gz
+
+Safe versions:
+    4.3.1    ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-cxx4-4.3.1.tar.gz
+    4.3.0    ftp://ftp.unidata.ucar.edu/pub/netcdf/netcdf-cxx4-4.3.0.tar.gz
+
+Variants: <span class="callout" id="spack-info-variants">2</span>
+    Name [Default]    Allowed values    Description
+    ==============    ==============    ===================================================
+
+    doxygen [on]      on, off           Enable doxygen docs
+    pic [on]          on, off           Produce position-independent code (for shared libs)
+    shared [on]       on, off           Enable shared library
+    static [on]       on, off           Enable building static libraries
+
+Installation Phases:
+    autoreconf    configure    build    install
+
+Build Dependencies: <span class="callout" id="spack-info-deps">3</span>
+    autoconf  automake  doxygen  libtool  m4  netcdf-c
+
+Link Dependencies:
+    netcdf-c
+
+Run Dependencies:
+    None
+
+Virtual Packages:
+    None</pre></div><div class="calloutlist"><table style="border: 0; "><tr><td style="width: 5%; vertical-align: top; text-align: left; "><p><a href="#spack-info-version"><span class="callout">1</span></a> </p></td><td style="vertical-align: top; text-align: left; "><p>
+      Spack uses the latest version by default, unless you specify otherwise
+      with <code class="literal">@<em class="replaceable">VERSION</em></code>.
+     </p></td></tr><tr><td style="width: 5%; vertical-align: top; text-align: left; "><p><a href="#spack-info-variants"><span class="callout">2</span></a> </p></td><td style="vertical-align: top; text-align: left; "><p>
+      You can disable the variant options using
+      <code class="literal">-<em class="replaceable">VARIANT</em></code> or enable
+      them using <code class="literal">+<em class="replaceable">VARIANT</em></code>.
+     </p></td></tr><tr><td style="width: 5%; vertical-align: top; text-align: left; "><p><a href="#spack-info-deps"><span class="callout">3</span></a> </p></td><td style="vertical-align: top; text-align: left; "><p>
+      The packages required by <code class="literal">netcdf-cxx4</code> must already be built.
+     </p></td></tr></table></div></li><li class="step"><p>
+    Build <code class="literal">netcdf-cxx4</code> with the variants <code class="literal">static</code>
+    and <code class="literal">doxygen</code> disabled:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>spack install netcdf-cxx4 -static -doxygen
+==&gt; netcdf-c: Executing phase: 'autoreconf'
+==&gt; netcdf-c: Executing phase: 'configure'
+==&gt; netcdf-c: Executing phase: 'build'
+==&gt; netcdf-c: Executing phase: 'install'
+[+] /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/netcdf-c-4.7.4-vry3tfp6kpq364gyxrj6fali4kqhirx7
+==&gt; Installing netcdf-cxx4-4.3.1-msiysdrdua3vv6izluhaeos4nyo5gslq
+==&gt; No binary for netcdf-cxx4-4.3.1-msiysdrdua3vv6izluhaeos4nyo5gslq found: installing from source
+==&gt; Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/6a/6a1189a181eed043b5859e15d5c080c30d0e107406fbb212c8fb9814e90f3445.tar.gz
+#################################################################################################################### 100.0%
+==&gt; netcdf-cxx4: Executing phase: 'autoreconf'
+==&gt; netcdf-cxx4: Executing phase: 'configure'
+==&gt; netcdf-cxx4: Executing phase: 'build'
+==&gt; netcdf-cxx4: Executing phase: 'install'
+[+] /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/netcdf-cxx4-4.3.1-msiysdrdua3vv6izluhaeos4nyo5gslq</pre></div></li><li class="step"><p>
+    Rebuild <code class="literal">netcdf-cxx4</code> with the default variants, and
+    specify the version:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>spack install netcdf-cxx4@4.3.1
+==&gt; Warning: Missing a source id for python@3.6.13
+==&gt; Warning: Missing a source id for pkgconf@1.5.3
+[+] /usr (external autoconf-2.69-tatq2aqbhboxbyjt2fsraoapgqwf3y5x)
+[+] /usr (external automake-1.15.1-3d7wkh42v52c6n77t4p7l2i7nguryisl)
+[+] /usr (external bison-3.0.4-y6ckc7e7mqnnkgmkbgcfbw5vgqzg5b6m)
+[+] /usr (external cmake-3.17.0-jr4evnjsgd7uh5stt33woclti37743kg)
+[+] /usr (external flex-2.6.4-vea2lhgajmeyjm6ei5d2bqvpss4ipors)
+[+] /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/libiconv-1.16-itovpc5jssshcgpeejrro6l7jn4ynaq7
+[+] /usr (external python-3.6.13-rpf47wa6wfn7h3rnydpxijoczc6opno2)
+[+] /usr (external libtool-2.4.6-ddch2qlie7t4ypbqg6kmf3uswqg2uylp)
+[+] /usr (external m4-1.4.18-tloh56qj47ahddst5g2xqsawffuz5ew6)
+[+] /usr (external pkgconf-1.5.3-gmxadsjg6q3xqwjwws5a4v4b4ugvi6p4)
+[+] /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/util-macros-1.19.1-rpnlbst6v3oqjm7tfoxasmn7wlilpqut
+[+] /usr (external xz-5.2.3-x3glm5yp2ixldbe7n557evglhygvlkqh)
+[+] /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/zlib-1.2.11-z6y74kgd73yc23kr5252slbydmk4posh
+[+] /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/doxygen-1.8.20-3griwieblqgb6ykc5avzkzrxmtaw4s2g
+[+] /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/numactl-2.0.14-tcuvjjtkhnyf5ijrazenjra5h5dbj4in
+[+] /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/libpciaccess-0.16-y3w7dlktz22lmdj6fei4aj2f4t2rqu6l
+[+] /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/libxml2-2.9.10-d4c7cskvhn7qwzzb2wiq7rl67vbl44je
+[+] /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/hwloc-1.11.11-rjdqchtk6i27lqxxwi4cvfyvrxxgwq7k
+[+] /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/openmpi-3.1.6-ks5elgg25bbnzwa7fmv7lewbkrcp2qsx
+[+] /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/hdf5-1.10.7-3cyidn4yvikyyuxehak7ftey2l57ku37
+[+] /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/netcdf-c-4.7.4-vry3tfp6kpq364gyxrj6fali4kqhirx7
+==&gt; Installing netcdf-cxx4-4.3.1-tiyqyxb3eqpptrlcll6rlf27aisekluy
+==&gt; No binary for netcdf-cxx4-4.3.1-tiyqyxb3eqpptrlcll6rlf27aisekluy found: installing from source
+==&gt; Using cached archive: /var/spack/cache/_source-cache/archive/6a/6a1189a181eed043b5859e15d5c080c30d0e107406fbb212c8fb9814e90f3445.tar.gz
+==&gt; netcdf-cxx4: Executing phase: 'autoreconf'
+==&gt; netcdf-cxx4: Executing phase: 'configure'
+==&gt; netcdf-cxx4: Executing phase: 'build'
+==&gt; netcdf-cxx4: Executing phase: 'install'
+[+] /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/netcdf-cxx4-4.3.1-tiyqyxb3eqpptrlcll6rlf27aisekluy</pre></div></li><li class="step"><p>
+    Check which packages are now available with Spack:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>spack find
+==&gt; 14 installed packages
+-- linux-sle_hpc15-skylake / gcc@7.5.0 --------------------------
+doxygen@1.8.20  hwloc@1.11.11  libpciaccess@0.16  netcdf-c@4.7.4     netcdf-cxx4@4.3.1  openmpi@3.1.6       xz@5.2.3
+hdf5@1.10.7     libiconv@1.16  libxml2@2.9.10     netcdf-cxx4@4.3.1  numactl@2.0.14     util-macros@1.19.1  zlib@1.2.11</pre></div><p>
+    In this example, there are now two versions of <code class="literal">netcdf-cxx4</code>.
+    All of the build requirements for <code class="literal">netcdf-cxx4</code> are also present.
+    If you want to show dependency hashes as well as versions, use the
+    <code class="literal">-l</code> option:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>spack find -l
+==&gt; 14 installed packages
+-- linux-sle_hpc15-skylake / gcc@7.5.0 --------------------------
+3griwie doxygen@1.8.20  y3w7dlk libpciaccess@0.16  tiyqyxb netcdf-cxx4@4.3.1   x3glm5y xz@5.2.3
+3cyidn4 hdf5@1.10.7     d4c7csk libxml2@2.9.10     tcuvjjt numactl@2.0.14      z6y74kg zlib@1.2.11
+rjdqcht hwloc@1.11.11   vry3tfp netcdf-c@4.7.4     ks5elgg openmpi@3.1.6
+itovpc5 libiconv@1.16   msiysdr netcdf-cxx4@4.3.1  rpnlbst util-macros@1.19.1</pre></div></li><li class="step"><p>
+    Show the differences between the two versions of <code class="literal">netcdf-cxx4</code>:
+   </p><ol type="a" class="substeps"><li class="step"><p>
+      Find the paths to the <code class="literal">netcdf-cxx4</code> packages:
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>spack find --paths
+==&gt; 15 installed packages
+-- linux-sle_hpc15-skylake / gcc@7.5.0 --------------------------
+doxygen@1.8.20      /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/doxygen-1.8.20-3griwieblqgb6ykc5avzkzrxmtaw4s2g
+hdf5@1.10.7         /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/hdf5-1.10.7-3cyidn4yvikyyuxehak7ftey2l57ku37
+hwloc@1.11.11       /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/hwloc-1.11.11-rjdqchtk6i27lqxxwi4cvfyvrxxgwq7k
+hwloc@2.2.0         /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/hwloc-2.2.0-4lxxw65tzjeqhyxelowclnwqfb3m3rmk
+libiconv@1.16       /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/libiconv-1.16-itovpc5jssshcgpeejrro6l7jn4ynaq7
+libpciaccess@0.16   /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/libpciaccess-0.16-y3w7dlktz22lmdj6fei4aj2f4t2rqu6l
+libxml2@2.9.10      /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/libxml2-2.9.10-d4c7cskvhn7qwzzb2wiq7rl67vbl44je
+netcdf-c@4.7.4      /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/netcdf-c-4.7.4-vry3tfp6kpq364gyxrj6fali4kqhirx7
+netcdf-cxx4@4.3.1   /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/netcdf-cxx4-4.3.1-msiysdrdua3vv6izluhaeos4nyo5gslq
+netcdf-cxx4@4.3.1   /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/netcdf-cxx4-4.3.1-tiyqyxb3eqpptrlcll6rlf27aisekluy
+numactl@2.0.14      /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/numactl-2.0.14-tcuvjjtkhnyf5ijrazenjra5h5dbj4in
+openmpi@3.1.6       /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/openmpi-3.1.6-ks5elgg25bbnzwa7fmv7lewbkrcp2qsx
+util-macros@1.19.1  /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/util-macros-1.19.1-rpnlbst6v3oqjm7tfoxasmn7wlilpqut
+xz@5.2.3            /usr
+zlib@1.2.11         /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/zlib-1.2.11-z6y74kgd73yc23kr5252slbydmk4posh</pre></div></li><li class="step"><p>
+      Move into the parent directory:
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>cd /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0</pre></div></li><li class="step"><p>
+      Run a <code class="command">diff</code> between each version's <code class="filename">spec.yaml</code>
+      file. This file describes how the package was built.
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>diff -ru netcdf-cxx4-4.3.1-msiysdrdua3vv6izluhaeos4nyo5gslq/.spack/spec.yaml netcdf-cxx4-4.3.1-tiyqyxb3eqpptrlcll6rlf27aisekluy/.spack/spec.yaml
+--- netcdf-cxx4-4.3.1-msiysdrdua3vv6izluhaeos4nyo5gslq/.spack/spec.yaml 2021-10-04 11:42:23.444000000 +0200
++++ netcdf-cxx4-4.3.1-tiyqyxb3eqpptrlcll6rlf27aisekluy/.spack/spec.yaml 2021-10-04 11:51:49.880000000 +0200
+@@ -38,10 +38,10 @@
+       version: 7.5.0
+     namespace: builtin
+     parameters:
+-      doxygen: false
++      doxygen: true
+       pic: true
+       shared: true
+-      static: false
++      static: true
+       cflags: []
+       cppflags: []
+       cxxflags: []
+@@ -54,8 +54,8 @@
+         type:
+         - build
+         - link
+-    hash: msiysdrdua3vv6izluhaeos4nyo5gslq
+-    full_hash: oeylqzvergh3ckviaqyhy3idn7vyk3hi
++    hash: tiyqyxb3eqpptrlcll6rlf27aisekluy
++    full_hash: i6btamzuyoo343n63f3rqopkz7ymkapq
+ - netcdf-c:
+     version: 4.7.4
+arch:</pre></div><p>
+      This example shows that one version of <code class="literal">netcdf-cxx4</code> was
+      built with <code class="literal">doxygen</code> and <code class="literal">static</code> enabled,
+      and the other version of <code class="literal">netcdf-cxx4</code> was built with
+      <code class="literal">doxygen</code> and <code class="literal">static</code> disabled.
+     </p></li></ol></li></ol></div></div></section><section class="sect1" id="spack-complex-example" data-id-title="Using Spack: complex example with mpich"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">8.3 </span><span class="title-name">Using Spack: complex example with mpich</span></span> <a title="Permalink" class="permalink" href="cha-spack.html#spack-complex-example">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/maintenance/SLE15SP3/xml/spack.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+   This example procedure shows you different ways to build <code class="literal">mpich</code>
+   with Spack.
+  </p><div class="procedure" id="pro-spack-complex-example" data-id-title="Building mpich with Spack"><div class="title-container"><div class="procedure-title-wrap"><div class="procedure-title"><span class="title-number-name"><span class="title-number">Procedure 8.3: </span><span class="title-name">Building <code class="literal">mpich</code> with Spack </span></span><a title="Permalink" class="permalink" href="cha-spack.html#pro-spack-complex-example">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/maintenance/SLE15SP3/xml/spack.xml" title="Edit source document"> </a></div></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
+     List the available versions of <code class="literal">mpich</code>:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>spack versions mpich
+==&gt; Safe versions (already checksummed):
+  develop  3.3.2  3.3.1  3.3  3.2.1  3.2  3.1.4  3.1.3  3.1.2  3.1.1  3.1  3.0.4
+==&gt; Remote versions (not yet checksummed):
+==&gt; Warning: Found no unchecksummed versions for mpich</pre></div></li><li class="step"><p>
+     Show detailed information on <code class="literal">mpich</code>:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>spack info mpich
+AutotoolsPackage:   mpich
+
+Description:
+    MPICH is a high performance and widely portable implementation of the
+    Message Passing Interface (MPI) standard.
+
+Homepage: http://www.mpich.org
+
+Maintainers: @raffenet @yfguo
+
+Tags:
+    None
+
+Preferred version:
+    3.3.2      http://www.mpich.org/static/downloads/3.3.2/mpich-3.3.2.tar.gz
+
+Safe versions:
+    develop    [git] https://github.com/pmodels/mpich.git
+    3.3.2      http://www.mpich.org/static/downloads/3.3.2/mpich-3.3.2.tar.gz
+    3.3.1      http://www.mpich.org/static/downloads/3.3.1/mpich-3.3.1.tar.gz
+    3.3        http://www.mpich.org/static/downloads/3.3/mpich-3.3.tar.gz
+    3.2.1      http://www.mpich.org/static/downloads/3.2.1/mpich-3.2.1.tar.gz
+    3.2        http://www.mpich.org/static/downloads/3.2/mpich-3.2.tar.gz
+    3.1.4      http://www.mpich.org/static/downloads/3.1.4/mpich-3.1.4.tar.gz
+    3.1.3      http://www.mpich.org/static/downloads/3.1.3/mpich-3.1.3.tar.gz
+    3.1.2      http://www.mpich.org/static/downloads/3.1.2/mpich-3.1.2.tar.gz
+    3.1.1      http://www.mpich.org/static/downloads/3.1.1/mpich-3.1.1.tar.gz
+    3.1        http://www.mpich.org/static/downloads/3.1/mpich-3.1.tar.gz
+    3.0.4      http://www.mpich.org/static/downloads/3.0.4/mpich-3.0.4.tar.gz
+
+Variants:
+    Name [Default]       Allowed values          Description
+    =================    ====================    ========================================================================
+
+    argobots [off]       on, off                 Enable Argobots support
+    device [ch3]         ch3, ch4                Abstract Device Interface (ADI) implementation. The ch4 device is
+                                                 currently in experimental state
+    fortran [on]         on, off                 Enable Fortran support
+    hwloc [on]           on, off                 Use external hwloc package
+    hydra [on]<span class="callout" id="spack-boolean-variant">1</span>        on, off                 Build the hydra process manager
+    libxml2 [on]         on, off                 Use libxml2 for XML support instead of the custom minimalistic
+                                                 implementation
+    netmod [tcp]<span class="callout" id="spack-nonboolean-variant">2</span>     tcp, mxm, ofi, ucx      Network module. Only single netmod builds are supported. For ch3 device
+                                                 configurations, this presumes the ch3:nemesis communication channel.
+                                                 ch3:sock is not supported by this spack package at this time.
+    pci [on]             on, off                 Support analyzing devices on PCI bus
+    pmi [pmi]            off, pmi, pmi2, pmix    PMI interface.
+    romio [on]           on, off                 Enable ROMIO MPI I/O implementation
+    slurm [off]          on, off                 Enable SLURM support
+    verbs [off]          on, off                 Build support for OpenFabrics verbs.
+    wrapperrpath [on]    on, off                 Enable wrapper rpath
+
+Installation Phases:
+    autoreconf    configure    build    install
+
+Build Dependencies:
+    argobots  automake   hwloc      libpciaccess  libxml2  pkgconfig  python  ucx
+    autoconf  findutils  libfabric  libtool       m4       pmix       slurm
+
+Link Dependencies:
+    argobots  hwloc  libfabric  libpciaccess  libxml2  pmix  slurm  ucx
+
+Run Dependencies:
+    None
+
+Virtual Packages:
+    mpich@3: provides mpi@:3.0
+    mpich@1: provides mpi@:1.3
+    mpich provides mpi</pre></div><div class="calloutlist"><table style="border: 0; "><tr><td style="width: 5%; vertical-align: top; text-align: left; "><p><a href="#spack-boolean-variant"><span class="callout">1</span></a> </p></td><td style="vertical-align: top; text-align: left; "><p><code class="literal"><em class="replaceable">NAME</em> [on]</code> is a boolean variant.</p></td></tr><tr><td style="width: 5%; vertical-align: top; text-align: left; "><p><a href="#spack-nonboolean-variant"><span class="callout">2</span></a> </p></td><td style="vertical-align: top; text-align: left; "><p><em class="replaceable">NAME=VALUE</em> is a non-boolean variant.</p></td></tr></table></div></li><li class="step"><p>
+     Build <code class="literal">mpich</code> with some variants disabled:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>spack install mpich@3.3.2 -romio -libxml2 -hydra -fortran
+==&gt; mpich: Executing phase: 'autoreconf'
+==&gt; mpich: Executing phase: 'configure'
+==&gt; mpich: Executing phase: 'build'
+==&gt; mpich: Executing phase: 'install'
+[+] /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/mpich-3.3.2-3nexqqx2r4m7p2y7lmovuwvvobi2bygw</pre></div></li><li class="step"><p>
+     Rebuild <code class="literal">mpich</code> with the default variants:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>spack install mpich@3.3.2
+.....
+[+] /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/mpich-3.3.2-sahjm2uhsoc3bi2cljtypwuqaflhamnx</pre></div></li><li class="step"><p>
+     Rebuild <code class="literal">mpich</code> with the compiler flag <code class="literal">cppflags</code>,
+     a specific <code class="literal">libxml</code> version of <code class="literal">2.9.4</code>,
+     an x86_64 <code class="literal">target</code>, and a non-boolean <code class="literal">netmod</code>
+     option:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>spack install mpich@3.3.2<span class="callout" id="spack-comples-at">1</span> -static<span class="callout" id="spack-complex-variants">2</span> cppflags="-O3 -fPIC"<span class="callout" id="spack-complex-compilerflag">3</span> target=x86_64<span class="callout" id="spack-complex-target">4</span> ^libxml2@2.9.4<span class="callout" id="spack-complex-hat">5</span> netmod=tcp<span class="callout" id="spack-complex-name">6</span></pre></div><div class="calloutlist"><table style="border: 0; "><tr><td style="width: 5%; vertical-align: top; text-align: left; "><p><a href="#spack-comples-at"><span class="callout">1</span></a> </p></td><td style="vertical-align: top; text-align: left; "><p>
+       <code class="literal">@</code> is an optional version specifier.
+      </p></td></tr><tr><td style="width: 5%; vertical-align: top; text-align: left; "><p><a href="#spack-complex-variants"><span class="callout">2</span></a> </p></td><td style="vertical-align: top; text-align: left; "><p>
+       <code class="literal">+</code> or <code class="literal">-</code> specifies the boolean variant
+       (on or off).
+      </p></td></tr><tr><td style="width: 5%; vertical-align: top; text-align: left; "><p><a href="#spack-complex-compilerflag"><span class="callout">3</span></a> </p></td><td style="vertical-align: top; text-align: left; "><p>
+       <code class="literal">cflags, cxxflags, fflags, cppflags, ldflags</code>, and
+       <code class="literal">ldlibs</code> are variants for the compiler flag.
+      </p></td></tr><tr><td style="width: 5%; vertical-align: top; text-align: left; "><p><a href="#spack-complex-target"><span class="callout">4</span></a> </p></td><td style="vertical-align: top; text-align: left; "><p>
+       <code class="literal">target=<em class="replaceable">value</em></code> and
+       <code class="literal">os=<em class="replaceable">value</em></code> specify the
+       architecture and the operating system. You can list all of the available
+       targets by running the command <code class="command">spack arch --known-targets</code>.
+      </p></td></tr><tr><td style="width: 5%; vertical-align: top; text-align: left; "><p><a href="#spack-complex-hat"><span class="callout">5</span></a> </p></td><td style="vertical-align: top; text-align: left; "><p>
+       <code class="literal">^</code> specifies a dependency.
+      </p></td></tr><tr><td style="width: 5%; vertical-align: top; text-align: left; "><p><a href="#spack-complex-name"><span class="callout">6</span></a> </p></td><td style="vertical-align: top; text-align: left; "><p>
+       <code class="literal"><em class="replaceable">name</em>=<em class="replaceable">value</em></code>
+       specifies a non-boolean variant.
+      </p></td></tr></table></div></li><li class="step"><p>
+     List all of the available packages and their dependency hashes:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>spack find -l
+==&gt; 33 installed packages
+-- linux-sle_hpc15-skylake / gcc@7.5.0 --------------------------
+3griwie doxygen@1.8.20  y3w7dlk libpciaccess@0.16  vry3tfp netcdf-c@4.7.4      x3glm5y xz@5.2.3
+3cyidn4 hdf5@1.10.7     to2atk6 libpciaccess@0.16  msiysdr netcdf-cxx4@4.3.1   bzeebyp xz@5.2.3
+rjdqcht hwloc@1.11.11   4cyoxau libxml2@2.9.4      tiyqyxb netcdf-cxx4@4.3.1   z6y74kg zlib@1.2.11
+4lxxw65 hwloc@2.2.0     d4c7csk libxml2@2.9.10     tcuvjjt numactl@2.0.14      m4zmub6 zlib@1.2.11
+yof3lps hwloc@2.2.0     3nexqqx mpich@3.3.2        ks5elgg openmpi@3.1.6
+itovpc5 libiconv@1.16   sahjm2u mpich@3.3.2        rpnlbst util-macros@1.19.1
+5mvdlgl libiconv@1.16   jxbspwk mpich@3.3.2        boclx6a util-macros@1.19.1
+
+-- linux-sle_hpc15-x86_64 / gcc@7.5.0 ---------------------------
+yzxibyd hwloc@2.2.0    7wmqik2 libpciaccess@0.16  6xjiutf mpich@3.3.2         zmfrpzf xz@5.2.3
+mm7at5h libiconv@1.16  jrtvvdj libxml2@2.9.4      jjxbukq util-macros@1.19.1  jxqtsne zlib@1.2.11</pre></div></li><li class="step"><p>
+     Show the specifications and output dependencies of
+     <code class="literal">/6xjiutf</code> (<code class="literal">mpich</code>):
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>spack find --deps /6xjiutf
+==&gt; 1 installed package
+-- linux-sle_hpc15-x86_64 / gcc@7.5.0 ---------------------------
+mpich@3.3.2
+    hwloc@2.2.0
+        libpciaccess@0.16
+        libxml2@2.9.4
+            libiconv@1.16
+            xz@5.2.3
+            zlib@1.2.11</pre></div></li></ol></div></div></section><section class="sect1" id="spack-compiler" data-id-title="Using a specific compiler"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">8.4 </span><span class="title-name">Using a specific compiler</span></span> <a title="Permalink" class="permalink" href="cha-spack.html#spack-compiler">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/maintenance/SLE15SP3/xml/spack.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+   In this example procedure, the goal is to build <code class="literal">mpich</code>
+   with <code class="literal">gcc-10.2.0</code>.
+  </p><div class="procedure" id="pro-spack-compiler" data-id-title="Using a specific compiler with Spack"><div class="title-container"><div class="procedure-title-wrap"><div class="procedure-title"><span class="title-number-name"><span class="title-number">Procedure 8.4: </span><span class="title-name">Using a specific compiler with Spack </span></span><a title="Permalink" class="permalink" href="cha-spack.html#pro-spack-compiler">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/maintenance/SLE15SP3/xml/spack.xml" title="Edit source document"> </a></div></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
+     Install <code class="literal">gcc-10.2.0</code>:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>spack install gcc@10.2.0
+.....
+[+] /usr/opt/spack/linux-sle_hpc15-skylake/gcc-7.5.0/gcc-10.2.0-tkcq6d6xnyfgyqsnpzq36dlk2etylgp7</pre></div></li><li class="step"><p>
+     Test whether <code class="literal">gcc</code> is usable by loading it and attempting
+     to build <code class="literal">mpich</code>, using the <code class="literal">%</code>
+     option to specify that you want to use <code class="literal">gcc-10.2.0</code>:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>module load gcc-10.2.0-gcc-7.5.0-tkcq6d6 <span class="callout" id="spack-module-load">1</span>
+<code class="prompt root"># </code>gcc --version
+gcc (Spack GCC) 10.2.0
+<code class="prompt root"># </code>spack install mpich@3.2.1 %gcc@10.2.0
+==&gt; Error: No compilers with spec gcc@10.2.0 found for operating system sle_hpc15 and target skylake.
+Run 'spack compiler find' to add compilers or 'spack compilers' to see which compilers are already recognized by spack.</pre></div><div class="calloutlist"><table style="border: 0; "><tr><td style="width: 5%; vertical-align: top; text-align: left; "><p><a href="#spack-module-load"><span class="callout">1</span></a> </p></td><td style="vertical-align: top; text-align: left; "><p>
+       <code class="command">module load gcc-10.2.0</code> also works if you have only
+       one version of <code class="literal">gcc-10.2.0</code> available in Spack.
+      </p></td></tr></table></div><p>
+     In this example, the compiler cannot be found yet.
+    </p></li><li class="step"><p>
+     Update the list of available compilers:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>spack compiler find
+==&gt; Added 1 new compiler to /home/tux/.spack/linux/compilers.yaml
+    gcc@10.2.0
+==&gt; Compilers are defined in the following files:
+    /home/tux/.spack/linux/compilers.yaml</pre></div></li><li class="step"><p>
+     Rerun the command to build <code class="literal">mpich</code> with <code class="literal">gcc-10.2.0</code>:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>spack install mpich@3.2.1 %gcc@10.2.0
+.....
+[+] /usr/opt/spack/linux-sle_hpc15-skylake/gcc-10.2.0/mpich-3.2.1-e56rcwtqofh2xytep5pjgq6wrxwmsy25</pre></div></li></ol></div></div></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="cha-compute.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 7 </span>HPC user libraries</span></a> </div><div><a class="pagination-link next" href="cha-dolly.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 9 </span>Dolly clone tool</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="cha-spack.html#spack-installation"><span class="title-number">8.1 </span><span class="title-name">Installing Spack</span></a></span></li><li><span class="sect1"><a href="cha-spack.html#spack-simple-example"><span class="title-number">8.2 </span><span class="title-name">Using Spack: simple example with netcdf-cxx4</span></a></span></li><li><span class="sect1"><a href="cha-spack.html#spack-complex-example"><span class="title-number">8.3 </span><span class="title-name">Using Spack: complex example with mpich</span></a></span></li><li><span class="sect1"><a href="cha-spack.html#spack-compiler"><span class="title-number">8.4 </span><span class="title-name">Using a specific compiler</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter/X"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2023</span></div></div></footer></body></html>

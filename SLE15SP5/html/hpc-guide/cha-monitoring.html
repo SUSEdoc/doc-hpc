@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>SLE-HPC 15 SP5 | Administration Guide | Monitoring and logging</title><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"/><link rel="schema.DCTERMS" href="http://purl.org/dc/terms/"/>
+<meta name="title" content="Monitoring and logging | SLE-HPC 15 SP5"/>
+<meta name="description" content="Obtaining and maintaining an overview over the status …"/>
+<meta name="product-name" content="SUSE Linux Enterprise High Performance Computing"/>
+<meta name="product-number" content="15 SP5"/>
+<meta name="book-title" content="Administration Guide"/>
+<meta name="chapter-title" content="Chapter 6. Monitoring and logging"/>
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi"/>
+<meta name="tracker-type" content="bsc"/>
+<meta name="tracker-bsc-assignee" content="tahlia.richardson@suse.com"/>
+<meta name="tracker-bsc-component" content="Documentation"/>
+<meta name="tracker-bsc-product" content="SUSE Linux Enterprise HPC 15 SP5"/>
+<meta name="publisher" content="SUSE"/><meta property="og:title" content="Monitoring and logging | SLE-HPC 15 SP5"/>
+<meta property="og:description" content="Obtaining and maintaining an overview over the status and health of a cluster's compute nodes helps to ensure a smooth opera…"/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Monitoring and logging | SLE-HPC 15 SP5"/>
+<meta name="twitter:description" content="Obtaining and maintaining an overview over the status and health of a cluster's compute nodes helps to ensure a smooth opera…"/>
+<link rel="prev" href="cha-slurm.html" title="Chapter 5. Slurm — utility for HPC workload management"/><link rel="next" href="cha-compute.html" title="Chapter 7. HPC user libraries"/><script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
+};
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script><meta name="edit-url" content="https://github.com/SUSE/doc-hpc/edit/main/xml/monitoring.xml"/></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">Administration Guide</a><span> / </span><a class="crumb" href="cha-monitoring.html">Monitoring and logging</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">Administration Guide</div><ol><li><a href="preface-administration.html" class=" "><span class="title-number"> </span><span class="title-name">Preface</span></a></li><li><a href="cha-introduction.html" class=" "><span class="title-number">1 </span><span class="title-name">Introduction</span></a></li><li><a href="installation.html" class=" "><span class="title-number">2 </span><span class="title-name">Installation and upgrade</span></a></li><li><a href="cha-remote.html" class=" "><span class="title-number">3 </span><span class="title-name">Remote administration</span></a></li><li><a href="cha-nodes.html" class=" "><span class="title-number">4 </span><span class="title-name">Hardware</span></a></li><li><a href="cha-slurm.html" class=" "><span class="title-number">5 </span><span class="title-name">Slurm — utility for HPC workload management</span></a></li><li><a href="cha-monitoring.html" class=" you-are-here"><span class="title-number">6 </span><span class="title-name">Monitoring and logging</span></a></li><li><a href="cha-compute.html" class=" "><span class="title-number">7 </span><span class="title-name">HPC user libraries</span></a></li><li><a href="cha-spack.html" class=" "><span class="title-number">8 </span><span class="title-name">Spack package management tool</span></a></li><li><a href="cha-dolly.html" class=" "><span class="title-number">9 </span><span class="title-name">Dolly clone tool</span></a></li><li><a href="apa.html" class=" "><span class="title-number">A </span><span class="title-name">GNU licenses</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section xml:lang="en" class="chapter" id="cha-monitoring" data-id-title="Monitoring and logging"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname">SUSE Linux Enterprise High Performance Computing</span> <span class="productnumber">15 SP5</span></div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">6 </span><span class="title-name">Monitoring and logging</span></span> <a title="Permalink" class="permalink" href="cha-monitoring.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/monitoring.xml" title="Edit source document"> </a></div></div></div><div><div class="abstract"><p>
+    Obtaining and maintaining an overview over the status and health
+    of a cluster's compute nodes helps to ensure a smooth operation.
+    This chapter describes tools that give an administrator an
+    overview of the current cluster status, collect system
+    logs, and gather information on certain system failure conditions.
+   </p></div></div></div></div><section class="sect1" id="sec-remote-conman" data-id-title="ConMan — the console manager"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">6.1 </span><span class="title-name">ConMan — the console manager</span></span> <a title="Permalink" class="permalink" href="cha-monitoring.html#sec-remote-conman">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/monitoring.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+   ConMan is a serial console management program designed to support many
+   console devices and simultaneous users. It supports:
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+     local serial devices
+    </p></li><li class="listitem"><p>
+     remote terminal servers (via the telnet protocol)
+    </p></li><li class="listitem"><p>
+     IPMI Serial-Over-LAN (via FreeIPMI)
+    </p></li><li class="listitem"><p>
+     Unix domain sockets
+    </p></li><li class="listitem"><p>
+     external processes (for example, using <code class="command">expect</code> scripts
+     for <code class="command">telnet</code>, <code class="command">ssh</code>, or
+     <code class="command">ipmi-sol</code> connections)
+    </p></li></ul></div><p>
+   ConMan can be used for monitoring, logging, and optionally timestamping
+   console device output.
+  </p><p>
+   To install ConMan, run <code class="command">zypper in conman</code>.
+  </p><div id="id-1.8.3.6" data-id-title="conmand sends unencrypted data" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important: <code class="systemitem">conmand</code> sends unencrypted data</div><p>
+    The daemon <code class="systemitem">conmand</code> sends
+    unencrypted data over the
+    network and its connections are not authenticated. Therefore, it should
+    be used locally only, listening to the port
+    <code class="literal">localhost</code>. However, the IPMI console does offer
+    encryption. This makes <code class="literal">conman</code> a good tool for
+    monitoring many such consoles.
+   </p></div><p>
+   ConMan provides expect-scripts in the
+   directory <code class="filename">/usr/lib/conman/exec</code>.
+  </p><p>
+   Input to <code class="literal">conman</code> is not echoed in interactive mode.
+   This can be changed by entering the escape sequence
+   <code class="literal">&amp;E</code>.
+  </p><p>
+   When pressing <span class="keycap">Enter</span> in interactive mode, no line
+   feed is generated. To generate a line feed, press
+   <span class="keycap">Ctrl</span><span class="key-connector">–</span><span class="keycap">L</span>.
+  </p><p>
+   For more information about options, see the ConMan man page.
+  </p></section><section class="sect1" id="sec-monitoring-clusters-prometheus" data-id-title="Monitoring HPC clusters with Prometheus and Grafana"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">6.2 </span><span class="title-name">Monitoring HPC clusters with Prometheus and Grafana</span></span> <a title="Permalink" class="permalink" href="cha-monitoring.html#sec-monitoring-clusters-prometheus">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/monitoring.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+   Monitor the performance of HPC clusters using Prometheus and Grafana.
+  </p><p>
+   Prometheus collects metrics from exporters running on cluster nodes
+   and stores the data in a time series database. Grafana provides
+   data visualization dashboards for the metrics collected by Prometheus.
+   Preconfigured dashboards are available on the Grafana website.
+  </p><p>
+   The following Prometheus exporters are useful for High Performance Computing:
+  </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.8.4.5.1"><span class="term">Slurm exporter</span></dt><dd><p>
+      Extracts job and job queue status metrics from the Slurm workload manager.
+      Install this exporter on a node that has access to the Slurm
+      command line interface.
+     </p></dd><dt id="id-1.8.4.5.2"><span class="term">Node exporter</span></dt><dd><p>
+      Extracts hardware and kernel performance metrics directly from each compute
+      node. Install this exporter on every compute node you want to monitor.
+     </p></dd></dl></div><div id="id-1.8.4.6" data-id-title="Restrict access to monitoring data" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important: Restrict access to monitoring data</div><p>
+    It is recommended that the monitoring data only be accessible from
+    within a trusted environment (for example, using a login node or VPN).
+    It should not be accessible from the internet without additional security
+    hardening measures for access restriction, access control, and encryption.
+   </p></div><div class="itemizedlist"><div class="title-container"><div class="itemizedlist-title-wrap"><div class="itemizedlist-title"><span class="title-number-name"><span class="title-name">More information </span></span><a title="Permalink" class="permalink" href="cha-monitoring.html#id-1.8.4.7">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/monitoring.xml" title="Edit source document"> </a></div></div><ul class="itemizedlist"><li class="listitem"><p>
+     Grafana:
+     <a class="link" href="https://grafana.com/docs/grafana/latest/getting-started/" target="_blank">https://grafana.com/docs/grafana/latest/getting-started/</a>
+    </p></li><li class="listitem"><p>
+     Grafana dashboards:
+     <a class="link" href="https://grafana.com/grafana/dashboards" target="_blank">https://grafana.com/grafana/dashboards</a>
+    </p></li><li class="listitem"><p>
+     Prometheus:
+     <a class="link" href="https://prometheus.io/docs/introduction/overview/" target="_blank">https://prometheus.io/docs/introduction/overview/</a>
+    </p></li><li class="listitem"><p>
+     Prometheus exporters:
+     <a class="link" href="https://prometheus.io/docs/instrumenting/exporters/" target="_blank">https://prometheus.io/docs/instrumenting/exporters/</a>
+    </p></li><li class="listitem"><p>
+     Slurm exporter:
+     <a class="link" href="https://github.com/vpenso/prometheus-slurm-exporter" target="_blank">https://github.com/vpenso/prometheus-slurm-exporter</a>
+    </p></li><li class="listitem"><p>
+     Node exporter:
+     <a class="link" href="https://github.com/prometheus/node_exporter" target="_blank">https://github.com/prometheus/node_exporter</a>
+    </p></li></ul></div><section class="sect2" id="sec-installing-prometheus-grafana" data-id-title="Installing Prometheus and Grafana"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">6.2.1 </span><span class="title-name">Installing Prometheus and Grafana</span></span> <a title="Permalink" class="permalink" href="cha-monitoring.html#sec-installing-prometheus-grafana">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/monitoring.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    Install Prometheus and Grafana on a management server, or on a
+    separate monitoring node.
+   </p><div class="itemizedlist"><div class="title-container"><div class="itemizedlist-title-wrap"><div class="itemizedlist-title"><span class="title-number-name"><span class="title-name">Prerequisites </span></span><a title="Permalink" class="permalink" href="cha-monitoring.html#id-1.8.4.8.3">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/monitoring.xml" title="Edit source document"> </a></div></div><ul class="itemizedlist"><li class="listitem"><p>
+      You have an installation source for Prometheus and Grafana:
+     </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+        The packages are available from SUSE Package Hub. To install SUSE Package Hub, see
+        <a class="link" href="https://packagehub.suse.com/how-to-use/" target="_blank">https://packagehub.suse.com/how-to-use/</a>.
+        
+       </p></li><li class="listitem"><p>
+        If you have a subscription for SUSE Manager, the packages are available
+        from the SUSE Manager Client Tools repository.
+       </p></li></ul></div></li></ul></div><div class="procedure" id="pro-installing-prometheus-grafana" data-id-title="Installing Prometheus and Grafana"><div class="title-container"><div class="procedure-title-wrap"><div class="procedure-title"><span class="title-number-name"><span class="title-number">Procedure 6.1: </span><span class="title-name">Installing Prometheus and Grafana </span></span><a title="Permalink" class="permalink" href="cha-monitoring.html#pro-installing-prometheus-grafana">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/monitoring.xml" title="Edit source document"> </a></div></div><div class="procedure-contents"><p>
+     In this procedure, replace <em class="replaceable">MNTRNODE</em> with the
+     host name or IP address of the server where Prometheus and Grafana
+     are installed.
+    </p><ol class="procedure" type="1"><li class="step"><p>
+      Install the Prometheus and Grafana packages:
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root">monitor # </code>zypper in golang-github-prometheus-prometheus grafana</pre></div></li><li class="step"><p>
+      Enable and start Prometheus:
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root">monitor # </code>systemctl enable --now prometheus</pre></div></li><li class="step"><p>
+      Verify that Prometheus works:
+     </p><ul class="stepalternatives">
+      <li class="step"><p>
+        In a browser, navigate to
+        <code class="literal"><em class="replaceable">MNTRNODE</em>:9090/config</code>, or:
+       </p></li>
+      <li class="step"><p>
+        In a terminal, run the following command:
+       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>wget <em class="replaceable">MNTRNODE</em>:9090/config --output-document=-</pre></div></li>
+     </ul><p>
+      Either of these methods should show the default contents of the
+      <code class="filename">/etc/prometheus/prometheus.yml</code> file.
+     </p></li><li class="step"><p>
+      Enable and start Grafana:
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root">monitor # </code>systemctl enable --now grafana-server</pre></div></li><li class="step"><p>
+      Log in to the Grafana web server at
+      <code class="literal"><em class="replaceable">MNTRNODE</em>:3000</code>.
+     </p><p>
+      Use <code class="literal">admin</code> for both the user name and password, then
+      change the password when prompted.
+     </p></li><li class="step"><p>
+      On the left panel, select the gear icon (<span class="inlinemediaobject"><a href="images/grafana-configuration.png"><img src="images/grafana-configuration.png" width="13" alt="Gear icon, Configuration" title="Gear icon, Configuration"/></a></span>) and click <span class="guimenu">Data Sources</span>.
+     </p></li><li class="step"><p>
+      Click <span class="guimenu">Add data source</span>.
+     </p></li><li class="step"><p>
+      Find Prometheus and click <span class="guimenu">Select</span>.
+     </p></li><li class="step"><p>
+      In the <span class="guimenu">URL</span> field, enter <code class="literal">http://localhost:9090</code>.
+      The default settings for the other fields can remain unchanged.
+     </p><div id="id-1.8.4.8.4.11.2" class="admonition important compact"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><p>
+       If Prometheus and Grafana are installed on different servers, replace
+       <code class="literal">localhost</code> with the host name or IP address of the server
+       where Prometheus is installed.
+      </p></div></li><li class="step"><p>
+      Click <span class="guimenu">Save &amp; Test</span>.
+     </p></li></ol></div></div><p>
+    You can now configure Prometheus to collect metrics from the cluster, and
+    add dashboards to Grafana to visualize those metrics.
+   </p></section><section class="sect2" id="sec-monitoring-cluster-workloads" data-id-title="Monitoring cluster workloads"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">6.2.2 </span><span class="title-name">Monitoring cluster workloads</span></span> <a title="Permalink" class="permalink" href="cha-monitoring.html#sec-monitoring-cluster-workloads">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/monitoring.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    To monitor the status of the nodes and jobs in an HPC cluster, install
+    the Prometheus Slurm exporter to collect workload data, then import a
+    custom Slurm dashboard from the Grafana website to visualize the data.
+    For more information about this dashboard, see
+    <a class="link" href="https://grafana.com/grafana/dashboards/4323" target="_blank">https://grafana.com/grafana/dashboards/4323</a>.
+   </p><p>
+    You must install the Slurm exporter on a node that has access to the
+    Slurm command line interface. In the following procedure, the Slurm
+    exporter will be installed on a management server.
+   </p><div class="itemizedlist"><div class="title-container"><div class="itemizedlist-title-wrap"><div class="itemizedlist-title"><span class="title-number-name"><span class="title-name">Prerequisites </span></span><a title="Permalink" class="permalink" href="cha-monitoring.html#id-1.8.4.9.4">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/monitoring.xml" title="Edit source document"> </a></div></div><ul class="itemizedlist"><li class="listitem"><p>
+      <a class="xref" href="cha-monitoring.html#sec-installing-prometheus-grafana" title="6.2.1. Installing Prometheus and Grafana">Section 6.2.1, “Installing Prometheus and Grafana”</a> is complete.
+     </p></li><li class="listitem"><p>
+      The Slurm workload manager is fully configured.
+     </p></li><li class="listitem"><p>
+      You have internet access and policies that allow you to download the
+      dashboard from the Grafana website.
+     </p></li></ul></div><div class="procedure" id="pro-monitoring-cluster-workloads" data-id-title="Monitoring cluster workloads"><div class="title-container"><div class="procedure-title-wrap"><div class="procedure-title"><span class="title-number-name"><span class="title-number">Procedure 6.2: </span><span class="title-name">Monitoring cluster workloads </span></span><a title="Permalink" class="permalink" href="cha-monitoring.html#pro-monitoring-cluster-workloads">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/monitoring.xml" title="Edit source document"> </a></div></div><div class="procedure-contents"><p>
+     In this procedure, replace <em class="replaceable">MGMTSERVER</em> with the
+     host name or IP address of the server where the Slurm exporter is installed,
+     and replace <em class="replaceable">MNTRNODE</em> with the host name or IP
+     address of the server where Grafana is installed.
+    </p><ol class="procedure" type="1"><li class="step"><p>
+      Install the Slurm exporter:
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root">management # </code>zypper in golang-github-vpenso-prometheus_slurm_exporter</pre></div></li><li class="step"><p>
+      Enable and start the Slurm exporter:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root">management # </code>systemctl enable --now prometheus-slurm_exporter</pre></div><div id="id-1.8.4.9.5.4.3" data-id-title="Slurm exporter fails when GPU monitoring is enabled" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important: Slurm exporter fails when GPU monitoring is enabled</div><p>
+       In Slurm 20.11, the Slurm exporter fails when GPU monitoring is enabled.
+      </p><p>
+       This feature is disabled by default. Do not enable it for this version of Slurm.
+      </p></div></li><li class="step"><p>
+      Verify that the Slurm exporter works:
+     </p><ul class="stepalternatives">
+      <li class="step"><p>
+        In a browser, navigate to
+        <code class="literal"><em class="replaceable">MNGMTSERVER</em>:8080/metrics</code>, or:
+       </p></li>
+      <li class="step"><p>
+        In a terminal, run the following command:
+       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>wget <em class="replaceable">MGMTSERVER</em>:8080/metrics --output-document=-</pre></div></li>
+     </ul><p>
+      Either of these methods should show output similar to the following:
+     </p><div class="verbatim-wrap"><pre class="screen"># HELP go_gc_duration_seconds A summary of the GC invocation durations.
+# TYPE go_gc_duration_seconds summary
+go_gc_duration_seconds{quantile="0"} 1.9521e-05
+go_gc_duration_seconds{quantile="0.25"} 4.5717e-05
+go_gc_duration_seconds{quantile="0.5"} 7.8573e-05
+...</pre></div></li><li class="step"><p>
+      On the server where Prometheus is installed, edit the
+      <code class="literal">scrape_configs</code> section of the
+      <code class="filename">/etc/prometheus/prometheus.yml</code> file to
+      add a job for the Slurm exporter:
+     </p><div class="verbatim-wrap"><pre class="screen">  - job_name: slurm-exporter
+     scrape_interval: 30s
+     scrape_timeout: 30s
+     static_configs:
+       - targets: ['<em class="replaceable">MGMTSERVER</em>:8080']</pre></div><p>
+      Set the <code class="literal">scrape_interval</code> and <code class="literal">scrape_timeout</code>
+      to <code class="literal">30s</code> to avoid overloading the server.
+     </p></li><li class="step"><p>
+      Restart the Prometheus service:
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root">monitor # </code>systemctl restart prometheus</pre></div></li><li class="step"><p>
+      Log in to the Grafana web server at
+      <code class="literal"><em class="replaceable">MNTRNODE</em>:3000</code>.
+     </p></li><li class="step"><p>
+      On the left panel, select the plus icon (<span class="inlinemediaobject"><a href="images/grafana-create.png"><img src="images/grafana-create.png" width="13" alt="Plus icon, Create" title="Plus icon, Create"/></a></span>) and click <span class="guimenu">Import</span>.
+     </p></li><li class="step"><p>
+      In the <span class="guimenu">Import via grafana.com</span> field, enter the dashboard
+      ID <code class="literal">4323</code>, then click <span class="guimenu">Load</span>.
+     </p></li><li class="step"><p>
+      From the <span class="guimenu">Select a Prometheus data source</span> drop-down
+      box, select the Prometheus data source added in
+      <a class="xref" href="cha-monitoring.html#pro-installing-prometheus-grafana" title="Installing Prometheus and Grafana">Procedure 6.1, “Installing Prometheus and Grafana”</a>, then click
+      <span class="guimenu">Import</span>.
+     </p></li><li class="step"><p>
+      Review the Slurm dashboard. The data might take some time to appear.
+     </p></li><li class="step"><p>
+      If you made any changes, click <span class="guimenu">Save dashboard</span> when
+      prompted, optionally describe your changes, then click <span class="guimenu">Save</span>.
+     </p></li></ol></div></div><p>
+    The Slurm dashboard is now available from the <span class="guimenu">Home</span>
+    screen in Grafana.
+   </p></section><section class="sect2" id="sec-monitoring-compute-node-performance" data-id-title="Monitoring compute node performance"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">6.2.3 </span><span class="title-name">Monitoring compute node performance</span></span> <a title="Permalink" class="permalink" href="cha-monitoring.html#sec-monitoring-compute-node-performance">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/monitoring.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    To monitor the performance and health of each compute node,
+    install the Prometheus node exporter to collect performance data, then
+    import a custom node dashboard from the Grafana website to visualize
+    the data. For more information about this dashboard, see
+    <a class="link" href="https://grafana.com/grafana/dashboards/405" target="_blank">https://grafana.com/grafana/dashboards/405</a>.
+   </p><div class="itemizedlist"><div class="title-container"><div class="itemizedlist-title-wrap"><div class="itemizedlist-title"><span class="title-number-name"><span class="title-name">Prerequisites </span></span><a title="Permalink" class="permalink" href="cha-monitoring.html#id-1.8.4.10.3">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/monitoring.xml" title="Edit source document"> </a></div></div><ul class="itemizedlist"><li class="listitem"><p>
+      <a class="xref" href="cha-monitoring.html#sec-installing-prometheus-grafana" title="6.2.1. Installing Prometheus and Grafana">Section 6.2.1, “Installing Prometheus and Grafana”</a> is complete.
+     </p></li><li class="listitem"><p>
+      You have internet access and policies that allow you to download the
+      dashboard from the Grafana website.
+     </p></li><li class="listitem"><p>
+      To run commands on multiple nodes at once, <code class="command">pdsh</code>
+      must be installed on the system your shell is running on, and
+      SSH key authentication must be configured for all of the nodes.
+      For more information, see <a class="xref" href="cha-remote.html#sec-remote-pdsh" title="3.2. pdsh — parallel remote shell program">Section 3.2, “pdsh — parallel remote shell program”</a>.
+     </p></li></ul></div><div class="procedure" id="pro-monitoring-compute-node-performance" data-id-title="Monitoring compute node performance"><div class="title-container"><div class="procedure-title-wrap"><div class="procedure-title"><span class="title-number-name"><span class="title-number">Procedure 6.3: </span><span class="title-name">Monitoring compute node performance </span></span><a title="Permalink" class="permalink" href="cha-monitoring.html#pro-monitoring-compute-node-performance">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/monitoring.xml" title="Edit source document"> </a></div></div><div class="procedure-contents"><p>
+     In this procedure, replace the example node names with the host names or IP
+     addresses of the nodes, and replace <em class="replaceable">MNTRNODE</em> with
+     the host name or IP address of the server where Grafana is installed.
+    </p><ol class="procedure" type="1"><li class="step"><p>
+      Install the node exporter on each compute node. You can do this on multiple
+      nodes at once by running the following command:
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root">management # </code>pdsh -R ssh -u root -w "<em class="replaceable">NODE1</em>,<em class="replaceable">NODE2</em>" \
+"zypper in -y golang-github-prometheus-node_exporter"</pre></div></li><li class="step"><p>
+      Enable and start the node exporter. You can do this on multiple nodes at
+      once by running the following command:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root">management # </code>pdsh -R ssh -u root -w "<em class="replaceable">NODE1</em>,<em class="replaceable">NODE2</em>" \
+"systemctl enable --now prometheus-node_exporter"</pre></div></li><li class="step"><p>
+      Verify that the node exporter works:
+     </p><ul class="stepalternatives">
+      <li class="step"><p>
+        In a browser, navigate to
+        <code class="literal"><em class="replaceable">NODE1</em>:9100/metrics</code>,
+        or:
+       </p></li>
+      <li class="step"><p>
+        In a terminal, run the following command:
+       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>wget <em class="replaceable">NODE1</em>:9100/metrics --output-document=-</pre></div></li>
+     </ul><p>
+      Either of these methods should show output similar to the following:
+     </p><div class="verbatim-wrap"><pre class="screen"># HELP go_gc_duration_seconds A summary of the pause duration of garbage collection cycles.
+# TYPE go_gc_duration_seconds summary
+go_gc_duration_seconds{quantile="0"} 2.3937e-05
+go_gc_duration_seconds{quantile="0.25"} 3.5456e-05
+go_gc_duration_seconds{quantile="0.5"} 8.1436e-05
+...</pre></div></li><li class="step"><p>
+      On the server where Prometheus is installed, edit the
+      <code class="literal">scrape_configs</code> section of the
+      <code class="filename">/etc/prometheus/prometheus.yml</code> file
+      to add a job for the node exporter:
+    </p><div class="verbatim-wrap"><pre class="screen">  - job_name: node-exporter
+    static_configs:
+      - targets: ['<em class="replaceable">NODE1</em>:9100']
+      - targets: ['<em class="replaceable">NODE2</em>:9100']</pre></div><p>
+      Add a target for every node that has the node exporter installed.
+     </p></li><li class="step"><p>
+      Restart the Prometheus service:
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root">monitor # </code>systemctl restart prometheus</pre></div></li><li class="step"><p>
+      Log in to the Grafana web server at
+      <code class="literal"><em class="replaceable">MNTRNODE</em>:3000</code>.
+     </p></li><li class="step"><p>
+      On the left panel, select the plus icon (<span class="inlinemediaobject"><a href="images/grafana-create.png"><img src="images/grafana-create.png" width="13" alt="Plus icon, Create" title="Plus icon, Create"/></a></span>) and click <span class="guimenu">Import</span>.
+     </p></li><li class="step"><p>
+      In the <span class="guimenu">Import via grafana.com</span> field, enter the dashboard
+      ID <code class="literal">405</code>, then click <span class="guimenu">Load</span>.
+     </p></li><li class="step"><p>
+      From the <span class="guimenu">Select a Prometheus data source</span> drop-down
+      box, select the Prometheus data source added in
+      <a class="xref" href="cha-monitoring.html#pro-installing-prometheus-grafana" title="Installing Prometheus and Grafana">Procedure 6.1, “Installing Prometheus and Grafana”</a>, then click
+      <span class="guimenu">Import</span>.
+     </p></li><li class="step"><p>
+      Review the node dashboard. Click the <span class="guimenu">node</span>
+      drop-down box to select the nodes you want to view. The data might take
+      some time to appear.
+     </p></li><li class="step"><p>
+      If you made any changes, click <span class="guimenu">Save dashboard</span> when prompted.
+      To keep the currently selected nodes next time you access the dashboard,
+      activate <span class="guimenu">Save current variable values as dashboard default</span>.
+      Optionally describe your changes, then click <span class="guimenu">Save</span>.
+     </p></li></ol></div></div><p>
+    The node dashboard is now available from the <span class="guimenu">Home</span> screen
+    in Grafana.
+   </p></section></section><section class="sect1" id="sec-monitoring-ras" data-id-title="rasdaemon — utility to log RAS error tracings"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">6.3 </span><span class="title-name">rasdaemon — utility to log RAS error tracings</span></span> <a title="Permalink" class="permalink" href="cha-monitoring.html#sec-monitoring-ras">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/monitoring.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+   <code class="systemitem">rasdaemon</code> is an RAS
+   (Reliability, Availability and Serviceability) logging tool. It records
+   memory errors using EDAC (Error Detection and Correction) tracing events.
+   EDAC drivers in the Linux kernel handle detection of ECC (Error Correction
+   Code) errors from memory controllers.
+  </p><p>
+   <code class="systemitem">rasdaemon</code> can be used on large
+   memory systems to track, record, and localize memory errors and how they
+   evolve over time to detect hardware degradation. Furthermore, it can be used
+   to localize a faulty DIMM on the mainboard.
+  </p><p>
+   To check whether the EDAC drivers are loaded, run the following command:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>ras-mc-ctl --status</pre></div><p>
+   The command should return <code class="literal">ras-mc-ctl: drivers are
+   loaded</code>. If it indicates that the drivers are not loaded, EDAC
+   may not be supported on your board.
+  </p><p>
+   To start <code class="systemitem">rasdaemon</code>, run
+   <code class="command">systemctl start rasdaemon.service</code>.
+   To start <code class="systemitem">rasdaemon</code>
+   automatically at boot time, run <code class="command">systemctl enable
+   rasdaemon.service</code>. The daemon logs information to
+   <code class="filename">/var/log/messages</code> and to an internal database. A
+   summary of the stored errors can be obtained with the following command:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>ras-mc-ctl --summary</pre></div><p>
+   The errors stored in the database can be viewed with:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>ras-mc-ctl --errors</pre></div><p>
+   Optionally, you can load the DIMM labels silk-screened on the system
+   board to more easily identify the faulty DIMM. To do so, before starting
+   <code class="systemitem">rasdaemon</code>, run:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>systemctl start ras-mc-ctl start</pre></div><p>
+   For this to work, you need to set up a layout description for the board.
+   There are no descriptions supplied by default. To add a layout
+   description, create a file with an arbitrary name in the directory
+   <code class="filename">/etc/ras/dimm_labels.d/</code>. The format is:
+  </p><div class="verbatim-wrap"><pre class="screen">Vendor: <em class="replaceable">MOTHERBOARD-VENDOR-NAME</em>
+Model: <em class="replaceable">MOTHERBOARD-MODEL-NAME</em>
+  <em class="replaceable">LABEL</em>: <em class="replaceable">MC</em>.<em class="replaceable">TOP</em>.<em class="replaceable">MID</em>.<em class="replaceable">LOW</em></pre></div></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="cha-slurm.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 5 </span>Slurm — utility for HPC workload management</span></a> </div><div><a class="pagination-link next" href="cha-compute.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 7 </span>HPC user libraries</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="cha-monitoring.html#sec-remote-conman"><span class="title-number">6.1 </span><span class="title-name">ConMan — the console manager</span></a></span></li><li><span class="sect1"><a href="cha-monitoring.html#sec-monitoring-clusters-prometheus"><span class="title-number">6.2 </span><span class="title-name">Monitoring HPC clusters with Prometheus and Grafana</span></a></span></li><li><span class="sect1"><a href="cha-monitoring.html#sec-monitoring-ras"><span class="title-number">6.3 </span><span class="title-name">rasdaemon — utility to log RAS error tracings</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter/X"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2024</span></div></div></footer></body></html>

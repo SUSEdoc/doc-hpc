@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>SLE-HPC 15 SP6 | Administration Guide | HPC user libraries</title><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"/><link rel="schema.DCTERMS" href="http://purl.org/dc/terms/"/>
+<meta name="title" content="HPC user libraries | SLE-HPC 15 SP6"/>
+<meta name="description" content="Many HPC clusters need to accommodate multiple compute…"/>
+<meta name="product-name" content="SUSE Linux Enterprise High Performance Computing"/>
+<meta name="product-number" content="15 SP6"/>
+<meta name="book-title" content="Administration Guide"/>
+<meta name="chapter-title" content="Chapter 7. HPC user libraries"/>
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi"/>
+<meta name="tracker-type" content="bsc"/>
+<meta name="tracker-bsc-assignee" content="tahlia.richardson@suse.com"/>
+<meta name="tracker-bsc-component" content="Documentation"/>
+<meta name="tracker-bsc-product" content="SUSE Linux Enterprise HPC 15 SP6"/>
+<meta name="publisher" content="SUSE"/><meta property="og:title" content="HPC user libraries | SLE-HPC 15 SP6"/>
+<meta property="og:description" content="Many HPC clusters need to accommodate multiple compute applications, each of which has its own very specific library depende…"/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HPC user libraries | SLE-HPC 15 SP6"/>
+<meta name="twitter:description" content="Many HPC clusters need to accommodate multiple compute applications, each of which has its own very specific library depende…"/>
+<link rel="prev" href="cha-monitoring.html" title="Chapter 6. Monitoring and logging"/><link rel="next" href="cha-spack.html" title="Chapter 8. Spack package management tool"/><script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
+};
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script><meta name="edit-url" content="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml"/></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">Administration Guide</a><span> / </span><a class="crumb" href="cha-compute.html">HPC user libraries</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">Administration Guide</div><ol><li><a href="preface-administration.html" class=" "><span class="title-number"> </span><span class="title-name">Preface</span></a></li><li><a href="cha-introduction.html" class=" "><span class="title-number">1 </span><span class="title-name">Introduction</span></a></li><li><a href="installation.html" class=" "><span class="title-number">2 </span><span class="title-name">Installation and upgrade</span></a></li><li><a href="cha-remote.html" class=" "><span class="title-number">3 </span><span class="title-name">Remote administration</span></a></li><li><a href="cha-nodes.html" class=" "><span class="title-number">4 </span><span class="title-name">Hardware</span></a></li><li><a href="cha-slurm.html" class=" "><span class="title-number">5 </span><span class="title-name">Slurm — utility for HPC workload management</span></a></li><li><a href="cha-monitoring.html" class=" "><span class="title-number">6 </span><span class="title-name">Monitoring and logging</span></a></li><li><a href="cha-compute.html" class=" you-are-here"><span class="title-number">7 </span><span class="title-name">HPC user libraries</span></a></li><li><a href="cha-spack.html" class=" "><span class="title-number">8 </span><span class="title-name">Spack package management tool</span></a></li><li><a href="cha-dolly.html" class=" "><span class="title-number">9 </span><span class="title-name">Dolly clone tool</span></a></li><li><a href="apa.html" class=" "><span class="title-number">A </span><span class="title-name">GNU licenses</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section xml:lang="en" class="chapter" id="cha-compute" data-id-title="HPC user libraries"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname">SUSE Linux Enterprise High Performance Computing</span> <span class="productnumber">15 SP6</span></div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">7 </span><span class="title-name">HPC user libraries</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div><div><div class="abstract"><p>
+    Many HPC clusters need to accommodate multiple compute applications,
+    each of which has its own very specific library dependencies. Multiple
+    instances of the same libraries might exist, differing in version, build
+    configuration, compiler, and MPI implementation. To manage these
+    dependencies, you can use an environment module system. Most HPC
+    libraries provided with SUSE Linux Enterprise High Performance Computing are built with support for environment
+    modules. This chapter describes the environment module system
+    <span class="emphasis"><em>Lmod</em></span>, and a set of HPC
+    compute libraries shipped with SLE HPC.
+   </p></div></div></div></div><section class="sect1" id="sec-compute-lmod" data-id-title="Lmod — Lua-based environment modules"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">7.1 </span><span class="title-name">Lmod — Lua-based environment modules</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec-compute-lmod">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+   Lmod is an advanced environment module system that allows the installation
+   of multiple versions of a program or shared library, and helps configure the
+   system environment for the use of a specific version. It supports
+   hierarchical library dependencies and makes sure that the correct versions of
+   dependent libraries are selected. Environment module-enabled library
+   packages supplied with the HPC module support parallel installation of
+   different versions and flavors of the same library or binary and are
+   supplied with appropriate <code class="literal">lmod</code> module files.
+  </p><section class="sect2" id="sec2-compute-lmod-basic" data-id-title="Installation and basic usage"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.1.1 </span><span class="title-name">Installation and basic usage</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-compute-lmod-basic">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    To install Lmod, run <code class="command">zypper in lua-lmod</code>.
+   </p><p>
+    Before you can use Lmod, you must <code class="command">source</code> an
+    <code class="filename">init</code> file into the initialization file of your
+    interactive shell. The following init files are available for various
+    common shells:
+   </p><div class="verbatim-wrap"><pre class="screen">/usr/share/lmod/lmod/init/bash
+/usr/share/lmod/lmod/init/ksh
+/usr/share/lmod/lmod/init/tcsh
+/usr/share/lmod/lmod/init/zsh
+/usr/share/lmod/lmod/init/sh</pre></div><p>
+    Pick the appropriate file for your shell, then add the following line into
+    your shell's init file:
+   </p><div class="verbatim-wrap"><pre class="screen">source /usr/share/lmod/lmod/init/<em class="replaceable">INIT-FILE</em></pre></div><p>
+    The init script adds the command <code class="command">module</code>.
+   </p></section><section class="sect2" id="sec2-compute-lmod-lista" data-id-title="Listing available modules"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.1.2 </span><span class="title-name">Listing available modules</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-compute-lmod-lista">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    To list all the available modules, run <code class="command">module spider</code>.
+    To show all modules which can be loaded with the currently loaded modules,
+    run <code class="command">module avail</code>. A module name consists of a name and
+    a version string, separated by a <code class="literal">/</code> character. If more
+    than one version is available for a certain module name, the default
+    version is marked by a <code class="literal">*</code> character. If there is no default,
+    the module with the highest version number is loaded. To reference a specific module
+    version, you can use the full string
+    <code class="literal"><em class="replaceable">NAME</em>/<em class="replaceable">VERSION</em></code>.
+   </p></section><section class="sect2" id="sec2-compute-lmod-listl" data-id-title="Listing loaded modules"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.1.3 </span><span class="title-name">Listing loaded modules</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-compute-lmod-listl">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    <code class="command">module list</code> shows all currently loaded modules. Refer to
+    <code class="command">module help</code> for some short help on the module command,
+    and <code class="command">module help <em class="replaceable">MODULE-NAME</em></code>
+    for help on the particular module. The <code class="command">module</code> command is
+    only available when you log in after installing
+    <span class="package">lua-lmod</span>.
+   </p></section><section class="sect2" id="sec2-compute-lmod-info" data-id-title="Gathering information about a module"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.1.4 </span><span class="title-name">Gathering information about a module</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-compute-lmod-info">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    To get information about a particular module, run <code class="command">module whatis
+    <em class="replaceable">MODULE-NAME</em></code>. To load a module, run
+    <code class="command">module load <em class="replaceable">MODULE-NAME</em></code>. This
+    will ensure that your environment is modified (that is, the
+    <code class="literal">PATH</code> and <code class="literal">LD_LIBRARY_PATH</code> and other
+    environment variables are prepended) so that binaries and libraries
+    provided by the respective modules are found. To run a program compiled
+    against this library, the appropriate <code class="command">module load</code>
+    commands must be issued beforehand.
+   </p></section><section class="sect2" id="sec2-compute-lmod-load" data-id-title="Loading modules"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.1.5 </span><span class="title-name">Loading modules</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-compute-lmod-load">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    The <code class="command">module load <em class="replaceable">MODULE</em></code>
+    command must be run in the shell from which the module is to be used.
+    Some modules require a compiler toolchain or MPI flavor module to be loaded
+    before they are available for loading.
+   </p></section><section class="sect2" id="sec2-compute-lmod-env" data-id-title="Environment variables"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.1.6 </span><span class="title-name">Environment variables</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-compute-lmod-env">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    If the respective development packages are installed, build-time
+    environment variables like <code class="literal">LIBRARY_PATH</code>,
+    <code class="literal">CPATH</code>, <code class="literal">C_INCLUDE_PATH</code>, and
+    <code class="literal">CPLUS_INCLUDE_PATH</code> are set up to include the
+    directories containing the appropriate header and library files. However,
+    some compiler and linker commands might not honor these. In this case, use
+    the appropriate options together with the environment variables <code class="literal">-I
+    <em class="replaceable">PACKAGE_NAME</em>_INC</code> and <code class="literal">-L
+    <em class="replaceable">PACKAGE_NAME</em>_LIB</code> to add the include
+    and library paths to the command lines of the compiler and linker.
+   </p></section><section class="sect2" id="sec2-compute-lmod-moreinfo" data-id-title="For more information"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.1.7 </span><span class="title-name">For more information</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-compute-lmod-moreinfo">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    For more information on Lmod, see
+    <a class="link" href="https://lmod.readthedocs.org" target="_blank">https://lmod.readthedocs.org</a>.
+   </p></section></section><section class="sect1" id="sec-compiler" data-id-title="GNU Compiler Toolchain Collection for HPC"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">7.2 </span><span class="title-name">GNU Compiler Toolchain Collection for HPC</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec-compiler">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+   In SUSE Linux Enterprise High Performance Computing, the GNU compiler collection version 7 is provided as the base
+   compiler toolchain. The <span class="package">gnu-compilers-hpc</span> package provides the
+   environment module for the base version of the GNU compiler suite. This
+   package must be installed when using any of the HPC libraries enabled for
+   environment modules.
+  </p><section class="sect2" id="sec-environment-module" data-id-title="Environment module"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.2.1 </span><span class="title-name">Environment module</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec-environment-module">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    This package requires <span class="package">lua-lmod</span> to supply environment
+    module support.
+   </p><p>
+    To install <span class="package">gnu-compilers-hpc</span>, run the following command:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>sudo zypper in gnu-compilers-hpc</pre></div><p>
+    To make libraries built with the base compilers available, you must set
+    up the environment appropriately and select the GNU toolchain. To do so,
+    run the following command:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>module load gnu</pre></div></section><section class="sect2" id="sec-building-software-with-compiler" data-id-title="Building High Performance Computing software with GNU Compiler Suite"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.2.2 </span><span class="title-name">Building High Performance Computing software with GNU Compiler Suite</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec-building-software-with-compiler">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    To use the GNU compiler collection to build your own libraries and
+    applications, <span class="package">gnu-compilers-hpc-devel</span> must be
+    installed. It ensures that all compiler components required for HPC (that is,
+    C, C++, and Fortran compilers) are installed.
+   </p><p>
+    The environment variables <code class="literal">CC</code>, <code class="literal">CXX</code>,
+    <code class="literal">FC</code> and <code class="literal">F77</code> will be set correctly and
+    the path will be adjusted so that the correct compiler version can be
+    found.
+   </p></section><section class="sect2" id="sec-compiler-later-versions" data-id-title="Later versions"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.2.3 </span><span class="title-name">Later versions</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec-compiler-later-versions">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    The Development Tools Module might provide later versions of the GNU compiler
+    suite. To determine the available compiler suites, run the following command:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>zypper search '*-compilers-hpc'</pre></div><p>
+    If you have more than one version of the compiler suite installed,
+    <span class="emphasis"><em>Lmod</em></span> picks the latest one by default. If you
+    require an older version, or the base version, append the version
+    number:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>module load gnu/7</pre></div><p>
+    For more information, see <a class="xref" href="cha-compute.html#sec-compute-lmod" title="7.1. Lmod — Lua-based environment modules">Section 7.1, “Lmod — Lua-based environment modules”</a>.
+   </p></section></section><section class="sect1" id="sec-compute-lib" data-id-title="High Performance Computing libraries"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">7.3 </span><span class="title-name">High Performance Computing libraries</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec-compute-lib">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+   Library packages that support environment modules follow a distinctive
+   naming scheme. All packages have the compiler suite and, if built with MPI
+   support, the MPI flavor included in their name:
+   <code class="literal">*-[<em class="replaceable">MPI_FLAVOR</em>-]<em class="replaceable">COMPILER</em>-hpc*</code>.
+   To allow the parallel installation of multiple versions of a library,
+   the package name contains the version number (with dots <code class="literal">.</code>
+   replaced by underscores <code class="literal">_</code>). <span class="package">master-</span>
+   packages are supplied to
+   ensure that the latest version of a package is installed. When these master
+   packages are updated, the latest version of the respective packages is
+   installed, while leaving previous versions installed. Library packages are
+   split between runtime and compile-time packages. The compile-time packages
+   typically supply <code class="literal">include</code> files and <code class="literal">.so</code>
+   files for shared libraries. Compile-time package names end with
+   <code class="literal">-devel</code>. For some libraries, static
+   (<code class="literal">.a</code>) libraries are supplied as well. Package names for
+   these end with <code class="literal">-devel-static</code>.
+  </p><p>
+   As an example, these are the package names of the ADIOS library version 1.13.1,
+   built with GCC for Open MPI v4:
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+     library master package: <span class="package">adios-gnu-openmpi4-hpc</span>
+    </p></li><li class="listitem"><p>
+     development master package: <span class="package">adios-gnu-openmpi4-hpc-devel</span>
+    </p></li><li class="listitem"><p>
+     library package: <span class="package">adios_1_13_1-gnu-openmpi4-hpc</span>
+    </p></li><li class="listitem"><p>
+     development package: <span class="package">adios_1_13_1-gnu-openmpi4-hpc-devel</span>
+    </p></li><li class="listitem"><p>
+     static library package: <span class="package">adios_1_13_1-gnu-openmpi4-hpc-devel-static</span>
+    </p></li></ul></div><p>
+   To install a library package, run <code class="command">zypper in
+   <em class="replaceable">LIBRARY-MASTER-PACKAGE</em></code>. To install a
+   development file, run <code class="command">zypper in
+   <em class="replaceable">LIBRARY-DEVEL-MASTER-PACKAGE</em></code>.
+  </p><p>
+   The GNU compiler collection version 7 as provided with SLE HPC
+   and the MPI flavors Open MPI v.3, Open MPI v.4, MPICH, and MVAPICH2 are
+   currently supported.
+  </p><p>
+   The Development Tools Module might provide later versions of the GNU compiler
+   suite. To view available compilers, run the following command:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>zypper search '*-compilers-hpc'</pre></div><section class="sect2" id="sec2-lib-numpy" data-id-title="NumPy Python library"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.3.1 </span><span class="title-name">NumPy Python library</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-lib-numpy">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    NumPy is a general-purpose array-processing package designed to efficiently
+    manipulate large multi-dimensional arrays of arbitrary records without
+    sacrificing too much speed for small multi-dimensional arrays.
+   </p><p>
+    NumPy is built on the Numeric code base and adds features introduced by the
+    discontinued <span class="emphasis"><em>NumArray</em></span> project, as well as an extended
+    C API, and the ability to create arrays of arbitrary type, which also makes
+    NumPy suitable for interfacing with general-purpose database applications.
+   </p><p>
+    There are also basic facilities for discrete Fourier transform, basic
+    linear algebra, and random number generation.
+   </p><p>
+    This package is available both for Python 2 and 3. The specific compiler
+    toolchain module must be loaded for this library. The correct library
+    module for the Python version used needs to be specified when loading this
+    module. To load this module, run the following command:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>module load <em class="replaceable">TOOLCHAIN</em> python<em class="replaceable">VERSION</em>-numpy</pre></div><p>
+    For information about the toolchain to load see: <a class="xref" href="cha-compute.html#sec-compiler" title="7.2. GNU Compiler Toolchain Collection for HPC">Section 7.2, “GNU Compiler Toolchain Collection for HPC”</a>.
+   </p><p>
+    List of master packages:
+   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+      <code class="literal">python<em class="replaceable">VERSION</em>-numpy-gnu-hpc</code>
+     </p></li><li class="listitem"><p>
+      <code class="literal">python<em class="replaceable">VERSION</em>-numpy-gnu-hpc-devel</code>
+     </p></li></ul></div></section><section class="sect2" id="sec2-lib-scipy" data-id-title="SciPy Python Library"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.3.2 </span><span class="title-name">SciPy Python Library</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-lib-scipy">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    SciPy is a collection of mathematical algorithms and convenience functions
+    built on the NumPy extension of Python. It provides high-level commands
+    and classes for manipulating and visualizing data. With SciPy, an
+    interactive Python session becomes a data-processing and system-prototyping
+    environment.
+   </p><p>
+    This package is available both for Python 2 (up to version 1.2.0 only) and
+    3. The specific compiler toolchain modules must be loaded for this library.
+    The correct library module for the Python version used must be
+    specified when loading this module. To load this module, run the following
+    command:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>module load <em class="replaceable">TOOLCHAIN</em> python<em class="replaceable">VERSION</em>-scipy</pre></div><p>
+    For information about the toolchain to load, see <a class="xref" href="cha-compute.html#sec-compiler" title="7.2. GNU Compiler Toolchain Collection for HPC">Section 7.2, “GNU Compiler Toolchain Collection for HPC”</a>.
+   </p><p>
+    List of master packages:
+   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+      <code class="literal">python<em class="replaceable">PYTHON_VERSION</em>-scipy-gnu-hpc</code>
+     </p></li><li class="listitem"><p>
+      <code class="literal">python<em class="replaceable">PYTHON_VERSION</em>-scipy-gnu-hpc-devel</code>
+     </p></li></ul></div></section><section class="sect2" id="sec-remote-memkind" data-id-title="memkind — heap manager for heterogeneous memory platforms and mixed memory policies"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.3.3 </span><span class="title-name">memkind — heap manager for heterogeneous memory platforms and mixed memory policies</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec-remote-memkind">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    The <span class="emphasis"><em>memkind</em></span> library is a user-extensible heap manager
+    built on top of <span class="emphasis"><em>jemalloc</em></span>. It enables control over
+    memory characteristics and a partitioning of the heap between kinds of
+    memory. The kinds of memory are defined by operating system memory policies
+    that have been applied to virtual address ranges. Memory characteristics
+    supported by <span class="package">memkind</span> without user extension include
+    control of NUMA and page size features.
+   </p><p>
+    For more information, see:
+   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+      the man pages <code class="literal">memkind</code> and <code class="literal">hbwallow</code>
+     </p></li><li class="listitem"><p>
+      <a class="link" href="https://github.com/memkind/memkind" target="_blank">https://github.com/memkind/memkind</a>
+     </p></li><li class="listitem"><p>
+      <a class="link" href="https://memkind.github.io/memkind/" target="_blank">https://memkind.github.io/memkind/</a>
+     </p></li></ul></div><div id="id-1.9.5.11.5" class="admonition note compact"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><p>
+     This tool is only available for AMD64/Intel 64.
+    </p></div></section><section class="sect2" id="sec2-lib-pmix" data-id-title="Support for PMIx in Slurm and MPI libraries"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.3.4 </span><span class="title-name">Support for PMIx in Slurm and MPI libraries</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-lib-pmix">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    PMIx abstracts the internals of MPI implementations for workload managers
+    and unifies the way MPI jobs are started by the workload manager. With
+    PMIx, there is no need to use the individual MPI launchers on Slurm,
+    because <code class="command">srun</code> will take care of this. In addition, the
+    workload manager can determine the topology of the cluster, so you do not
+    need to specify topologies manually.
+   </p></section><section class="sect2" id="sec2-lib-blas" data-id-title="OpenBLAS library — optimized BLAS library"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.3.5 </span><span class="title-name">OpenBLAS library — optimized BLAS library</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-lib-blas">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    OpenBLAS is an optimized BLAS (Basic Linear Algebra Subprograms) library
+    based on GotoBLAS2 1.3, BSD version. It provides the BLAS API. It is
+    shipped as a package enabled for environment modules, so it requires
+    using Lmod to select a version. There are two variants of this library: an
+    OpenMP-enabled variant, and a <code class="literal">pthreads</code> variant.
+   </p><div class="sect5 bridgehead"><h6 class="title" id="id-1.9.5.13.3"><span class="name">OpenMP-Enabled Variant</span><a title="Permalink" class="permalink" href="cha-compute.html#id-1.9.5.13.3">#</a></h6></div><p>
+    The OpenMP variant covers the following use cases:
+   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+      <span class="bold"><strong>Programs using OpenMP.</strong></span> This requires the
+      OpenMP-enabled library version to function correctly.
+     </p></li><li class="listitem"><p>
+      <span class="bold"><strong>Programs using pthreads.</strong></span> This requires
+      an OpenBLAS library without pthread support. This can be achieved with
+      the OpenMP-version. We recommend limiting the number of threads that are
+      used to 1 by setting the environment variable
+      <code class="literal">OMP_NUM_THREADS=1</code>.
+     </p></li><li class="listitem"><p>
+      <span class="bold"><strong>Programs without pthreads and without
+      OpenMP.</strong></span> Such programs can still take advantage of the OpenMP
+      optimization in the library by linking against the OpenMP variant of the
+      library.
+     </p></li></ul></div><p>
+    When linking statically, ensure that <code class="literal">libgomp.a</code> is
+    included by adding the linker flag <code class="literal">-lgomp</code>.
+   </p><div class="sect5 bridgehead"><h6 class="title" id="id-1.9.5.13.7"><span class="name">pthreads Variant</span><a title="Permalink" class="permalink" href="cha-compute.html#id-1.9.5.13.7">#</a></h6></div><p>
+    The pthreads variant of the OpenBLAS library can improve the performance of
+    single-threaded programs. The number of threads used can be controlled with
+    the environment variable <code class="literal">OPENBLAS_NUM_THREADS</code>.
+   </p><div class="sect5 bridgehead"><h6 class="title" id="id-1.9.5.13.9"><span class="name">Installation and Usage</span><a title="Permalink" class="permalink" href="cha-compute.html#id-1.9.5.13.9">#</a></h6></div><p>
+    This module requires loading a compiler toolchain beforehand. To select the
+    latest version of this module provided, run the following command:
+   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+      Standard version:
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>module load <em class="replaceable">TOOLCHAIN</em> openblas</pre></div></li><li class="listitem"><p>
+      OpenMP/pthreads version:
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>module load <em class="replaceable">TOOLCHAIN</em> openblas-pthreads</pre></div></li></ul></div><p>
+    For information about the toolchain to load, see <a class="xref" href="cha-compute.html#sec-compiler" title="7.2. GNU Compiler Toolchain Collection for HPC">Section 7.2, “GNU Compiler Toolchain Collection for HPC”</a>.
+   </p><p>
+    List of master packages:
+   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+      <code class="literal">libopenblas-gnu-hpc</code>
+     </p></li><li class="listitem"><p>
+      <code class="literal">libopenblas-gnu-hpc-devel</code>
+     </p></li><li class="listitem"><p>
+      <code class="literal">libopenblas-pthreads-gnu-hpc</code>
+     </p></li><li class="listitem"><p>
+      <code class="literal">libopenblas-pthreads-gnu-hpc-devel</code>
+     </p></li></ul></div></section></section><section class="sect1" id="FileFormat" data-id-title="File format libraries"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">7.4 </span><span class="title-name">File format libraries</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#FileFormat">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><section class="sect2" id="sec2-lib-hdf5" data-id-title="HDF5 HPC library — model, library, and file format for storing and managing data"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.4.1 </span><span class="title-name">HDF5 HPC library — model, library, and file format for storing and managing data</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-lib-hdf5">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    HDF5 is a data model, library, and file format for storing and managing
+    data. It supports an unlimited variety of data types, and is designed for
+    flexible and efficient I/O and for high-volume and complex data. HDF5 is
+    portable and extensible, allowing applications to evolve in their use of
+    HDF5.
+   </p><p>
+    There are serial and MPI variants of this library available. All flavors
+    require loading a compiler toolchain module beforehand. The MPI variants
+    also require loading the correct MPI flavor module.
+   </p><p>
+    To load the highest available serial version of this module, run the following
+    command:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>module load <em class="replaceable">TOOLCHAIN</em> hdf5</pre></div><p>
+    When an MPI flavor is loaded, you can load the MPI version of this module
+    by running the following command:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>module load <em class="replaceable">TOOLCHAIN</em> <em class="replaceable">MPI_FLAVOR</em> phdf5</pre></div><p>
+    For information about the toolchain to load, see <a class="xref" href="cha-compute.html#sec-compiler" title="7.2. GNU Compiler Toolchain Collection for HPC">Section 7.2, “GNU Compiler Toolchain Collection for HPC”</a>. For information about available MPI flavors, see
+    <a class="xref" href="cha-compute.html#sec1-MPI-libs" title="7.5. MPI libraries">Section 7.5, “MPI libraries”</a>.
+   </p><p>
+    List of master packages:
+   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+      <span class="package">hdf5-hpc-examples</span>
+     </p></li><li class="listitem"><p>
+      <span class="package">hdf5-gnu-hpc-devel</span>
+     </p></li><li class="listitem"><p>
+      <span class="package">libhdf5-gnu-hpc</span>
+     </p></li><li class="listitem"><p>
+      <span class="package">libhdf5_cpp-gnu-hpc</span>
+     </p></li><li class="listitem"><p>
+      <span class="package">libhdf5_fortran-gnu-hpc</span>
+     </p></li><li class="listitem"><p>
+      <span class="package">libhdf5_hl_cpp-gnu-hpc</span>
+     </p></li><li class="listitem"><p>
+      <span class="package">libhdf5_hl_fortran-gnu-hpc</span>
+     </p></li><li class="listitem"><p>
+      <span class="package">hdf5-gnu-<em class="replaceable">MPI_FLAVOR</em>-hpc-devel</span>
+     </p></li><li class="listitem"><p>
+      <span class="package">libhdf5-gnu-<em class="replaceable">MPI_FLAVOR</em>-hpc</span>
+     </p></li><li class="listitem"><p>
+      <span class="package">libhdf5_fortran-gnu-<em class="replaceable">MPI_FLAVOR</em>-hpc</span>
+     </p></li><li class="listitem"><p>
+      <span class="package">libhdf5_hl_fortran-<em class="replaceable">MPI_FLAVOR</em>-hpc</span>
+     </p></li></ul></div><p>
+    <em class="replaceable">MPI_FLAVOR</em> must be one of the supported MPI
+    flavors described in <a class="xref" href="cha-compute.html#sec1-MPI-libs" title="7.5. MPI libraries">Section 7.5, “MPI libraries”</a>.
+   </p><p>
+    For general information about Lmod and modules, see
+    <a class="xref" href="cha-compute.html#sec-compute-lmod" title="7.1. Lmod — Lua-based environment modules">Section 7.1, “Lmod — Lua-based environment modules”</a>.
+   </p></section></section><section class="sect1" id="sec1-MPI-libs" data-id-title="MPI libraries"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">7.5 </span><span class="title-name">MPI libraries</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec1-MPI-libs">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+   Three different implementation of the Message Passing Interface (MPI)
+   standard are provided standard with the HPC module:
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+     Open MPI (version 3 and version 4)
+    </p></li><li class="listitem"><p>
+     MVAPICH2
+    </p></li><li class="listitem"><p>
+     MPICH
+    </p></li></ul></div><p>
+   These packages have been built with full environment module support (LMOD).
+  </p><p>
+   The following packages are available:
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+     For Open MPI:
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+       user programs: <code class="literal">openmpi3-gnu-hpc</code> and
+       <code class="literal">openmpi4-gnu-hpc</code>
+      </p></li><li class="listitem"><p>
+       shared libraries: <code class="literal">libopenmpi3-gnu-hpc</code> and
+       <code class="literal">libopenmpi4-gnu-hpc</code>
+      </p></li><li class="listitem"><p>
+       development libraries, headers and tools required for building:
+       <code class="literal">openmpi3-gnu-hpc-devel</code> and
+       <code class="literal">openmpi4-gnu-hpc-devel</code>
+      </p></li><li class="listitem"><p>
+       documentation: <code class="literal">openmpi3-gnu-hpc-docs</code> and
+       <code class="literal">openmpi4-gnu-hpc-docs</code>.
+      </p></li></ul></div></li><li class="listitem"><p>
+     For MVAPICH2
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+       user programs and libraries: <code class="literal">mvapich2-gnu-hpc</code>
+      </p></li><li class="listitem"><p>
+       development libraries, headers and tools for building:
+       <code class="literal">mvapich2-gnu-hpc-devel</code>
+      </p></li><li class="listitem"><p>
+       documentation: <code class="literal">mvapich2-gnu-hpc-doc</code>
+      </p></li></ul></div><p>
+     For MPICH:
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+       user programs and libraries: <code class="literal">mpich-gnu-hpc</code>
+      </p></li><li class="listitem"><p>
+       development libraries, headers and tools for building:
+       <code class="literal">mpich-gnu-hpc-devel</code>
+      </p></li></ul></div></li></ul></div><p>
+   The different MPI implementations and versions are independent of each other,
+   and can be installed in parallel.
+  </p><p>
+   Use environment modules to pick the version to use:
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+     For Open MPI v.3:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>module load <em class="replaceable">TOOLCHAIN</em> openmpi/3</pre></div></li><li class="listitem"><p>
+     For Open MPI v.4:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>module load <em class="replaceable">TOOLCHAIN</em> openmpi/4</pre></div></li><li class="listitem"><p>
+     For MVAPICH2:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>module load <em class="replaceable">TOOLCHAIN</em> mvapich2</pre></div></li><li class="listitem"><p>
+     For MPICH:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>module load <em class="replaceable">TOOLCHAIN</em> mpich</pre></div></li></ul></div><p>
+   For information about the toolchain to load, see <a class="xref" href="cha-compute.html#sec-compiler" title="7.2. GNU Compiler Toolchain Collection for HPC">Section 7.2, “GNU Compiler Toolchain Collection for HPC”</a>.
+  </p></section><section class="sect1" id="sec1-packages-profiling-benchmark" data-id-title="Profiling and benchmarking libraries and tools"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">7.6 </span><span class="title-name">Profiling and benchmarking libraries and tools</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec1-packages-profiling-benchmark">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+   SUSE Linux Enterprise High Performance Computing provides tools for profiling MPI applications and benchmarking
+   MPI performance.
+  </p><section class="sect2" id="sec2-tool-imb" data-id-title="IMB — Intel* MPI benchmarks"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.6.1 </span><span class="title-name">IMB — Intel* MPI benchmarks</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-tool-imb">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    The Intel* MPI Benchmarks package provides a set of elementary
+    benchmarks that conform to the MPI-1, MPI-2, and MPI-3 standards. You can
+    run all of the supported benchmarks, or a subset specified in the command
+    line, using a single executable file. Use command line parameters to
+    specify various settings, such as time measurement, message lengths, and
+    selection of communicators. For details, see the Intel* MPI
+    Benchmarks User's Guide:
+    <a class="link" href="https://software.intel.com/en-us/imb-user-guide" target="_blank">https://software.intel.com/en-us/imb-user-guide</a>.
+   </p><p>
+    For the IMB binaries to be found, a compiler toolchain and an MPI flavor
+    must be loaded beforehand. To load this module, run the following command:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>module load <em class="replaceable">TOOLCHAIN</em> <em class="replaceable">MPI_FLAVOR</em> imb</pre></div><p>
+    For information about the toolchain to load, see <a class="xref" href="cha-compute.html#sec-compiler" title="7.2. GNU Compiler Toolchain Collection for HPC">Section 7.2, “GNU Compiler Toolchain Collection for HPC”</a>. For information on available MPI
+    flavors, see <a class="xref" href="cha-compute.html#sec1-MPI-libs" title="7.5. MPI libraries">Section 7.5, “MPI libraries”</a>.
+   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+      <code class="literal">imb-gnu-<em class="replaceable">MPI_FLAVOR</em>-hpc</code>
+     </p></li></ul></div></section><section class="sect2" id="sec2-lib-papi" data-id-title="PAPI HPC library — consistent interface for hardware performance counters"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.6.2 </span><span class="title-name">PAPI HPC library — consistent interface for hardware performance counters</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-lib-papi">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    PAPI provides a tool with a consistent
+    interface and methodology for the performance counter hardware found
+    in most major microprocessors.
+   </p><p>
+    This package works with all compiler toolchains and does not require a
+    compiler toolchain to be selected. Load the latest version provided by running
+    the following command:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>module load <em class="replaceable">TOOLCHAIN</em> papi</pre></div><p>
+    For information about the toolchain to load, see <a class="xref" href="cha-compute.html#sec-compiler" title="7.2. GNU Compiler Toolchain Collection for HPC">Section 7.2, “GNU Compiler Toolchain Collection for HPC”</a>.
+   </p><p>
+    List of master packages:
+   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+      <span class="package">papi-hpc</span>
+     </p></li><li class="listitem"><p>
+      <span class="package">papi-hpc-devel</span>
+     </p></li></ul></div><p>
+    For general information about Lmod and modules, see <a class="xref" href="cha-compute.html#sec-compute-lmod" title="7.1. Lmod — Lua-based environment modules">Section 7.1, “Lmod — Lua-based environment modules”</a>.
+   </p></section><section class="sect2" id="sec2-lib-mpip" data-id-title="mpiP — lightweight MPI profiling library"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.6.3 </span><span class="title-name">mpiP — lightweight MPI profiling library</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-lib-mpip">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    mpiP is a lightweight profiling library for MPI applications. Because it
+    only collects statistical information about MPI functions, mpiP generates
+    considerably less overhead and much less data than tracing tools. All the
+    information captured by mpiP is task-local. It only uses communication
+    during report generation, typically at the end of the experiment, to merge
+    results from all of the tasks into one output file.
+   </p><p>
+    For this library a compiler toolchain and MPI flavor must be loaded
+    beforehand. To load this module, run the following command:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>module load <em class="replaceable">TOOLCHAIN</em> <em class="replaceable">MPI_FLAVOR</em> mpip</pre></div><p>
+    For information about the toolchain to load, see <a class="xref" href="cha-compute.html#sec-compiler" title="7.2. GNU Compiler Toolchain Collection for HPC">Section 7.2, “GNU Compiler Toolchain Collection for HPC”</a>. For information on available MPI
+    flavors, see <a class="xref" href="cha-compute.html#sec1-MPI-libs" title="7.5. MPI libraries">Section 7.5, “MPI libraries”</a>.
+   </p><p>
+    List of master packages:
+   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+      <span class="package">mpiP-gnu-<em class="replaceable">MPI_FLAVOR</em>-hpc</span>
+     </p></li><li class="listitem"><p>
+      <span class="package">mpiP-gnu-<em class="replaceable">MPI_FLAVOR</em>-hpc-devel</span>
+     </p></li><li class="listitem"><p>
+      <code class="literal">mpiP-gnu-<em class="replaceable">MPI_FLAVOR</em>-hpc-doc</code>
+     </p></li></ul></div><p>
+    <em class="replaceable">MPI_FLAVOR</em> must be one of the supported MPI
+    flavors described in <a class="xref" href="cha-compute.html#sec1-MPI-libs" title="7.5. MPI libraries">Section 7.5, “MPI libraries”</a>.
+   </p></section></section><section xml:lang="en" class="sect1" id="sec-environment-containers" data-id-title="Creating environment containers with Apptainer"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">7.7 </span><span class="title-name">Creating environment containers with Apptainer</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec-environment-containers">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/environment-containers.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    You can deploy environments with preconfigured environment variables by using
+    <span class="emphasis"><em>environment containers</em></span>. Environment containers include only the
+    components that are part of the environment, plus any required user applications.
+    To create a container from the current HPC environment, use the container platform
+    Apptainer (formerly called Singularity). Apptainer is available from SUSE Package Hub.
+    You can also use Spack to configure the environment to use with Apptainer.
+  </p><p>
+    For more information, see the following documentation:
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+        Enabling the SUSE Package Hub extension: <a class="link" href="https://packagehub.suse.com/how-to-use/" target="_blank">https://packagehub.suse.com/how-to-use/</a>.
+      </p></li><li class="listitem"><p>
+        Using Spack to configure the environment:
+        <a class="link" href="https://spack.readthedocs.io/en/latest/containers.html#" target="_blank">https://spack.readthedocs.io/en/latest/containers.html#</a>.
+      </p></li><li class="listitem"><p>
+        Apptainer documentation: <a class="link" href="https://apptainer.org/docs/" target="_blank">https://apptainer.org/docs/</a>.
+      </p></li></ul></div><p>
+    To migrate from Singularity to Apptainer, see
+    <a class="link" href="https://apptainer.org/docs/admin/latest/singularity_migration.html" target="_blank">https://apptainer.org/docs/admin/latest/singularity_migration.html</a>.
+  </p></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="cha-monitoring.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 6 </span>Monitoring and logging</span></a> </div><div><a class="pagination-link next" href="cha-spack.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 8 </span>Spack package management tool</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="cha-compute.html#sec-compute-lmod"><span class="title-number">7.1 </span><span class="title-name">Lmod — Lua-based environment modules</span></a></span></li><li><span class="sect1"><a href="cha-compute.html#sec-compiler"><span class="title-number">7.2 </span><span class="title-name">GNU Compiler Toolchain Collection for HPC</span></a></span></li><li><span class="sect1"><a href="cha-compute.html#sec-compute-lib"><span class="title-number">7.3 </span><span class="title-name">High Performance Computing libraries</span></a></span></li><li><span class="sect1"><a href="cha-compute.html#FileFormat"><span class="title-number">7.4 </span><span class="title-name">File format libraries</span></a></span></li><li><span class="sect1"><a href="cha-compute.html#sec1-MPI-libs"><span class="title-number">7.5 </span><span class="title-name">MPI libraries</span></a></span></li><li><span class="sect1"><a href="cha-compute.html#sec1-packages-profiling-benchmark"><span class="title-number">7.6 </span><span class="title-name">Profiling and benchmarking libraries and tools</span></a></span></li><li><span class="sect1"><a href="cha-compute.html#sec-environment-containers"><span class="title-number">7.7 </span><span class="title-name">Creating environment containers with Apptainer</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter/X"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2024</span></div></div></footer></body></html>
