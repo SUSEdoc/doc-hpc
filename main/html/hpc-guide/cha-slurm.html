@@ -398,7 +398,15 @@ Description="subgroup" Organization=bavaria</pre></div><p>
     you to request their installation explicitly. This ensures that these
     upgrades are not installed unintentionally and gives you the opportunity
     to plan version upgrades beforehand.
-   </p><section class="sect2" id="sec-slurm-upgrade-workflow" data-id-title="Slurm upgrade workflow"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.3.1 </span><span class="title-name">Slurm upgrade workflow</span></span> <a title="Permalink" class="permalink" href="cha-slurm.html#sec-slurm-upgrade-workflow">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/slurm.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+   </p><div id="id-1.7.5.3" data-id-title="zypper up is not recommended" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important: <code class="command">zypper up</code> is not recommended</div><p>
+       On systems running Slurm, updating packages with <code class="command">zypper up</code>
+       is not recommended. <code class="command">zypper up</code> attempts to update all installed
+       packages to the latest version, so might install a new major version of Slurm
+       outside of planned Slurm upgrades.
+     </p><p>
+       Use <code class="command">zypper patch</code> instead, which only updates packages to the
+       latest bug fix version.
+     </p></div><section class="sect2" id="sec-slurm-upgrade-workflow" data-id-title="Slurm upgrade workflow"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.3.1 </span><span class="title-name">Slurm upgrade workflow</span></span> <a title="Permalink" class="permalink" href="cha-slurm.html#sec-slurm-upgrade-workflow">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/slurm.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     Interoperability is guaranteed between three consecutive versions of Slurm,
     with the following restrictions:
    </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
@@ -439,7 +447,7 @@ Description="subgroup" Organization=bavaria</pre></div><p>
     local applications using <code class="literal">libslurm</code>, such as MPI libraries
     with Slurm support, as early as possible. This might require updating the
     user applications, as new arguments might be introduced to existing functions.
-   </p><div id="id-1.7.5.3.8" data-id-title="Upgrade slurmdbd databases before other Slurm components" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><div class="admon-title">Warning: Upgrade <code class="literal">slurmdbd</code> databases before other Slurm components</div><p>
+   </p><div id="id-1.7.5.4.8" data-id-title="Upgrade slurmdbd databases before other Slurm components" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><div class="admon-title">Warning: Upgrade <code class="literal">slurmdbd</code> databases before other Slurm components</div><p>
      If <code class="literal">slurmdbd</code> is used, always upgrade the
      <code class="literal">slurmdbd</code> database <span class="emphasis"><em>before</em></span> starting
      the upgrade of any other Slurm component. The same database can be connected
@@ -460,7 +468,7 @@ Description="subgroup" Organization=bavaria</pre></div><p>
     converted to a newer version cannot be converted back to an older version,
     and older versions of <code class="literal">slurmdbd</code> do not recognize the
     newer formats.
-   </p><div id="id-1.7.5.4.4" data-id-title="Convert primary slurmdbd first" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note: Convert primary <code class="systemitem">slurmdbd</code> first</div><p>
+   </p><div id="id-1.7.5.5.4" data-id-title="Convert primary slurmdbd first" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note: Convert primary <code class="systemitem">slurmdbd</code> first</div><p>
      If you are using a backup <code class="literal">slurmdbd</code>, the conversion must
      be performed on the primary <code class="literal">slurmdbd</code> first. The backup
      <code class="literal">slurmdbd</code> only starts after the conversion is complete.
@@ -516,7 +524,7 @@ success!</pre></div></li><li class="step"><p>
       <a class="link" href="https://www.suse.com/releasenotes/x86_64/SLE-HPC/15-SP6" target="_blank"><em class="citetitle">Release Notes</em></a>.
      </p></li><li class="step"><p>
       Restart <code class="literal">slurmdbd</code>:
-     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root">DBnode # </code>systemctl start slurmdbd</pre></div><div id="id-1.7.5.4.5.10.3" data-id-title="No daemonization during rebuild" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note: No daemonization during rebuild</div><p>
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root">DBnode # </code>systemctl start slurmdbd</pre></div><div id="id-1.7.5.5.5.10.3" data-id-title="No daemonization during rebuild" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note: No daemonization during rebuild</div><p>
        During the rebuild of the Slurm database, the database daemon does not
        daemonize.
       </p></div></li></ol></div></div></section><section class="sect2" id="sec-slurm-upgrade-controller" data-id-title="Upgrading slurmctld and slurmd"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.3.3 </span><span class="title-name">Upgrading <code class="literal">slurmctld</code> and <code class="literal">slurmd</code></span></span> <a title="Permalink" class="permalink" href="cha-slurm.html#sec-slurm-upgrade-controller">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/slurm.xml" title="Edit source document"> </a></div></div></div></div></div><p>
@@ -526,7 +534,7 @@ success!</pre></div></li><li class="step"><p>
     If this is not feasible, the compute nodes (<code class="literal">slurmd</code>) can
     be updated on a node-by-node basis. However, the management servers
     (<code class="literal">slurmctld</code>) must be updated first.
-   </p><div class="itemizedlist"><div class="title-container"><div class="itemizedlist-title-wrap"><div class="itemizedlist-title"><span class="title-number-name"><span class="title-name">Prerequisites </span></span><a title="Permalink" class="permalink" href="cha-slurm.html#id-1.7.5.5.3">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/slurm.xml" title="Edit source document"> </a></div></div><ul class="itemizedlist"><li class="listitem"><p>
+   </p><div class="itemizedlist"><div class="title-container"><div class="itemizedlist-title-wrap"><div class="itemizedlist-title"><span class="title-number-name"><span class="title-name">Prerequisites </span></span><a title="Permalink" class="permalink" href="cha-slurm.html#id-1.7.5.6.3">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/slurm.xml" title="Edit source document"> </a></div></div><ul class="itemizedlist"><li class="listitem"><p>
       <a class="xref" href="cha-slurm.html#sec-slurm-upgrade-database" title="5.3.2. Upgrading the slurmdbd database daemon">Section 5.3.2, “Upgrading the <code class="literal">slurmdbd</code> database daemon”</a>. Upgrading other Slurm
       components before the database can lead to data loss.
      </p></li><li class="listitem"><p>
@@ -595,7 +603,7 @@ pdsh -R mrsh -P <em class="replaceable">PARTITIONS</em> "cat &gt; /etc/slurm/slu
      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root">management # </code>pdsh -R ssh -P <em class="replaceable">PARTITIONS</em> systemctl stop slurmd</pre></div></li><li class="step"><p>
       Upgrade <code class="literal">slurmctld</code> on the main and backup management
       servers:
-     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root">management # </code>zypper install --force-resolution slurm_<em class="replaceable">VERSION</em></pre></div><div id="id-1.7.5.5.4.8.3" data-id-title="Upgrade all Slurm packages at the same time" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important: Upgrade all Slurm packages at the same time</div><p>
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root">management # </code>zypper install --force-resolution slurm_<em class="replaceable">VERSION</em></pre></div><div id="id-1.7.5.6.4.8.3" data-id-title="Upgrade all Slurm packages at the same time" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important: Upgrade all Slurm packages at the same time</div><p>
        If any additional Slurm packages are installed, you must upgrade
        those as well. This includes:
       </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
@@ -625,7 +633,7 @@ pdsh -R mrsh -P <em class="replaceable">PARTITIONS</em> "cat &gt; /etc/slurm/slu
       </p></div></li><li class="step"><p>
       Upgrade <code class="literal">slurmd</code> on the compute nodes:
      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root">management # </code>pdsh -R ssh -P <em class="replaceable">PARTITIONS</em> \
-zypper install --force-resolution slurm_<em class="replaceable">VERSION</em>-node</pre></div><div id="id-1.7.5.5.4.9.3" data-id-title="Memory size seen by slurmd might change on update" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note: Memory size seen by <code class="literal">slurmd</code> might change on update</div><p>
+zypper install --force-resolution slurm_<em class="replaceable">VERSION</em>-node</pre></div><div id="id-1.7.5.6.4.9.3" data-id-title="Memory size seen by slurmd might change on update" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note: Memory size seen by <code class="literal">slurmd</code> might change on update</div><p>
        Under certain circumstances, the amount of memory seen by
        <code class="literal">slurmd</code> might change after an update. If this happens,
        <code class="literal">slurmctld</code> puts the nodes in a
