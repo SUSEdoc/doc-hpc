@@ -24,7 +24,7 @@ if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/script-purejs.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -41,10 +41,10 @@ hljs.configure({
     instances of the same libraries might exist, differing in version, build
     configuration, compiler, and MPI implementation. To manage these
     dependencies, you can use an environment module system. Most HPC
-    libraries provided with SUSE Linux Enterprise High Performance Computing are built with support for environment
+    libraries provided with the HPC module for SUSE Linux Enterprise Server are built with support for environment
     modules. This chapter describes the environment module system
     <span class="emphasis"><em>Lmod</em></span>, and a set of HPC
-    compute libraries shipped with SLE HPC.
+    compute libraries shipped with the HPC module.
    </p></div></div></div></div><section class="sect1" id="sec-compute-lmod" data-id-title="Lmod — Lua-based environment modules"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">7.1 </span><span class="title-name">Lmod — Lua-based environment modules</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec-compute-lmod">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
    Lmod is an advanced environment module system that allows the installation
    of multiple versions of a program or shared library, and helps configure the
@@ -117,7 +117,7 @@ hljs.configure({
     For more information on Lmod, see
     <a class="link" href="https://lmod.readthedocs.org" target="_blank">https://lmod.readthedocs.org</a>.
    </p></section></section><section class="sect1" id="sec-compiler" data-id-title="GNU Compiler Toolchain Collection for HPC"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">7.2 </span><span class="title-name">GNU Compiler Toolchain Collection for HPC</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec-compiler">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
-   In SUSE Linux Enterprise High Performance Computing, the GNU compiler collection version 7 is provided as the base
+   In the HPC module for SUSE Linux Enterprise Server, the GNU compiler collection version 7 is provided as the base
    compiler toolchain. The <span class="package">gnu-compilers-hpc</span> package provides the
    environment module for the base version of the GNU compiler suite. This
    package must be installed when using any of the HPC libraries enabled for
@@ -142,7 +142,7 @@ hljs.configure({
     the path will be adjusted so that the correct compiler version can be
     found.
    </p></section><section class="sect2" id="sec-compiler-later-versions" data-id-title="Later versions"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.2.3 </span><span class="title-name">Later versions</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec-compiler-later-versions">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
-    The Development Tools Module might provide later versions of the GNU compiler
+    The Development Tools module might provide later versions of the GNU compiler
     suite. To determine the available compiler suites, run the following command:
    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>zypper search '*-compilers-hpc'</pre></div><p>
     If you have more than one version of the compiler suite installed,
@@ -188,11 +188,11 @@ hljs.configure({
    development file, run <code class="command">zypper in
    <em class="replaceable">LIBRARY-DEVEL-MASTER-PACKAGE</em></code>.
   </p><p>
-   The GNU compiler collection version 7 as provided with SLE HPC
+   The GNU compiler collection version 7 as provided with the HPC module
    and the MPI flavors Open MPI v.3, Open MPI v.4, MPICH, and MVAPICH2 are
    currently supported.
   </p><p>
-   The Development Tools Module might provide later versions of the GNU compiler
+   The Development Tools module might provide later versions of the GNU compiler
    suite. To view available compilers, run the following command:
   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>zypper search '*-compilers-hpc'</pre></div><section class="sect2" id="sec2-lib-numpy" data-id-title="NumPy Python library"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.3.1 </span><span class="title-name">NumPy Python library</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-lib-numpy">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     NumPy is a general-purpose array-processing package designed to efficiently
@@ -421,7 +421,7 @@ hljs.configure({
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>module load <em class="replaceable">TOOLCHAIN</em> mpich</pre></div></li></ul></div><p>
    For information about the toolchain to load, see <a class="xref" href="cha-compute.html#sec-compiler" title="7.2. GNU Compiler Toolchain Collection for HPC">Section 7.2, “GNU Compiler Toolchain Collection for HPC”</a>.
   </p></section><section class="sect1" id="sec1-packages-profiling-benchmark" data-id-title="Profiling and benchmarking libraries and tools"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">7.6 </span><span class="title-name">Profiling and benchmarking libraries and tools</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec1-packages-profiling-benchmark">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
-   SUSE Linux Enterprise High Performance Computing provides tools for profiling MPI applications and benchmarking
+   The HPC module for SUSE Linux Enterprise Server provides tools for profiling MPI applications and benchmarking
    MPI performance.
   </p><section class="sect2" id="sec2-tool-imb" data-id-title="IMB — Intel* MPI benchmarks"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">7.6.1 </span><span class="title-name">IMB — Intel* MPI benchmarks</span></span> <a title="Permalink" class="permalink" href="cha-compute.html#sec2-tool-imb">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/compute.xml" title="Edit source document"> </a></div></div></div></div></div><p>
     The Intel* MPI Benchmarks package provides a set of elementary

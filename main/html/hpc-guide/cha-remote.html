@@ -24,7 +24,7 @@ if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"> </script><script src="static/js/script.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/script-purejs.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -111,8 +111,8 @@ nodenames[A-B]          attr[=value],attr[=value],...</pre></div><p>
    To install <span class="package">pdsh</span>, run the command
    <code class="command">zypper in pdsh</code>.
   </p><p>
-   In SUSE Linux Enterprise High Performance Computing, the back-ends <code class="literal">ssh</code>,
-   <code class="literal">mrsh</code>, and <code class="literal">exec</code> are supported. The
+   The HPC module for SUSE Linux Enterprise Server supports the back-ends <code class="literal">ssh</code>,
+   <code class="literal">mrsh</code>, and <code class="literal">exec</code>. The
    <code class="literal">ssh</code> back-end is the default. Non-default login methods
    can be used by setting the <code class="literal">PDSH_RCMD_TYPE</code>
    environment variable, or by using the <code class="literal">-R</code> command
