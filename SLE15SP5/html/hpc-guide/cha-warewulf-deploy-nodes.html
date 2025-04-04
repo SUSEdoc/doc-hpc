@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>SLE-HPC 15 SP5 | Administration Guide | Deploying compute nodes</title><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"/><link rel="schema.DCTERMS" href="http://purl.org/dc/terms/"/>
+<meta name="title" content="Deploying compute nodes | SLE-HPC 15 SP5"/>
+<meta name="description" content="High Performance Computing clusters consist of one or more sets of identical compute nodes. In large clusters, each set could contain thousands of ma…"/>
+<meta name="product-name" content="SUSE Linux Enterprise High Performance Computing"/>
+<meta name="product-number" content="15 SP5"/>
+<meta name="book-title" content="Administration Guide"/>
+<meta name="chapter-title" content="Chapter 3. Deploying compute nodes"/>
+<meta name="tracker-url" content="https://bugzilla.suse.com/enter_bug.cgi"/>
+<meta name="tracker-type" content="bsc"/>
+<meta name="tracker-bsc-assignee" content="tahlia.richardson@suse.com"/>
+<meta name="tracker-bsc-component" content="Documentation"/>
+<meta name="tracker-bsc-product" content="SUSE Linux Enterprise HPC 15 SP5"/>
+<meta name="publisher" content="SUSE"/><meta property="og:title" content="Administration Guide"/>
+<meta property="og:description" content="Set up High Performance Computing with SLES"/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Administration Guide"/>
+<meta name="twitter:description" content="Set up High Performance Computing with SLES"/>
+<script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": ["TechArticle"],
+    "image": "https://www.suse.com/assets/img/suse-white-logo-green.svg",
+    
+     "isPartOf": {
+      "@type": "CreativeWorkSeries",
+      "name": "Product &amp; Solutions"
+    },
+    
+    "inLanguage": "en",
+    
+
+    "headline": "Deploying compute nodes",
+  
+    "description": "High Performance Computing clusters consist of one or more sets of identical compute nodes. In large clusters, each set could contain thousands of ma…",
+      
+    "author": [
+      {
+        "@type": "Corporation",
+        "name": "SUSE Product &amp; Solution Documentation Team",
+        "url": "https://www.suse.com/assets/img/suse-white-logo-green.svg"
+      }
+    ],
+      
+    "dateModified": "2023-06-20T00:00+02:00",
+      
+    "datePublished": "2023-06-20T00:00+02:00",
+      
+
+    "about": [
+      
+    ],
+  
+    "sameAs": [
+          "https://www.facebook.com/SUSEWorldwide/about",
+          "https://www.youtube.com/channel/UCHTfqIzPKz4f_dri36lAQGA",
+          "https://twitter.com/SUSE",
+          "https://www.linkedin.com/company/suse"
+    ],
+    "publisher": {
+      "@type": "Corporation",
+      "name": "SUSE",
+      "url": "https://documentation.suse.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.suse.com/assets/img/suse-white-logo-green.svg"
+      }
+    }
+  }</script>
+<link rel="prev" href="installation.html" title="Chapter 2. Installation and upgrade"/><link rel="next" href="cha-remote.html" title="Chapter 4. Remote administration"/><script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
+};
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/script-purejs.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script><meta name="edit-url" content="https://github.com/SUSE/doc-hpc/edit/main/xml/warewulf.xml"/></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">Administration Guide</a><span> / </span><a class="crumb" href="cha-warewulf-deploy-nodes.html">Deploying compute nodes</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">Administration Guide</div><ol><li><a href="preface-administration.html" class=" "><span class="title-number"> </span><span class="title-name">Preface</span></a></li><li><a href="cha-introduction.html" class=" "><span class="title-number">1 </span><span class="title-name">Introduction</span></a></li><li><a href="installation.html" class=" "><span class="title-number">2 </span><span class="title-name">Installation and upgrade</span></a></li><li><a href="cha-warewulf-deploy-nodes.html" class=" you-are-here"><span class="title-number">3 </span><span class="title-name">Deploying compute nodes</span></a></li><li><a href="cha-remote.html" class=" "><span class="title-number">4 </span><span class="title-name">Remote administration</span></a></li><li><a href="cha-nodes.html" class=" "><span class="title-number">5 </span><span class="title-name">Hardware</span></a></li><li><a href="cha-slurm.html" class=" "><span class="title-number">6 </span><span class="title-name">Slurm — utility for HPC workload management</span></a></li><li><a href="cha-monitoring.html" class=" "><span class="title-number">7 </span><span class="title-name">Monitoring and logging</span></a></li><li><a href="cha-compute.html" class=" "><span class="title-number">8 </span><span class="title-name">HPC user libraries</span></a></li><li><a href="cha-spack.html" class=" "><span class="title-number">9 </span><span class="title-name">Spack package management tool</span></a></li><li><a href="cha-dolly.html" class=" "><span class="title-number">10 </span><span class="title-name">Dolly clone tool</span></a></li><li><a href="apa.html" class=" "><span class="title-number">A </span><span class="title-name">GNU licenses</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section xml:lang="en" class="chapter" id="cha-warewulf-deploy-nodes" data-id-title="Deploying compute nodes"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname">SUSE Linux Enterprise High Performance Computing</span> <span class="productnumber">15 SP5</span></div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">3 </span><span class="title-name">Deploying compute nodes</span></span> <a title="Permalink" class="permalink" href="cha-warewulf-deploy-nodes.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/warewulf.xml" title="Edit source document"> </a></div></div></div><div><div class="abstract"><p>
+    High Performance Computing clusters consist of one or more sets of identical compute nodes. In large clusters,
+    each set could contain thousands of machines. To help deploy so many compute nodes as
+    clusters scale up, the HPC module provides the deployment tool <span class="emphasis"><em>Warewulf</em></span>.
+   </p></div></div></div></div><section class="sect1" id="sec-about-warewulf" data-id-title="About Warewulf"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">3.1 </span><span class="title-name">About Warewulf</span></span> <a title="Permalink" class="permalink" href="cha-warewulf-deploy-nodes.html#sec-about-warewulf">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/warewulf.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    Warewulf is a deployment system for compute nodes in High Performance Computing clusters. Compute nodes
+    are booted and deployed over the network with a kernel and node image provided by Warewulf.
+    To generate the node image, Warewulf uses a <span class="emphasis"><em>Warewulf container</em></span>,
+    which is a base operating system container with a kernel and an <code class="literal">init</code>
+    implementation installed. Warewulf configures images for the individual compute nodes using
+    <span class="emphasis"><em>node profiles</em></span> and <span class="emphasis"><em>Warewulf overlays</em></span>.
+  </p><p>
+    <span class="emphasis"><em>Node profiles</em></span> are used to apply the same configuration
+    to multiple nodes. Node profiles can include settings such as the container
+    to use, overlays to apply, and IPMI details. New nodes automatically use the
+    <code class="literal">default</code> node profile. You can also create additional node profiles,
+    for example, if two groups of nodes require different containers.
+  </p><p>
+    <span class="emphasis"><em>Warewulf overlays</em></span> are compiled for each individual compute node:
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+        System (or <code class="literal">wwinit</code>) overlays are applied to nodes at boot time
+        by the <code class="literal">wwinit</code> process, before <code class="systemitem">systemd</code> starts. These overlays
+        are required to start the compute nodes, and contain basic node-specific configuration
+        to start the first network interface. System overlays are not updated during runtime.
+      </p></li><li class="listitem"><p>
+        Runtime (or generic) overlays are updated periodically at runtime by the
+        <code class="literal">wwclient</code> service. The default is once per minute. These overlays
+        are used to apply configuration changes to the nodes.
+      </p></li><li class="listitem"><p>
+        The Host overlay is used for configuration that applies to the Warewulf server
+        itself, such as adding entries to <code class="filename">/etc/hosts</code> or setting up the
+        DHCP service and NFS exports.
+      </p></li></ul></div><p>
+    System and runtime overlays can be overlayed on top of each other. For example, instead of
+    altering a configuration setting in an overlay, you can override it with a new overlay.
+    You can set a list of system and runtime overlays to apply to individual nodes, or to
+    multiple nodes via profiles.
+  </p></section><section class="sect1" id="sec-warewulf-deploy-nodes" data-id-title="Deploying compute nodes with Warewulf"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">3.2 </span><span class="title-name">Deploying compute nodes with Warewulf</span></span> <a title="Permalink" class="permalink" href="cha-warewulf-deploy-nodes.html#sec-warewulf-deploy-nodes">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/warewulf.xml" title="Edit source document"> </a></div></div></div></div></div><div class="itemizedlist"><div class="title-container"><div class="itemizedlist-title-wrap"><div class="itemizedlist-title"><span class="title-number-name"><span class="title-name">Requirements </span></span><a title="Permalink" class="permalink" href="cha-warewulf-deploy-nodes.html#id-1.5.4.2">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/warewulf.xml" title="Edit source document"> </a></div></div><ul class="itemizedlist"><li class="listitem"><p>
+      The Warewulf server has a static IP address.
+    </p></li><li class="listitem"><p>
+      The compute nodes are set to PXE boot.
+    </p></li><li class="listitem"><p>
+      The Warewulf server is accessible from an external network, but is connected to
+      the compute nodes via an internal cluster network used for deployment. This is
+      important because Warewulf configures DHCP and TFTP on the Warewulf server,
+      which might conflict with DHCP on the external network.
+    </p></li></ul></div><div class="procedure" id="pro-warewulf-deploy-nodes" data-id-title="Deploying compute nodes with Warewulf"><div class="title-container"><div class="procedure-title-wrap"><div class="procedure-title"><span class="title-number-name"><span class="title-number">Procedure 3.1: </span><span class="title-name">Deploying compute nodes with Warewulf </span></span><a title="Permalink" class="permalink" href="cha-warewulf-deploy-nodes.html#pro-warewulf-deploy-nodes">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/warewulf.xml" title="Edit source document"> </a></div></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
+      On the Warewulf server, install Warewulf:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>sudo zypper install warewulf4</pre></div></li><li class="step"><p>
+      The installation creates a basic configuration for the Warewulf server in the file
+      <code class="filename">/etc/warewulf/warewulf.conf</code>. Review this file to make sure
+      the details are correct. In particular, check the following settings:
+    </p><div class="verbatim-wrap"><pre class="screen">ipaddr: 192.168.1.250
+netmask: 255.255.255.0
+network: 192.168.1.0</pre></div><p>
+      <code class="literal">ipaddr</code> is the IP address of the Warewulf server on the internal
+      cluster network to be used for node deployment. <code class="literal">netmask</code> and
+      <code class="literal">network</code> must match this network.
+    </p><p>
+      Additionally, check that the DHCP range is in the cluster network:
+    </p><div class="verbatim-wrap"><pre class="screen">dhcp:
+  range start: 192.168.1.21
+  range end: 192.168.1.50</pre></div></li><li class="step"><p>
+      In the file <code class="filename">/etc/sysconfig/dhcpd</code>, check that
+      <code class="option">DHCPD_INTERFACE</code> has the correct value. This must be
+      the interface on which the cluster network is running.
+    </p></li><li class="step"><p>
+      Start and enable the Warewulf service:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>sudo systemctl enable --now warewulfd</pre></div></li><li class="step"><p>
+      Configure the services required by Warewulf:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>sudo wwctl configure --all</pre></div><p>
+      This command performs the following tasks:
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+        Configures DHCP and enables the DHCP service.
+      </p></li><li class="listitem"><p>
+        Writes the required PXE files to the TFTP root directory and enables the TFTP service.
+      </p></li><li class="listitem"><p>
+        Updates the <code class="filename">/etc/hosts</code> file.
+      </p></li><li class="listitem"><p>
+        Configures an NFS server on the Warewulf server and enables the NFS service.
+      </p></li><li class="listitem"><p>
+        Creates host keys and user keys for passwordless SSH access to the nodes.
+      </p></li></ul></div></li><li class="step"><p>
+      When the configuration is finished, log out of the Warewulf server and back into it.
+      This creates an SSH key pair to allow passwordless login to the deployed compute nodes.
+      If you require a password to secure the private key, set it now:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>ssh-keygen -p -f $HOME/.ssh/cluster</pre></div></li><li class="step"><p>
+      Importing the Warewulf container from the SUSE registry requires SUSE Customer Center credentials.
+      Set your SCC credentials as environment variables before you import the container:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>export WAREWULF_OCI_USERNAME=<em class="replaceable">USER@EXAMPLE.COM</em>
+<code class="prompt user">&gt; </code>export WAREWULF_OCI_PASSWORD=<em class="replaceable">REGISTRATION_CODE</em></pre></div></li><li class="step"><p>
+      Import the Warewulf container from the SUSE registry:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>sudo wwctl container import \
+docker://registry.suse.com/suse/hpc/warewulf4-x86_64/sle-hpc-node:15.5 \
+hpcnode15.5 --setdefault</pre></div><p>
+      The <code class="option">--setdefault</code> argument sets this as the default container
+      in the <code class="literal">default</code> node profile.
+    </p></li><li class="step"><p>
+      Configure the networking details for the <code class="literal">default</code> profile:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>sudo wwctl profile set -y default --netname default \
+--netmask 255.255.255.0 --gateway 192.168.1.250</pre></div><p>
+      To see the details of this profile, run the following command:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>sudo wwctl profile list -a default</pre></div></li><li class="step"><p>
+      Add compute nodes to Warewulf. For example, to add ten discoverable nodes
+      with preconfigured IP addresses, run the following command:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>sudo wwctl node add node[01-10] \ <span class="callout" id="co-warewulf-deploy-node-name">1</span>
+--netdev eth0 -I 192.168.1.100 \ <span class="callout" id="co-warewulf-deploy-node-network">2</span>
+--discoverable=true <span class="callout" id="co-warewulf-deploy-node-discover">3</span></pre></div><div class="calloutlist"><table style="border: 0; "><tr><td style="width: 5%; vertical-align: top; text-align: left; "><p><a href="#co-warewulf-deploy-node-name"><span class="callout">1</span></a> </p></td><td style="vertical-align: top; text-align: left; "><p>
+        One or more node names. Node names must be unique. If you have node groups
+        or multiple clusters, add descriptors to the node names, for example
+        <code class="literal">node01.cluster01</code>.
+      </p></td></tr><tr><td style="width: 5%; vertical-align: top; text-align: left; "><p><a href="#co-warewulf-deploy-node-network"><span class="callout">2</span></a> </p></td><td style="vertical-align: top; text-align: left; "><p>
+        The IP address for the first node. Subsequent nodes are given incremental
+        IP addresses.
+      </p></td></tr><tr><td style="width: 5%; vertical-align: top; text-align: left; "><p><a href="#co-warewulf-deploy-node-discover"><span class="callout">3</span></a> </p></td><td style="vertical-align: top; text-align: left; "><p>
+        Allows Warewulf to assign a MAC address to the nodes when they boot for
+        the first time.
+      </p></td></tr></table></div><p>
+      To view the settings for these nodes, run the following command:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>sudo wwctl node list -a node[01-10]</pre></div></li><li class="step"><p>
+      Add the nodes to the <code class="filename">/etc/hosts</code> file:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>sudo wwctl configure hostfile</pre></div></li><li class="step"><p>
+      Rebuild the container image to make sure it is ready to use:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>sudo wwctl container build hpcnode15.5</pre></div></li><li class="step"><p>
+      Build the default system and runtime overlays:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>sudo wwctl overlay build</pre></div><p>
+      This command compiles overlays for all the nodes.
+    </p></li></ol></div></div><p>
+    You can now boot the compute nodes with PXE. Warewulf provides all the required information.
+  </p></section><section class="sect1" id="sec-warewulf-advanced-tasks" data-id-title="Advanced Warewulf tasks"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">3.3 </span><span class="title-name">Advanced Warewulf tasks</span></span> <a title="Permalink" class="permalink" href="cha-warewulf-deploy-nodes.html#sec-warewulf-advanced-tasks">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/warewulf.xml" title="Edit source document"> </a></div></div></div></div></div><section class="sect2" id="sec-warewulf-secure-boot" data-id-title="Using Warewulf with UEFI Secure Boot"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">3.3.1 </span><span class="title-name">Using Warewulf with UEFI Secure Boot</span></span> <a title="Permalink" class="permalink" href="cha-warewulf-deploy-nodes.html#sec-warewulf-secure-boot">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/warewulf.xml" title="Edit source document"> </a></div></div></div></div></div><p>
+    To boot compute nodes with UEFI Secure Boot enabled, the packages <span class="package">shim</span>
+    and <span class="package">grub2-x86_64-efi</span> must be installed in the Warewulf container.
+    For the container you imported in <a class="xref" href="cha-warewulf-deploy-nodes.html#pro-warewulf-deploy-nodes" title="Deploying compute nodes with Warewulf">Procedure 3.1, “Deploying compute nodes with Warewulf”</a>, this should
+    already be the default. Use the following procedure to verify that the packages are installed:
+   </p><div class="procedure" id="pro-warewulf-secure-boot-packages" data-id-title="Verifying packages in a Warewulf container"><div class="title-container"><div class="procedure-title-wrap"><div class="procedure-title"><span class="title-number-name"><span class="title-number">Procedure 3.2: </span><span class="title-name">Verifying packages in a Warewulf container </span></span><a title="Permalink" class="permalink" href="cha-warewulf-deploy-nodes.html#pro-warewulf-secure-boot-packages">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/warewulf.xml" title="Edit source document"> </a></div></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
+         Open a shell in the Warewulf container:
+       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>sudo wwctl container shell hpcnode15.5</pre></div></li><li class="step"><p>
+         Search for the packages and check their installation status in the
+         <code class="literal">S</code> column:
+       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">[hpcnode15.5] Warewulf&gt; </code>zypper search shim grub2</pre></div><p>
+         If <span class="package">shim</span> and <span class="package">grub2-x86_64-efi</span> are not installed,
+         install them now:
+       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">[hpcnode15.5] Warewulf&gt; </code>zypper install shim grub2-x86_64-efi</pre></div></li><li class="step"><p>
+        Exit the container's shell:
+       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">[hpcnode15.5] Warewulf&gt; </code>exit</pre></div><p>
+        If any changes were made, Warewulf automatically rebuilds the container.
+       </p></li><li class="step"><p>
+         We recommend rebuilding the container again manually to make sure the changes are applied:
+       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>sudo wwctl container build hpcnode15.5</pre></div></li></ol></div></div><p>
+    By default, Warewulf boots nodes via iPXE, which cannot be used when UEFI Secure Boot
+    is enabled. Use the following procedure to switch to GRUB 2 as the boot method:
+   </p><div class="procedure" id="pro-warewulf-secure-boot-grub" data-id-title="Configuring Warewulf to boot via GRUB 2"><div class="title-container"><div class="procedure-title-wrap"><div class="procedure-title"><span class="title-number-name"><span class="title-number">Procedure 3.3: </span><span class="title-name">Configuring Warewulf to boot via GRUB 2 </span></span><a title="Permalink" class="permalink" href="cha-warewulf-deploy-nodes.html#pro-warewulf-secure-boot-grub">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/warewulf.xml" title="Edit source document"> </a></div></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
+        Open the file <code class="filename">/etc/warewulf/warewulf.conf</code> and change the value of
+        <code class="literal">grubboot</code> to <code class="literal">true</code>:
+       </p><div class="verbatim-wrap"><pre class="screen">warewulf:
+  [...]
+  grubboot: true</pre></div></li><li class="step"><p>
+        Reconfigure DHCP and TFTP to recognize the configuration change:
+       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>sudo wwctl configure dhcp
+<code class="prompt user">&gt; </code>sudo wwctl configure tftp</pre></div></li><li class="step"><p>
+        Rebuild the system and runtime overlays:
+       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>sudo wwctl overlay build</pre></div></li></ol></div></div></section></section><section class="sect1" id="sec-warewulf-more-info" data-id-title="For more information"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">3.4 </span><span class="title-name">For more information</span></span> <a title="Permalink" class="permalink" href="cha-warewulf-deploy-nodes.html#sec-warewulf-more-info">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/warewulf.xml" title="Edit source document"> </a></div></div></div></div></div><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+      Warewulf: <a class="link" href="https://warewulf.org/docs/development/index.html" target="_blank">https://warewulf.org/docs/development/index.html</a>
+    </p></li><li class="listitem"><p>
+      Node profiles: <a class="link" href="https://warewulf.org/docs/development/contents/profiles.html" target="_blank">https://warewulf.org/docs/development/contents/profiles.html</a>
+    </p></li><li class="listitem"><p>
+      Warewulf overlays: <a class="link" href="https://warewulf.org/docs/development/contents/overlays.html" target="_blank">https://warewulf.org/docs/development/contents/overlays.html</a>
+    </p></li><li class="listitem"><p>
+      The node provisioning process: <a class="link" href="https://warewulf.org/docs/development/contents/provisioning.html" target="_blank">https://warewulf.org/docs/development/contents/provisioning.html</a>
+    </p></li></ul></div></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="installation.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 2 </span>Installation and upgrade</span></a> </div><div><a class="pagination-link next" href="cha-remote.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 4 </span>Remote administration</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="cha-warewulf-deploy-nodes.html#sec-about-warewulf"><span class="title-number">3.1 </span><span class="title-name">About Warewulf</span></a></span></li><li><span class="sect1"><a href="cha-warewulf-deploy-nodes.html#sec-warewulf-deploy-nodes"><span class="title-number">3.2 </span><span class="title-name">Deploying compute nodes with Warewulf</span></a></span></li><li><span class="sect1"><a href="cha-warewulf-deploy-nodes.html#sec-warewulf-advanced-tasks"><span class="title-number">3.3 </span><span class="title-name">Advanced Warewulf tasks</span></a></span></li><li><span class="sect1"><a href="cha-warewulf-deploy-nodes.html#sec-warewulf-more-info"><span class="title-number">3.4 </span><span class="title-name">For more information</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter/X"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2024</span></div></div></footer></body></html>
