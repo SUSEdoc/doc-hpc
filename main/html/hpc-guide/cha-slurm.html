@@ -43,9 +43,9 @@
       }
     ],
       
-    "dateModified": "2025-06-17T00:00+02:00",
+    "dateModified": "2024-07-16T00:00+02:00",
       
-    "datePublished": "2025-06-17T00:00+02:00",
+    "datePublished": "2024-07-16T00:00+02:00",
       
 
     "about": [
@@ -68,22 +68,22 @@
       }
     }
   }</script>
-<link rel="prev" href="cha-nodes.html" title="Chapter 5. Hardware"/><link rel="next" href="cha-monitoring.html" title="Chapter 7. Monitoring and logging"/><link type="text/css" rel="preload" as="style" onload="this.rel='stylesheet'" href="https://documentation.suse.com/docserv/res/fonts/suse/suse.css"/><script src="static/js/script-purejs.js" type="text/javascript"> </script><script src="static/js/highlight.js" type="text/javascript"> </script><script>hljs.highlightAll();</script><meta name="edit-url" content="https://github.com/SUSE/doc-hpc/edit/main/xml/slurm.xml"/></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">High Performance Computing Guide</a><span> / </span><a class="crumb" href="cha-slurm.html">Slurm — utility for HPC workload management</a></div></div><main id="_content"><nav id="_side-toc-overall" tabindex="0" class="side-toc"><div class="side-title">High Performance Computing Guide</div><ol role="list"><li role="listitem"><a href="preface-administration.html" class=" "><span class="title-number"> </span><span class="title-name">Preface</span></a></li><li role="listitem"><a href="cha-introduction.html" class=" "><span class="title-number">1 </span><span class="title-name">Introduction</span></a></li><li role="listitem"><a href="installation.html" class=" "><span class="title-number">2 </span><span class="title-name">Installation and upgrade</span></a></li><li role="listitem"><a href="cha-warewulf-deploy-nodes.html" class=" "><span class="title-number">3 </span><span class="title-name">Deploying compute nodes</span></a></li><li role="listitem"><a href="cha-remote.html" class=" "><span class="title-number">4 </span><span class="title-name">Remote administration</span></a></li><li role="listitem"><a href="cha-nodes.html" class=" "><span class="title-number">5 </span><span class="title-name">Hardware</span></a></li><li role="listitem"><a href="cha-slurm.html" class=" you-are-here"><span class="title-number">6 </span><span class="title-name">Slurm — utility for HPC workload management</span></a></li><li role="listitem"><a href="cha-monitoring.html" class=" "><span class="title-number">7 </span><span class="title-name">Monitoring and logging</span></a></li><li role="listitem"><a href="cha-compute.html" class=" "><span class="title-number">8 </span><span class="title-name">HPC user libraries</span></a></li><li role="listitem"><a href="cha-spack.html" class=" "><span class="title-number">9 </span><span class="title-name">Spack package management tool</span></a></li><li role="listitem"><a href="apa.html" class=" "><span class="title-number">A </span><span class="title-name">GNU licenses</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section xml:lang="en" class="chapter" id="cha-slurm" data-id-title="Slurm — utility for HPC workload management"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname">SUSE Linux Enterprise Server</span> <span class="productnumber">15 SP7</span></div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">6 </span><span class="title-name">Slurm — utility for HPC workload management</span></span> <a title="Permalink" class="permalink" href="cha-slurm.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/slurm.xml" title="Edit source document"> </a></div></div></div><div><div class="abstract"><p>
-    <span class="emphasis"><em>Slurm</em></span> is a workload manager for managing compute jobs
+<link rel="prev" href="cha-nodes.html" title="Chapter 5. Hardware"/><link rel="next" href="cha-monitoring.html" title="Chapter 7. Monitoring and logging"/><link type="text/css" rel="preload" as="style" onload="this.rel='stylesheet'" href="https://documentation.suse.com/docserv/res/fonts/suse/suse.css"/><script src="static/js/script-purejs.js" type="text/javascript"> </script><script src="static/js/highlight.js" type="text/javascript"> </script><script>hljs.highlightAll();</script><meta name="edit-url" content="https://github.com/SUSE/doc-hpc/edit/main/xml/slurm.xml"/></head><body class="draft wide offline js-off" onload="$('#betawarn-button-wrap').toggle();if (document.cookie.length > 0) {if (document.cookie.indexOf('betawarn=closed') != -1){$('#betawarn').toggle()}};"><div id="betawarn" style="position:fixed;bottom:0;z-index:9025;background-color:#FDE8E8;padding:1em;margin-left:10%;margin-right:10%;display:block;border-top:.75em solid #E11;width:80%"><p style="color:#333;margin:1em 0;padding:0;">This is a draft document that was built and uploaded automatically. It may document beta software and be incomplete or even incorrect. <strong>Use this document at your own risk.</strong></p> <div id="betawarn-button-wrap" style="display:none;margin:0;padding:0;"><a href="#" onclick="$('#betawarn').toggle();var d=new Date();d.setTime(d.getTime()+(0.5*24*60*60*1000));document.cookie='betawarn=closed; expires='+d.toUTCString()+'; path=/'; return false;" style="color:#333;text-decoration:underline;float:left;margin-top:.5em;padding:1em;display:block;background-color:#FABEBE;">I understand this is a draft</a></div></div><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">High Performance Computing Guide</a><span> / </span><a class="crumb" href="cha-slurm.html">Slurm — utility for HPC workload management</a></div></div><main id="_content"><nav id="_side-toc-overall" tabindex="0" class="side-toc"><div class="side-title">High Performance Computing Guide</div><ol role="list"><li role="listitem"><a href="preface-administration.html" class=" "><span class="title-number"> </span><span class="title-name">Preface</span></a></li><li role="listitem"><a href="cha-introduction.html" class=" "><span class="title-number">1 </span><span class="title-name">Introduction</span></a></li><li role="listitem"><a href="installation.html" class=" "><span class="title-number">2 </span><span class="title-name">Installation and upgrade</span></a></li><li role="listitem"><a href="cha-warewulf-deploy-nodes.html" class=" "><span class="title-number">3 </span><span class="title-name">Deploying compute nodes</span></a></li><li role="listitem"><a href="cha-remote.html" class=" "><span class="title-number">4 </span><span class="title-name">Remote administration</span></a></li><li role="listitem"><a href="cha-nodes.html" class=" "><span class="title-number">5 </span><span class="title-name">Hardware</span></a></li><li role="listitem"><a href="cha-slurm.html" class=" you-are-here"><span class="title-number">6 </span><span class="title-name">Slurm — utility for HPC workload management</span></a></li><li role="listitem"><a href="cha-monitoring.html" class=" "><span class="title-number">7 </span><span class="title-name">Monitoring and logging</span></a></li><li role="listitem"><a href="cha-compute.html" class=" "><span class="title-number">8 </span><span class="title-name">HPC user libraries</span></a></li><li role="listitem"><a href="cha-spack.html" class=" "><span class="title-number">9 </span><span class="title-name">Spack package management tool</span></a></li><li role="listitem"><a href="apa.html" class=" "><span class="title-number">A </span><span class="title-name">GNU licenses</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section xml:lang="en" class="chapter" id="cha-slurm" data-id-title="Slurm — utility for HPC workload management"><div class="titlepage"><div><div class="version-info">Applies to  <span class="productname">SUSE Linux Enterprise Server</span> <span class="productnumber">15 SP7</span></div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">6 </span><span class="title-name">Slurm — utility for HPC workload management</span></span> <a title="Permalink" class="permalink" href="cha-slurm.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/slurm.xml" title="Edit source document"> </a></div></div></div><div><div class="titlepage-revhistory"><a aria-label="Revision History: High Performance Computing Guide" hreflang="en" href="rh-cha-slurm.html" target="_blank">Revision History: High Performance Computing Guide</a></div></div><div><div class="abstract"><p>
+    <span><em class="emphasis">Slurm</em></span> is a workload manager for managing compute jobs
     on High Performance Computing clusters. It can start multiple jobs on a
     single node, or a single job on multiple nodes. Additional components can be
     used for advanced scheduling and accounting.
    </p><p>
     The mandatory components of Slurm are the control daemon
-    <span class="emphasis"><em>slurmctld</em></span>, which handles job scheduling, and the
-    Slurm daemon <span class="emphasis"><em>slurmd</em></span>, responsible for launching compute
+    <span><em class="emphasis">slurmctld</em></span>, which handles job scheduling, and the
+    Slurm daemon <span><em class="emphasis">slurmd</em></span>, responsible for launching compute
     jobs. Nodes running <code class="command">slurmctld</code> are called
-    <span class="emphasis"><em>management servers</em></span> and nodes running
-    <code class="command">slurmd</code> are called <span class="emphasis"><em>compute nodes</em></span>.
+    <span><em class="emphasis">management servers</em></span> and nodes running
+    <code class="command">slurmd</code> are called <span><em class="emphasis">compute nodes</em></span>.
    </p><p>
-    Additional components are a secondary <span class="emphasis"><em>slurmctld</em></span> acting
+    Additional components are a secondary <span><em class="emphasis">slurmctld</em></span> acting
     as a standby server for a failover, and the Slurm database daemon
-    <span class="emphasis"><em>slurmdbd</em></span>, which stores the job history and user
+    <span><em class="emphasis">slurmdbd</em></span>, which stores the job history and user
     hierarchy.
    </p><p>
     For further documentation, see the
@@ -198,7 +198,7 @@ echo "finished at $(date)"</pre></div><p>
     In a minimal installation, Slurm only stores pending and running
     jobs. To store finished and failed job data, the storage plugin
     must be installed and enabled. You can also enable
-    <span class="emphasis"><em>completely fair scheduling</em></span>, which replaces FIFO
+    <span><em class="emphasis">completely fair scheduling</em></span>, which replaces FIFO
     (first in, first out) scheduling with algorithms that calculate the job
     priority in a queue in dependence of the job which a user has run in the history.
     
@@ -275,8 +275,8 @@ AccountingStorageHost=localhost</pre></div><div id="id-1.8.3.4.5.12.3" class="ad
      </p></li><li class="step"><p><span class="step-optional">(Optional)</span> 
       By default, Slurm does not take any group membership into account, and
       the system groups cannot be mapped to Slurm. However, you can mimic system groups
-      with <span class="emphasis"><em>accounts</em></span>. In Slurm, accounts are usually entities billed
-      for cluster usage, while <span class="emphasis"><em>users</em></span> identify individual cluster users.
+      with <span><em class="emphasis">accounts</em></span>. In Slurm, accounts are usually entities billed
+      for cluster usage, while <span><em class="emphasis">users</em></span> identify individual cluster users.
       Multiple users can be associated with a single account.
      </p><p>
       The following example creates an umbrella group <code class="literal">bavaria</code>
@@ -312,7 +312,7 @@ Description="subgroup" Organization=bavaria</pre></div><p>
           Removes all jobs from the compute node, and aborts any jobs already
           running on the node.
          </p></dd><dt id="id-1.8.4.3.5.2.2.2.2"><span class="term"><code class="command">nodename=<em class="replaceable">NODE</em> state=drain reason=<em class="replaceable">REASON</em></code></span></dt><dd><p>
-          Drains the compute node so that no <span class="emphasis"><em>new</em></span> jobs
+          Drains the compute node so that no <span><em class="emphasis">new</em></span> jobs
           can be scheduled on it, but does not end compute jobs already
           running on the compute node. <em class="replaceable">REASON</em> can
           be any string. The compute node stays in the <code class="literal">drained</code>
@@ -376,7 +376,7 @@ Description="subgroup" Organization=bavaria</pre></div><p>
          </p></dd><dt id="id-1.8.4.5.3.2.2.2.6"><span class="term"><code class="command">--partition</code>=<em class="replaceable">PARTITION</em></span></dt><dd><p>
           Shows only jobs that run in the specified <em class="replaceable">PARTITION</em>.
          </p></dd></dl></div></dd></dl></div></section><section class="sect2" id="sec-slurm-sbatch-salloc-srun" data-id-title="sbatch, salloc, and srun"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">6.2.4 </span><span class="title-name">sbatch, salloc, and srun</span></span> <a title="Permalink" class="permalink" href="cha-slurm.html#sec-slurm-sbatch-salloc-srun">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/slurm.xml" title="Edit source document"> </a></div></div></div></div></div><p>
-    These commands are used to schedule <span class="emphasis"><em>compute jobs</em></span>,
+    These commands are used to schedule <span><em class="emphasis">compute jobs</em></span>,
     which means batch scripts for the <code class="command">sbatch</code> command,
     interactive sessions for the <code class="command">salloc</code> command, or
     binaries for the <code class="command">srun</code> command. If the job cannot be
@@ -414,7 +414,7 @@ Description="subgroup" Organization=bavaria</pre></div><p>
        Defers the job until the specified <em class="replaceable">STATE</em> of
        the job <em class="replaceable">JOBID</em> is reached.
       </p></dd><dt id="id-1.8.4.6.4.8"><span class="term"><code class="command">--gres=<em class="replaceable">GRES</em></code></span></dt><dd><p>
-       Runs a job only on nodes with the specified <span class="emphasis"><em>generic
+       Runs a job only on nodes with the specified <span><em class="emphasis">generic
        resource</em></span> (GRes), for example a GPU, specified by the value
        of <em class="replaceable">GRES</em>.
       </p></dd><dt id="id-1.8.4.6.4.9"><span class="term"><code class="command">--licenses=<em class="replaceable">NAME[:COUNT]</em></code></span></dt><dd><p>
@@ -492,7 +492,7 @@ Description="subgroup" Organization=bavaria</pre></div><p>
     user applications, as new arguments might be introduced to existing functions.
    </p><div id="id-1.8.5.4.8" data-id-title="Upgrade slurmdbd databases before other Slurm components" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><div class="admon-title">Warning: Upgrade <code class="literal">slurmdbd</code> databases before other Slurm components</div><p>
      If <code class="literal">slurmdbd</code> is used, always upgrade the
-     <code class="literal">slurmdbd</code> database <span class="emphasis"><em>before</em></span> starting
+     <code class="literal">slurmdbd</code> database <span><em class="emphasis">before</em></span> starting
      the upgrade of any other Slurm component. The same database can be connected
      to multiple clusters and must be upgraded before all of them.
     </p><p>
@@ -564,7 +564,7 @@ mysql --password --batch</pre></div><p>
 success!</pre></div></li><li class="step"><p>
       Before restarting the service, remove or replace any deprecated
       configuration options. Check the deprecated options in the
-      <a class="link" href="https://www.suse.com/releasenotes/x86_64/SLE-HPC/15-SP7" target="_blank"><em class="citetitle">Release Notes</em></a>.
+      <a class="link" href="§!§rn-url;" target="_blank"><em class="citetitle">Release Notes</em></a>.
      </p></li><li class="step"><p>
       Restart <code class="literal">slurmdbd</code>:
      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root">DBnode# </code>systemctl start slurmdbd</pre></div><div id="id-1.8.5.5.5.10.3" data-id-title="No daemonization during rebuild" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note: No daemonization during rebuild</div><p>
@@ -689,7 +689,7 @@ zypper install --force-resolution slurm_<em class="replaceable">VERSION</em>-nod
       </p></div></li><li class="step"><p>
       Before restarting the service, remove or replace any deprecated
       configuration options. Check the deprecated options in the
-      <a class="link" href="https://www.suse.com/releasenotes/x86_64/SLE-HPC/15-SP7" target="_blank"><em class="citetitle">Release Notes</em></a>.
+      <a class="link" href="§!§rn-url;" target="_blank"><em class="citetitle">Release Notes</em></a>.
      </p><p>
       If you replace deprecated options in the configuration files, these
       configuration files can be distributed to all management servers and
