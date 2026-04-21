@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><title>SLES 15 SP6 | High Performance Computing Guide</title><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
-<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"/><link rel="schema.DCTERMS" href="http://purl.org/dc/terms/"/>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><title>High Performance Computing Guide | SLES 15 SP6</title><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><link rel="stylesheet" type="text/css" href="static/css/style-new.css"/>
+<link rel="schema.dc" href="http://purl.org/dc/elements/1.1/"/><link rel="schema.dcterms" href="http://purl.org/dc/terms/"/>
+<meta name="dcterms.created" content="2024-06-24"/>
+<meta name="dcterms.modified" content="2024-06-24"/>
+<meta name="dcterms.dateSubmitted" content="2026-04-21"/>
 <meta name="title" content="High Performance Computing Guide | SLES 15 SP6"/>
 <meta name="description" content="How to master system administration tasks such as remote administration, workload management and monitoring"/>
 <meta name="product-name" content="SUSE Linux Enterprise Server"/>
@@ -18,10 +21,10 @@
 <meta name="twitter:title" content="High Performance Computing Guide"/>
 <meta name="twitter:description" content="Set up High Performance Computing with SLES"/>
 <script type="application/ld+json">{
-    "@context": "http://schema.org",
+    "@context": "https://schema.org",
     "@type": ["TechArticle"],
     "image": "https://www.suse.com/assets/img/suse-white-logo-green.svg",
-    
+    "name": "High Performance Computing Guide | SLES 15 SP6",
      "isPartOf": {
       "@type": "CreativeWorkSeries",
       "name": "Products &amp; Solutions"
@@ -38,14 +41,13 @@
       {
         "@type": "Corporation",
         "name": "SUSE Product &amp; Solution Documentation Team",
-        "url": "https://www.suse.com/assets/img/suse-white-logo-green.svg"
+        "url": "https://documentation.suse.com"
       }
     ],
       
+    "dateCreated": "2024-06-24T00:00+02:00",
     "dateModified": "2024-06-24T00:00+02:00",
-      
-    "datePublished": "2024-06-24T00:00+02:00",
-      
+    "datePublished": "2026-04-21T03:12+02:00",
 
     "about": [
       {
@@ -57,7 +59,7 @@
     "mentions": [
       
       { "@type": "SoftwareApplication",
-        "name": "SUSE Linux Enterprise Server",
+        "name": "SLES",
         "softwareVersion": "15 SP6",
         "applicationCategory": "Operating System",
         "operatingSystem": "Linux"
@@ -86,9 +88,9 @@
     platform for modeling, simulation and advanced analytics workloads. It provides tools and
     libraries related to High Performance Computing, including a workload manager, remote and parallel shells,
     monitoring and measuring tools, and libraries to accomplish HPC tasks.
-   </p></div><div><div class="titlepage-revhistory"><a aria-label="Revision History: High Performance Computing Guide" hreflang="en" href="rh-book-hpc.html" target="_blank">Revision History: High Performance Computing Guide</a></div></div><div class="date"><span class="imprint-label">Publication Date: </span>August 11, 2025
+   </p></div><div><div class="titlepage-revhistory"><a aria-label="Revision History: High Performance Computing Guide" hreflang="en" href="rh-book-hpc.html" target="_blank">Revision History: High Performance Computing Guide</a></div></div><div class="date"><span class="imprint-label">Publication Date: </span>April 21, 2026
 </div></div></div><div class="toc"><ul><li><span class="preface"><a href="#preface-administration"><span class="title-name">Preface</span></a></span><ul><li><span class="sect1"><a href="#id-1.2.3"><span class="title-name">Available documentation</span></a></span></li><li><span class="sect1"><a href="#id-1.2.4"><span class="title-name">Improving the documentation</span></a></span></li><li><span class="sect1"><a href="#id-1.2.5"><span class="title-name">Documentation conventions</span></a></span></li><li><span class="sect1"><a href="#id-1.2.6"><span class="title-name">Support</span></a></span></li></ul></li><li><span class="chapter"><a href="#cha-introduction"><span class="title-number">1 </span><span class="title-name">Introduction</span></a></span><ul><li><span class="sect1"><a href="#sec-intro-provides"><span class="title-number">1.1 </span><span class="title-name">Components provided</span></a></span></li><li><span class="sect1"><a href="#sec-introduction-hw"><span class="title-number">1.2 </span><span class="title-name">Hardware platform support</span></a></span></li><li><span class="sect1"><a href="#sec-introduction-life"><span class="title-number">1.3 </span><span class="title-name">Support and lifecycle</span></a></span></li><li><span class="sect1"><a href="#sec-introduction-documentation"><span class="title-number">1.4 </span><span class="title-name">Documentation and other information</span></a></span></li></ul></li><li><span class="chapter"><a href="#installation"><span class="title-number">2 </span><span class="title-name">Installation and upgrade</span></a></span><ul><li><span class="sect1"><a href="#sec2-installation-systemrole"><span class="title-number">2.1 </span><span class="title-name">Installing SUSE Linux Enterprise Server 15 SP6 for HPC</span></a></span></li><li><span class="sect1"><a href="#sec2-upgrade"><span class="title-number">2.2 </span><span class="title-name">Upgrading from SLE HPC to SUSE Linux Enterprise Server</span></a></span></li></ul></li><li><span class="chapter"><a href="#cha-warewulf-deploy-nodes"><span class="title-number">3 </span><span class="title-name">Deploying compute nodes</span></a></span><ul><li><span class="sect1"><a href="#sec-about-warewulf"><span class="title-number">3.1 </span><span class="title-name">About Warewulf</span></a></span></li><li><span class="sect1"><a href="#sec-warewulf-deploy-nodes"><span class="title-number">3.2 </span><span class="title-name">Deploying compute nodes with Warewulf</span></a></span></li><li><span class="sect1"><a href="#sec-warewulf-advanced-tasks"><span class="title-number">3.3 </span><span class="title-name">Advanced Warewulf tasks</span></a></span></li><li><span class="sect1"><a href="#sec-warewulf-more-info"><span class="title-number">3.4 </span><span class="title-name">For more information</span></a></span></li></ul></li><li><span class="chapter"><a href="#cha-remote"><span class="title-number">4 </span><span class="title-name">Remote administration</span></a></span><ul><li><span class="sect1"><a href="#sec-remote-genders"><span class="title-number">4.1 </span><span class="title-name">Genders — static cluster configuration database</span></a></span></li><li><span class="sect1"><a href="#sec-remote-pdsh"><span class="title-number">4.2 </span><span class="title-name">pdsh — parallel remote shell program</span></a></span></li><li><span class="sect1"><a href="#sec-remote-powerman"><span class="title-number">4.3 </span><span class="title-name">PowerMan — centralized power control for clusters</span></a></span></li><li><span class="sect1"><a href="#sec-remote-munge"><span class="title-number">4.4 </span><span class="title-name">MUNGE authentication</span></a></span></li><li><span class="sect1"><a href="#sec-remote-mrsh"><span class="title-number">4.5 </span><span class="title-name">mrsh/mrlogin — remote login using MUNGE authentication</span></a></span></li></ul></li><li><span class="chapter"><a href="#cha-nodes"><span class="title-number">5 </span><span class="title-name">Hardware</span></a></span><ul><li><span class="sect1"><a href="#sec-nodes-cpuid"><span class="title-number">5.1 </span><span class="title-name">cpuid</span></a></span></li><li><span class="sect1"><a href="#sec-nodes-hwloc"><span class="title-number">5.2 </span><span class="title-name">hwloc — portable abstraction of hierarchical architectures for high-performance computing</span></a></span></li></ul></li><li><span class="chapter"><a href="#cha-slurm"><span class="title-number">6 </span><span class="title-name">Slurm — utility for HPC workload management</span></a></span><ul><li><span class="sect1"><a href="#sec-scheduler-slurm"><span class="title-number">6.1 </span><span class="title-name">Installing Slurm</span></a></span></li><li><span class="sect1"><a href="#sec-slurm-admin-commands"><span class="title-number">6.2 </span><span class="title-name">Slurm administration commands</span></a></span></li><li><span class="sect1"><a href="#sec-slurm-upgrade"><span class="title-number">6.3 </span><span class="title-name">Upgrading Slurm</span></a></span></li><li><span class="sect1"><a href="#sec-slurm-faq"><span class="title-number">6.4 </span><span class="title-name">Frequently asked questions</span></a></span></li></ul></li><li><span class="chapter"><a href="#cha-monitoring"><span class="title-number">7 </span><span class="title-name">Monitoring and logging</span></a></span><ul><li><span class="sect1"><a href="#sec-remote-conman"><span class="title-number">7.1 </span><span class="title-name">ConMan — the console manager</span></a></span></li><li><span class="sect1"><a href="#sec-monitoring-clusters-prometheus"><span class="title-number">7.2 </span><span class="title-name">Monitoring HPC clusters with Prometheus and Grafana</span></a></span></li><li><span class="sect1"><a href="#sec-monitoring-ras"><span class="title-number">7.3 </span><span class="title-name">rasdaemon — utility to log RAS error tracings</span></a></span></li></ul></li><li><span class="chapter"><a href="#cha-compute"><span class="title-number">8 </span><span class="title-name">HPC user libraries</span></a></span><ul><li><span class="sect1"><a href="#sec-compute-lmod"><span class="title-number">8.1 </span><span class="title-name">Lmod — Lua-based environment modules</span></a></span></li><li><span class="sect1"><a href="#sec-compiler"><span class="title-number">8.2 </span><span class="title-name">GNU Compiler Toolchain Collection for HPC</span></a></span></li><li><span class="sect1"><a href="#sec-compute-lib"><span class="title-number">8.3 </span><span class="title-name">High Performance Computing libraries</span></a></span></li><li><span class="sect1"><a href="#FileFormat"><span class="title-number">8.4 </span><span class="title-name">File format libraries</span></a></span></li><li><span class="sect1"><a href="#sec1-MPI-libs"><span class="title-number">8.5 </span><span class="title-name">MPI libraries</span></a></span></li><li><span class="sect1"><a href="#sec1-packages-profiling-benchmark"><span class="title-number">8.6 </span><span class="title-name">Profiling and benchmarking libraries and tools</span></a></span></li><li><span class="sect1"><a href="#sec-environment-containers"><span class="title-number">8.7 </span><span class="title-name">Creating environment containers with Apptainer</span></a></span></li></ul></li><li><span class="chapter"><a href="#cha-spack"><span class="title-number">9 </span><span class="title-name">Spack package management tool</span></a></span><ul><li><span class="sect1"><a href="#spack-installation"><span class="title-number">9.1 </span><span class="title-name">Installing Spack</span></a></span></li><li><span class="sect1"><a href="#spack-simple-example"><span class="title-number">9.2 </span><span class="title-name">Using Spack: simple example with netcdf-cxx4</span></a></span></li><li><span class="sect1"><a href="#spack-complex-example"><span class="title-number">9.3 </span><span class="title-name">Using Spack: complex example with mpich</span></a></span></li><li><span class="sect1"><a href="#spack-compiler"><span class="title-number">9.4 </span><span class="title-name">Using a specific compiler</span></a></span></li></ul></li><li><span class="appendix"><a href="#id-1.12"><span class="title-number">A </span><span class="title-name">GNU licenses</span></a></span><ul><li><span class="sect1"><a href="#id-1.12.4"><span class="title-number">A1 </span><span class="title-name">GNU Free Documentation License</span></a></span></li></ul></li></ul></div><div class="list-of-examples"><div class="toc-title">List of Examples</div><ul><li><span class="example"><a href="#ex-warewulf-storage-add-scratch-partition"><span class="number">3.1 </span><span class="name">Adding disk configuration to a node: scratch partition</span></a></span></li><li><span class="example"><a href="#ex-warewulf-storage-add-swap-partition"><span class="number">3.2 </span><span class="name">Adding disk configuration to a node: swap partition</span></a></span></li></ul></div><div><div xml:lang="en" class="legalnotice" id="id-1.1.6"><p>
-  Copyright © 2020–2025
+  Copyright © 2020–2026
 
   SUSE LLC and contributors. All rights reserved.
  </p><p>
@@ -2406,13 +2408,11 @@ Model: <em class="replaceable">MOTHERBOARD-MODEL-NAME</em>
     <span><em class="emphasis">environment containers</em></span>. Environment containers include only the
     components that are part of the environment, plus any required user applications.
     To create a container from the current HPC environment, use the container platform
-    Apptainer (formerly called Singularity). Apptainer is available from SUSE Package Hub.
-    You can also use Spack to configure the environment to use with Apptainer.
+    Apptainer (formerly called Singularity). You can also use Spack to configure the
+    environment to use with Apptainer.
   </p><p>
     For more information, see the following documentation:
   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
-        Enabling the SUSE Package Hub extension: <a class="link" href="https://packagehub.suse.com/how-to-use/" target="_blank">https://packagehub.suse.com/how-to-use/</a>.
-      </p></li><li class="listitem"><p>
         Using Spack to configure the environment:
         <a class="link" href="https://spack.readthedocs.io/en/latest/containers.html#" target="_blank">https://spack.readthedocs.io/en/latest/containers.html#</a>.
       </p></li><li class="listitem"><p>
@@ -2811,7 +2811,7 @@ Run 'spack compiler find' to add compilers or 'spack compilers' to see which com
      Rerun the command to build <code class="literal">mpich</code> with <code class="literal">gcc-10.2.0</code>:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt root"># </code>spack install mpich@3.2.1 %gcc@10.2.0
 .....
-[+] /usr/opt/spack/linux-sle_hpc15-skylake/gcc-10.2.0/mpich-3.2.1-e56rcwtqofh2xytep5pjgq6wrxwmsy25</pre></div></li></ol></div></div></section></section><div class="legal-section"><section class="appendix" id="id-1.12" data-id-title="GNU licenses"><div class="titlepage"><div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">A </span><span class="title-name">GNU licenses</span></span> <a title="Permalink" class="permalink" href="#id-1.12">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/common_legal.xml" title="Edit source document"> </a></div></div></div><div><div class="titlepage-revhistory"><a aria-label="Revision History: High Performance Computing Guide" hreflang="en" href="rh-id4339.html" target="_blank">Revision History: High Performance Computing Guide</a></div></div></div></div><p>
+[+] /usr/opt/spack/linux-sle_hpc15-skylake/gcc-10.2.0/mpich-3.2.1-e56rcwtqofh2xytep5pjgq6wrxwmsy25</pre></div></li></ol></div></div></section></section><div class="legal-section"><section class="appendix" id="id-1.12" data-id-title="GNU licenses"><div class="titlepage"><div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">A </span><span class="title-name">GNU licenses</span></span> <a title="Permalink" class="permalink" href="#id-1.12">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/common_legal.xml" title="Edit source document"> </a></div></div></div><div><div class="titlepage-revhistory"><a aria-label="Revision History: High Performance Computing Guide" hreflang="en" href="rh-id4336.html" target="_blank">Revision History: High Performance Computing Guide</a></div></div></div></div><p>
   This appendix contains the GNU Free Documentation License version 1.2.
  </p><section class="sect1" id="id-1.12.4" data-id-title="GNU Free Documentation License"><div class="titlepage"><div><div><div class="title-container"><h2 class="title legal"><span class="title-number-name"><span class="title-name">GNU Free Documentation License</span></span> <a title="Permalink" class="permalink" href="#id-1.12.4">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a><a target="_blank" class="icon-editsource" href="https://github.com/SUSE/doc-hpc/edit/main/xml/common_license_gfdl1.2.xml" title="Edit source document"> </a></div></div></div></div></div><p>
   Copyright (C) 2000, 2001, 2002 Free Software Foundation, Inc. 51 Franklin St,
@@ -3182,5 +3182,5 @@ Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST.</pre></d
   releasing these examples in parallel under your choice of free software
   license, such as the GNU General Public License, to permit their use in free
   software.
- </p></section></section></div></section></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
-                 2025</span></div></div></footer></body></html>
+ </p></section></section></div></section></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE  2026</span></div></div></footer>
+<script type="text/javascript" src="static/js/language-switcher.js"> </script></body></html>
