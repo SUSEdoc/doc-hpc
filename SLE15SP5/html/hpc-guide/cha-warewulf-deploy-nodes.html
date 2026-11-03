@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><title>Deploying compute nodes | Administration Guide | SLE-HPC 15 SP5</title><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><link rel="stylesheet" type="text/css" href="static/css/style-new.css"/>
 <link rel="schema.dc" href="http://purl.org/dc/elements/1.1/"/><link rel="schema.dcterms" href="http://purl.org/dc/terms/"/>
-<meta name="dcterms.created" content="2026-10-28"/>
-<meta name="dcterms.modified" content="2026-10-28"/>
-<meta name="dcterms.dateSubmitted" content="2026-10-28"/>
+<meta name="dcterms.created" content="2026-11-03"/>
+<meta name="dcterms.modified" content="2026-11-03"/>
+<meta name="dcterms.dateSubmitted" content="2026-11-03"/>
 <meta name="title" content="Deploying compute nodes | SLE-HPC 15 SP5"/>
 <meta name="description" content="Learn to deploy compute nodes using Warewulf to scale High Performance Computing clusters efficiently"/>
 <meta name="product-name" content="SUSE Linux Enterprise High Performance Computing"/>
@@ -40,9 +40,9 @@
         "url": "https://documentation.suse.com"
       }
     ],
-    "dateCreated": "2026-10-28T00:00+02:00",
-    "dateModified": "2026-10-28T00:00+02:00",
-    "datePublished": "2026-10-28T08:40+02:00",
+    "dateCreated": "2026-11-03T00:00+02:00",
+    "dateModified": "2026-11-03T00:00+02:00",
+    "datePublished": "2026-11-03T05:17+02:00",
     "about": [
 
     ],
@@ -157,10 +157,16 @@ network: 192.168.1.0</pre></div><p>
       This creates an SSH key pair to allow passwordless login to the deployed compute nodes.
       If you require a password to secure the private key, set it now:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>ssh-keygen -p -f $HOME/.ssh/cluster</pre></div></li><li class="step"><p>
-      Importing the Warewulf container from the SUSE registry requires SUSE Customer Center credentials.
-      Set your SCC credentials as environment variables before you import the container:
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>export WAREWULF_OCI_USERNAME=<em class="replaceable">USER@EXAMPLE.COM</em>
-<code class="prompt user">&gt; </code>export WAREWULF_OCI_PASSWORD=<em class="replaceable">REGISTRATION_CODE</em></pre></div></li><li class="step"><p>
+      Importing the Warewulf container from the SUSE registry requires login credentials.
+      Set your organization's mirroring credentials as environment variables before you
+      import the container:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>export WAREWULF_OCI_USERNAME=<em class="replaceable">USER_NAME</em>
+<code class="prompt user">&gt; </code>export WAREWULF_OCI_PASSWORD=<em class="replaceable">PASSWORD</em></pre></div><div id="id-1.5.4.3.8.3" class="admonition tip compact"><img class="symbol" alt="Tip" title="Tip" src="static/images/icon-tip.svg"/><p>
+          To find the mirroring credentials, log in to the
+          <a class="link" href="https://scc.suse.com" target="_blank">SUSE Customer Center</a>, select your organization from
+          <span class="guimenu">My Organizations</span>, and click <span class="guimenu">Registration Proxies</span>.
+          Your organization's <span class="guimenu">Mirroring credentials</span> are in the top right corner.
+        </p></div></li><li class="step"><p>
       Import the Warewulf container from the SUSE registry:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">&gt; </code>sudo wwctl container import \
 docker://registry.suse.com/suse/hpc/warewulf4-x86_64/sle-hpc-node:15.5 \
